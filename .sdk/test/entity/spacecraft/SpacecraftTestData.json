@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "spacecraft": {
+      "SPACECRAFT00": {
+        "date_status": "s50",
+        "name": "s51",
+        "operator": "s52",
+        "owner": "s53",
+        "registry": "s54",
+        "spacecraft_class": "s55",
+        "status": "s56",
+        "uid": "s57"
+      },
+      "SPACECRAFT01": {
+        "date_status": "sa0",
+        "name": "sa1",
+        "operator": "sa2",
+        "owner": "sa3",
+        "registry": "sa4",
+        "spacecraft_class": "sa5",
+        "status": "sa6",
+        "uid": "sa7"
+      },
+      "SPACECRAFT02": {
+        "date_status": "sf0",
+        "name": "sf1",
+        "operator": "sf2",
+        "owner": "sf3",
+        "registry": "sf4",
+        "spacecraft_class": "sf5",
+        "status": "sf6",
+        "uid": "sf7"
+      }
+    }
+  },
+  "new": {
+    "spacecraft": {
+      "spacecraft_ref01": {
+        "date_status": "s140",
+        "name": "s141",
+        "operator": "s142",
+        "owner": "s143",
+        "registry": "s144",
+        "spacecraft_class": "s145",
+        "status": "s146",
+        "uid": "s147"
+      }
+    }
+  }
+}

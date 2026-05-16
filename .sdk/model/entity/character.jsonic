@@ -1,0 +1,126 @@
+# Entity: character
+
+main: kit: entity: character: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "deceased"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "fictional_character"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "gender"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "height"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "hologram"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "uid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "weight"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "year_of_birth"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "year_of_death"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "character"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "gender"
+                orig: "gender"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "name"
+                orig: "name"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "page_number"
+                orig: "page_number"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 50
+                kind: "query"
+                name: "page_size"
+                orig: "page_size"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/character/search"
+          parts: [
+            "character"
+            "search"
+          ]
+          select: {
+            "$action": "search"
+            exist: [
+              "gender"
+              "name"
+              "page_number"
+              "page_size"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

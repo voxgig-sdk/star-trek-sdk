@@ -1,0 +1,38 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 4
+  metrics: count: path: 4
+  metrics: count: method: 4
+
+  entity: character: {
+    path: "/character/search": {
+      action: "search": {}
+      op: list: method: *GET
+    }
+  }
+
+  entity: episode: {
+    path: "/episode/search": {
+      action: "search": {}
+      op: list: method: *GET
+    }
+  }
+
+  entity: spacecraft: {
+    path: "/spacecraft/search": {
+      action: "search": {}
+      op: list: method: *GET
+      op: list: transform: res: *("`body.spacecraft`")|top
+    }
+  }
+
+  entity: species: {
+    path: "/species/search": {
+      action: "search": {}
+      op: list: method: *GET
+      op: list: transform: res: *("`body.species`")|top
+    }
+  }
+
+}

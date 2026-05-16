@@ -1,0 +1,542 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Star Trek API",
+    "description": "STAPI is the first public REST API dedicated to all things Star Trek. It provides access to a comprehensive read-only model that includes characters, species, episodes, spacecraft, and much more, making it invaluable for fans and developers alike.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "STAPI",
+      "url": "https://stapi.co/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://stapi.co/api/v1/rest",
+      "description": "Production API Server"
+    }
+  ],
+  "paths": {
+    "/character/search": {
+      "get": {
+        "summary": "Search characters",
+        "description": "Search for Star Trek characters with various filters",
+        "operationId": "searchCharacters",
+        "tags": [
+          "Character"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Character name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gender",
+            "in": "query",
+            "description": "Character gender",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "F",
+                "M"
+              ]
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "description": "Zero-based page number",
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Page size",
+            "schema": {
+              "type": "integer",
+              "default": 50,
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with character search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CharacterSearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/episode/search": {
+      "get": {
+        "summary": "Search episodes",
+        "description": "Search for Star Trek episodes",
+        "operationId": "searchEpisodes",
+        "tags": [
+          "Episode"
+        ],
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "description": "Episode title",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "seasonNumber",
+            "in": "query",
+            "description": "Season number",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "episodeNumber",
+            "in": "query",
+            "description": "Episode number",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "description": "Zero-based page number",
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Page size",
+            "schema": {
+              "type": "integer",
+              "default": 50,
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with episode search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EpisodeSearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/species/search": {
+      "get": {
+        "summary": "Search species",
+        "description": "Search for Star Trek species",
+        "operationId": "searchSpecies",
+        "tags": [
+          "Species"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Species name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "description": "Zero-based page number",
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Page size",
+            "schema": {
+              "type": "integer",
+              "default": 50,
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with species search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpeciesSearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/spacecraft/search": {
+      "get": {
+        "summary": "Search spacecraft",
+        "description": "Search for Star Trek spacecraft and vessels",
+        "operationId": "searchSpacecraft",
+        "tags": [
+          "Spacecraft"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Spacecraft name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "description": "Zero-based page number",
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "Page size",
+            "schema": {
+              "type": "integer",
+              "default": 50,
+              "minimum": 1,
+              "maximum": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with spacecraft search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpacecraftSearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CharacterSearchResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "$ref": "#/components/schemas/PageMetadata"
+          },
+          "characters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Character"
+            }
+          }
+        }
+      },
+      "Character": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "Unique identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Character name"
+          },
+          "gender": {
+            "type": "string",
+            "description": "Character gender"
+          },
+          "yearOfBirth": {
+            "type": "integer",
+            "description": "Year of birth"
+          },
+          "yearOfDeath": {
+            "type": "integer",
+            "description": "Year of death"
+          },
+          "height": {
+            "type": "integer",
+            "description": "Height in centimeters"
+          },
+          "weight": {
+            "type": "integer",
+            "description": "Weight in kilograms"
+          },
+          "deceased": {
+            "type": "boolean",
+            "description": "Whether the character is deceased"
+          },
+          "hologram": {
+            "type": "boolean",
+            "description": "Whether the character is a hologram"
+          },
+          "fictionalCharacter": {
+            "type": "boolean",
+            "description": "Whether this is a fictional character within Star Trek"
+          }
+        }
+      },
+      "EpisodeSearchResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "$ref": "#/components/schemas/PageMetadata"
+          },
+          "episodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Episode"
+            }
+          }
+        }
+      },
+      "Episode": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "Unique identifier"
+          },
+          "title": {
+            "type": "string",
+            "description": "Episode title"
+          },
+          "seasonNumber": {
+            "type": "integer",
+            "description": "Season number"
+          },
+          "episodeNumber": {
+            "type": "integer",
+            "description": "Episode number"
+          },
+          "productionSerialNumber": {
+            "type": "string",
+            "description": "Production serial number"
+          },
+          "featureLength": {
+            "type": "boolean",
+            "description": "Whether this is a feature length episode"
+          },
+          "stardateFrom": {
+            "type": "number",
+            "format": "float",
+            "description": "Starting stardate"
+          },
+          "stardateTo": {
+            "type": "number",
+            "format": "float",
+            "description": "Ending stardate"
+          },
+          "yearFrom": {
+            "type": "integer",
+            "description": "Starting year"
+          },
+          "yearTo": {
+            "type": "integer",
+            "description": "Ending year"
+          },
+          "usAirDate": {
+            "type": "string",
+            "format": "date",
+            "description": "US air date"
+          }
+        }
+      },
+      "SpeciesSearchResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "$ref": "#/components/schemas/PageMetadata"
+          },
+          "species": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Species"
+            }
+          }
+        }
+      },
+      "Species": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "Unique identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Species name"
+          },
+          "homeworld": {
+            "type": "string",
+            "description": "Name of homeworld"
+          },
+          "quadrant": {
+            "type": "string",
+            "description": "Quadrant of origin"
+          },
+          "extinctSpecies": {
+            "type": "boolean",
+            "description": "Whether the species is extinct"
+          },
+          "warpCapableSpecies": {
+            "type": "boolean",
+            "description": "Whether the species is warp capable"
+          },
+          "extraGalacticSpecies": {
+            "type": "boolean",
+            "description": "Whether the species is from outside the galaxy"
+          },
+          "humanoidSpecies": {
+            "type": "boolean",
+            "description": "Whether the species is humanoid"
+          }
+        }
+      },
+      "SpacecraftSearchResponse": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "$ref": "#/components/schemas/PageMetadata"
+          },
+          "spacecraft": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Spacecraft"
+            }
+          }
+        }
+      },
+      "Spacecraft": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "description": "Unique identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Spacecraft name"
+          },
+          "registry": {
+            "type": "string",
+            "description": "Registry number"
+          },
+          "status": {
+            "type": "string",
+            "description": "Current status"
+          },
+          "dateStatus": {
+            "type": "string",
+            "description": "Date of status"
+          },
+          "spacecraftClass": {
+            "type": "string",
+            "description": "Class of spacecraft"
+          },
+          "owner": {
+            "type": "string",
+            "description": "Owner organization"
+          },
+          "operator": {
+            "type": "string",
+            "description": "Operating organization"
+          }
+        }
+      },
+      "PageMetadata": {
+        "type": "object",
+        "properties": {
+          "pageNumber": {
+            "type": "integer",
+            "description": "Current page number (zero-based)"
+          },
+          "pageSize": {
+            "type": "integer",
+            "description": "Page size"
+          },
+          "numberOfElements": {
+            "type": "integer",
+            "description": "Number of elements on current page"
+          },
+          "totalElements": {
+            "type": "integer",
+            "description": "Total number of elements"
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total number of pages"
+          },
+          "firstPage": {
+            "type": "boolean",
+            "description": "Whether this is the first page"
+          },
+          "lastPage": {
+            "type": "boolean",
+            "description": "Whether this is the last page"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Character",
+      "description": "Operations related to Star Trek characters"
+    },
+    {
+      "name": "Episode",
+      "description": "Operations related to Star Trek episodes"
+    },
+    {
+      "name": "Species",
+      "description": "Operations related to Star Trek species"
+    },
+    {
+      "name": "Spacecraft",
+      "description": "Operations related to Star Trek spacecraft and vessels"
+    }
+  ]
+}

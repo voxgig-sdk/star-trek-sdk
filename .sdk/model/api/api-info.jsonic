@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "STAPI"
+        url: "https://stapi.co/"
+      }
+      description: "STAPI is the first public REST API dedicated to all things Star Trek. It provides access to a comprehensive read-only model that includes characters, species, episodes, spacecraft, and much more, making it invaluable for fans and developers alike."
+      servers: [
+        {
+          description: "Production API Server"
+          url: "https://stapi.co/api/v1/rest"
+        }
+      ]
+      title: "Star Trek API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

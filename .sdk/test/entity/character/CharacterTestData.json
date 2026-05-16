@@ -1,0 +1,58 @@
+{
+  "existing": {
+    "character": {
+      "CHARACTER00": {
+        "deceased": true,
+        "fictional_character": false,
+        "gender": "s66",
+        "height": "s67",
+        "hologram": true,
+        "name": "s69",
+        "uid": "s6a",
+        "weight": "s6b",
+        "year_of_birth": "s6c",
+        "year_of_death": "s6d"
+      },
+      "CHARACTER01": {
+        "deceased": true,
+        "fictional_character": false,
+        "gender": "sca",
+        "height": "scb",
+        "hologram": true,
+        "name": "scd",
+        "uid": "sce",
+        "weight": "scf",
+        "year_of_birth": "sd0",
+        "year_of_death": "sd1"
+      },
+      "CHARACTER02": {
+        "deceased": true,
+        "fictional_character": false,
+        "gender": "s12e",
+        "height": "s12f",
+        "hologram": true,
+        "name": "s131",
+        "uid": "s132",
+        "weight": "s133",
+        "year_of_birth": "s134",
+        "year_of_death": "s135"
+      }
+    }
+  },
+  "new": {
+    "character": {
+      "character_ref01": {
+        "deceased": true,
+        "fictional_character": false,
+        "gender": "s192",
+        "height": "s193",
+        "hologram": true,
+        "name": "s195",
+        "uid": "s196",
+        "weight": "s197",
+        "year_of_birth": "s198",
+        "year_of_death": "s199"
+      }
+    }
+  }
+}

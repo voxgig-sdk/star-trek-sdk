@@ -1,0 +1,22 @@
+# BasicSpacecraftFlow
+
+main: kit: flow: BasicSpacecraftFlow:
+{
+  entity: "spacecraft",
+  kind: "basic",
+  name: "BasicSpacecraftFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "spacecraft_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSpacecraftFlow"
+}

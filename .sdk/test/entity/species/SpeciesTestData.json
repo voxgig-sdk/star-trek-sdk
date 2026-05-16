@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "species": {
+      "SPECIES00": {
+        "extinct_species": true,
+        "extra_galactic_species": false,
+        "homeworld": "s52",
+        "humanoid_species": false,
+        "name": "s54",
+        "quadrant": "s55",
+        "uid": "s56",
+        "warp_capable_species": false
+      },
+      "SPECIES01": {
+        "extinct_species": true,
+        "extra_galactic_species": false,
+        "homeworld": "sa2",
+        "humanoid_species": false,
+        "name": "sa4",
+        "quadrant": "sa5",
+        "uid": "sa6",
+        "warp_capable_species": false
+      },
+      "SPECIES02": {
+        "extinct_species": true,
+        "extra_galactic_species": false,
+        "homeworld": "sf2",
+        "humanoid_species": false,
+        "name": "sf4",
+        "quadrant": "sf5",
+        "uid": "sf6",
+        "warp_capable_species": false
+      }
+    }
+  },
+  "new": {
+    "species": {
+      "species_ref01": {
+        "extinct_species": true,
+        "extra_galactic_species": false,
+        "homeworld": "s142",
+        "humanoid_species": false,
+        "name": "s144",
+        "quadrant": "s145",
+        "uid": "s146",
+        "warp_capable_species": false
+      }
+    }
+  }
+}

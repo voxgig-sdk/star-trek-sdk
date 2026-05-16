@@ -1,0 +1,62 @@
+{
+  "existing": {
+    "episode": {
+      "EPISODE00": {
+        "episode_number": "s6e",
+        "feature_length": false,
+        "production_serial_number": "s70",
+        "season_number": "s71",
+        "stardate_from": 114,
+        "stardate_to": 115,
+        "title": "s74",
+        "uid": "s75",
+        "us_air_date": "s76",
+        "year_from": "s77",
+        "year_to": "s78"
+      },
+      "EPISODE01": {
+        "episode_number": "sdc",
+        "feature_length": false,
+        "production_serial_number": "sde",
+        "season_number": "sdf",
+        "stardate_from": 224,
+        "stardate_to": 225,
+        "title": "se2",
+        "uid": "se3",
+        "us_air_date": "se4",
+        "year_from": "se5",
+        "year_to": "se6"
+      },
+      "EPISODE02": {
+        "episode_number": "s14a",
+        "feature_length": false,
+        "production_serial_number": "s14c",
+        "season_number": "s14d",
+        "stardate_from": 334,
+        "stardate_to": 335,
+        "title": "s150",
+        "uid": "s151",
+        "us_air_date": "s152",
+        "year_from": "s153",
+        "year_to": "s154"
+      }
+    }
+  },
+  "new": {
+    "episode": {
+      "episode_ref01": {
+        "episode_number": "s1b8",
+        "feature_length": false,
+        "production_serial_number": "s1ba",
+        "season_number": "s1bb",
+        "stardate_from": 444,
+        "stardate_to": 445,
+        "title": "s1be",
+        "uid": "s1bf",
+        "us_air_date": "s1c0",
+        "year_from": "s1c1",
+        "year_to": "s1c2"
+      }
+    }
+  }
+}

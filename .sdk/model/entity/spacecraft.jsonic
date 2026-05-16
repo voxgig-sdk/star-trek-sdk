@@ -1,0 +1,108 @@
+# Entity: spacecraft
+
+main: kit: entity: spacecraft: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "date_status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "operator"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "owner"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "registry"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "spacecraft_class"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "uid"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "spacecraft"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "name"
+                orig: "name"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "page_number"
+                orig: "page_number"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 50
+                kind: "query"
+                name: "page_size"
+                orig: "page_size"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/spacecraft/search"
+          parts: [
+            "spacecraft"
+            "search"
+          ]
+          select: {
+            "$action": "search"
+            exist: [
+              "name"
+              "page_number"
+              "page_size"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

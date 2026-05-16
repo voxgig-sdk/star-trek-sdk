@@ -1,0 +1,6 @@
+# Entity Models
+
+@"character.jsonic"
+@"episode.jsonic"
+@"spacecraft.jsonic"
+@"species.jsonic"

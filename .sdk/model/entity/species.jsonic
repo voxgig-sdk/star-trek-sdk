@@ -1,0 +1,108 @@
+# Entity: species
+
+main: kit: entity: species: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "extinct_species"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "extra_galactic_species"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "homeworld"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "humanoid_species"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "quadrant"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "uid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "warp_capable_species"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+  ]
+
+  name: "species"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "name"
+                orig: "name"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "page_number"
+                orig: "page_number"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 50
+                kind: "query"
+                name: "page_size"
+                orig: "page_size"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/species/search"
+          parts: [
+            "species"
+            "search"
+          ]
+          select: {
+            "$action": "search"
+            exist: [
+              "name"
+              "page_number"
+              "page_size"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
