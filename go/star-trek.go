@@ -1,10 +1,10 @@
 package voxgigstartreksdk
 
 import (
-	"github.com/voxgig-sdk/star-trek-sdk/core"
-	"github.com/voxgig-sdk/star-trek-sdk/entity"
-	"github.com/voxgig-sdk/star-trek-sdk/feature"
-	_ "github.com/voxgig-sdk/star-trek-sdk/utility"
+	"github.com/voxgig-sdk/star-trek-sdk/go/core"
+	"github.com/voxgig-sdk/star-trek-sdk/go/entity"
+	"github.com/voxgig-sdk/star-trek-sdk/go/feature"
+	_ "github.com/voxgig-sdk/star-trek-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

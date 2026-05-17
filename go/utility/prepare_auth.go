@@ -1,9 +1,9 @@
 package utility
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/star-trek-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/star-trek-sdk/core"
+	"github.com/voxgig-sdk/star-trek-sdk/go/core"
 )
 
 const headerAuth = "authorization"

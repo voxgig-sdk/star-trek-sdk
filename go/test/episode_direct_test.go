@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/star-trek-sdk"
-	"github.com/voxgig-sdk/star-trek-sdk/core"
+	sdk "github.com/voxgig-sdk/star-trek-sdk/go"
+	"github.com/voxgig-sdk/star-trek-sdk/go/core"
 )
 
 func TestEpisodeDirect(t *testing.T) {

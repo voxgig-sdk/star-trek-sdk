@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/star-trek-sdk/core"
+import "github.com/voxgig-sdk/star-trek-sdk/go/core"
 
 func makeResponseUtil(ctx *core.Context) (*core.Response, error) {
 	if ctx.Out["response"] != nil {

@@ -29,7 +29,7 @@ class Config {
 
 
   options = {
-    base: 'https://stapi.co/api/v1/rest',
+    base: '$$main.kit.info.servers.0.url$$',
 
     'AUTHBLOCK'headers: 'HEADERS',
 

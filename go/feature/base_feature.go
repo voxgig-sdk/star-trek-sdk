@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/star-trek-sdk/core"
+	"github.com/voxgig-sdk/star-trek-sdk/go/core"
 )
 
 type BaseFeature struct {
