@@ -62,14 +62,12 @@ def spacecraft_direct_setup(mockres)
   env = Runner.env_override({
     "STARTREK_TEST_SPACECRAFT_ENTID" => {},
     "STARTREK_TEST_LIVE" => "FALSE",
-    "STARTREK_APIKEY" => "NONE",
   })
 
   live = env["STARTREK_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["STARTREK_APIKEY"],
     }
     client = StarTrekSDK.new(merged_opts)
     return {

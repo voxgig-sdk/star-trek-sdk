@@ -92,7 +92,6 @@ function character_basic_setup(extra)
     ["STARTREK_TEST_CHARACTER_ENTID"] = idmap,
     ["STARTREK_TEST_LIVE"] = "FALSE",
     ["STARTREK_TEST_EXPLAIN"] = "FALSE",
-    ["STARTREK_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -104,7 +103,6 @@ function character_basic_setup(extra)
   if env["STARTREK_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["STARTREK_APIKEY"],
       },
       extra or {},
     })

@@ -68,14 +68,12 @@ function character_direct_setup($mockres)
     $env = Runner::env_override([
         "STARTREK_TEST_CHARACTER_ENTID" => [],
         "STARTREK_TEST_LIVE" => "FALSE",
-        "STARTREK_APIKEY" => "NONE",
     ]);
 
     $live = $env["STARTREK_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["STARTREK_APIKEY"],
         ];
         $client = new StarTrekSDK($merged_opts);
         return [
