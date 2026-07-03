@@ -10,13 +10,13 @@ The Ruby SDK for the StarTrek API — an entity-oriented client using idiomatic 
 
 ## Install
 ```bash
-gem install star-trek-sdk
+gem install voxgig-sdk-star-trek
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "star-trek-sdk"
+gem "voxgig-sdk-star-trek"
 ```
 
 Then run:

@@ -10,7 +10,7 @@ The PHP SDK for the StarTrek API — an entity-oriented client using PHP convent
 
 ## Install
 ```bash
-composer require voxgig/star-trek-sdk
+composer require voxgig-sdk/star-trek
 ```
 
 

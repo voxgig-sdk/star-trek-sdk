@@ -10,7 +10,7 @@ The Lua SDK for the StarTrek API — an entity-oriented client using Lua convent
 
 ## Install
 ```bash
-luarocks install star-trek-sdk
+luarocks install voxgig-sdk-star-trek
 ```
 
 If the module is not yet published, add the source directory to

@@ -10,7 +10,7 @@ The Python SDK for the StarTrek API — an entity-oriented client following Pyth
 
 ## Install
 ```bash
-pip install star-trek-sdk
+pip install voxgig-sdk-star-trek
 ```
 
 Or install from source:

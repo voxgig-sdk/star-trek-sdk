@@ -10,7 +10,7 @@ The TypeScript SDK for the StarTrek API — a type-safe, entity-oriented client 
 
 ## Install
 ```bash
-npm install star-trek
+npm install @voxgig-sdk/star-trek
 ```
 ## Tutorial: your first API call
 
