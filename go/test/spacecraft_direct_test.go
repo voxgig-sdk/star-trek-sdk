@@ -93,12 +93,14 @@ func spacecraftDirectSetup(mockres any) *spacecraftDirectSetupResult {
 	env := envOverride(map[string]any{
 		"STARTREK_TEST_SPACECRAFT_ENTID": map[string]any{},
 		"STARTREK_TEST_LIVE":    "FALSE",
+		"STARTREK_APIKEY":       "NONE",
 	})
 
 	live := env["STARTREK_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["STARTREK_APIKEY"],
 		}
 		client := sdk.NewStarTrekSDK(mergedOpts)
 

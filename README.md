@@ -1,23 +1,8 @@
 # StarTrek SDK
 
-Query Star Trek characters, episodes, ships and species from the STAPI public REST catalogue
+Star Trek API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Star Trek API
-
-[STAPI](https://stapi.co) (the Star Trek API) is a community-maintained public REST service that exposes structured data drawn from the Star Trek franchise. It is read-only and does not require an API key.
-
-The API is organised around named resource types covering the in-universe canon and the production side of the shows and films. You can look up individual items by UID or browse the catalogues exposed under the REST base.
-
-**What you get from the API**
-
-- Characters from the series and films
-- Episodes across the various Star Trek shows
-- Spacecraft and starship records
-- Species catalogued in the Star Trek universe
-
-Operational notes: the service is HTTP-accessible and unauthenticated. CORS is reported as disabled, so browser-side calls from another origin will be blocked — use a server-side proxy if you need to consume it from the browser.
 
 ## Try it
 
@@ -51,29 +36,31 @@ gem install star-trek-sdk
 luarocks install star-trek-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { StarTrekSDK } from 'star-trek'
 
-const client = new StarTrekSDK({})
+const client = new StarTrekSDK({
+  apikey: process.env.STAR-TREK_APIKEY,
+})
 
 // List all characters
 const characters = await client.Character().list()
+console.log(characters.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -103,10 +90,10 @@ The API exposes 4 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Character** | An individual character from the Star Trek franchise (Starfleet officers, aliens, recurring guests). | `/character/search` |
-| **Episode** | A single episode of a Star Trek television series, with production and airing metadata. | `/episode/search` |
-| **Spacecraft** | A ship or other spacefaring vessel appearing in the franchise. | `/spacecraft/search` |
-| **Species** | A sentient or non-sentient species catalogued in the Star Trek universe. | `/species/search` |
+| **Character** |  | `/character/search` |
+| **Episode** |  | `/episode/search` |
+| **Spacecraft** |  | `/spacecraft/search` |
+| **Species** |  | `/species/search` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -116,12 +103,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from startrek_sdk import StarTrekSDK
 
-client = StarTrekSDK({})
+client = StarTrekSDK({
+    "apikey": os.environ.get("STAR-TREK_APIKEY"),
+})
 
 # List all characters
-characters, err = client.Character(None).list(None, None)
+characters, err = client.Character().list()
+print(characters)
 ```
 
 ### PHP
@@ -130,10 +121,13 @@ characters, err = client.Character(None).list(None, None)
 <?php
 require_once 'startrek_sdk.php';
 
-$client = new StarTrekSDK([]);
+$client = new StarTrekSDK([
+    "apikey" => getenv("STAR-TREK_APIKEY"),
+]);
 
 // List all characters
-[$characters, $err] = $client->Character(null)->list(null, null);
+[$characters, $err] = $client->Character()->list();
+print_r($characters);
 ```
 
 ### Golang
@@ -141,10 +135,13 @@ $client = new StarTrekSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/star-trek-sdk/go"
 
-client := sdk.NewStarTrekSDK(map[string]any{})
+client := sdk.NewStarTrekSDK(map[string]any{
+    "apikey": os.Getenv("STAR-TREK_APIKEY"),
+})
 
 // List all characters
 characters, err := client.Character(nil).List(nil, nil)
+fmt.Println(characters)
 ```
 
 ### Ruby
@@ -152,10 +149,13 @@ characters, err := client.Character(nil).List(nil, nil)
 ```ruby
 require_relative "StarTrek_sdk"
 
-client = StarTrekSDK.new({})
+client = StarTrekSDK.new({
+  "apikey" => ENV["STAR-TREK_APIKEY"],
+})
 
 # List all characters
-characters, err = client.Character(nil).list(nil, nil)
+characters, err = client.Character().list
+puts characters
 ```
 
 ### Lua
@@ -163,10 +163,13 @@ characters, err = client.Character(nil).list(nil, nil)
 ```lua
 local sdk = require("star-trek_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("STAR-TREK_APIKEY"),
+})
 
 -- List all characters
-local characters, err = client:Character(nil):list(nil, nil)
+local characters, err = client:Character():list()
+print(characters)
 ```
 
 ## Unit testing in offline mode
@@ -185,25 +188,21 @@ const result = await client.Character().load({ id: 'test01' })
 ### Python
 
 ```python
-client = StarTrekSDK.test(None, None)
-result, err = client.Character(None).load(
-    {"id": "test01"}, None
-)
+client = StarTrekSDK.test()
+result, err = client.Character().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = StarTrekSDK::test(null, null);
-[$result, $err] = $client->Character(null)->load(
-    ["id" => "test01"], null
-);
+$client = StarTrekSDK::test();
+[$result, $err] = $client->Character()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Character(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -212,19 +211,15 @@ result, err := client.Character(nil).Load(
 ### Ruby
 
 ```ruby
-client = StarTrekSDK.test(nil, nil)
-result, err = client.Character(nil).load(
-  { "id" => "test01" }, nil
-)
+client = StarTrekSDK.test
+result, err = client.Character().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Character(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Character():load({ id = "test01" })
 ```
 
 ## How it works
@@ -328,10 +323,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Star Trek API
-
-- Upstream: [https://stapi.co](https://stapi.co)
 
 ---
 

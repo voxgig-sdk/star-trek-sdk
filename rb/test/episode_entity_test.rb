@@ -83,6 +83,7 @@ def episode_basic_setup(extra)
     "STARTREK_TEST_EPISODE_ENTID" => idmap,
     "STARTREK_TEST_LIVE" => "FALSE",
     "STARTREK_TEST_EXPLAIN" => "FALSE",
+    "STARTREK_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,6 +95,7 @@ def episode_basic_setup(extra)
   if env["STARTREK_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["STARTREK_APIKEY"],
       },
       extra || {},
     ])

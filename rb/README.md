@@ -1,6 +1,11 @@
 # StarTrek Ruby SDK
 
-The Ruby SDK for the StarTrek API. Provides an entity-oriented interface using idiomatic Ruby conventions.
+
+
+The Ruby SDK for the StarTrek API — an entity-oriented client using idiomatic Ruby conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -31,13 +36,15 @@ loading a specific record.
 ```ruby
 require_relative "StarTrek_sdk"
 
-client = StarTrekSDK.new({})
+client = StarTrekSDK.new({
+  "apikey" => ENV["STAR-TREK_APIKEY"],
+})
 ```
 
 ### 2. List characters
 
 ```ruby
-result, err = client.Character(nil).list(nil, nil)
+result, err = client.Character().list
 raise err if err
 
 if result.is_a?(Array)
@@ -89,11 +96,9 @@ puts fetchdef["headers"]
 Create a mock client for unit testing — no server required:
 
 ```ruby
-client = StarTrekSDK.test(nil, nil)
+client = StarTrekSDK.test
 
-result, err = client.StarTrek(nil).load(
-  { "id" => "test01" }, nil
-)
+result, err = client.StarTrek().load({ "id" => "test01" })
 # result contains mock response data
 ```
 
@@ -125,6 +130,7 @@ Create a `.env.local` file at the project root:
 
 ```
 STAR-TREK_TEST_LIVE=TRUE
+STAR-TREK_APIKEY=<your-key>
 ```
 
 Then run:
@@ -147,6 +153,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `String` | API key for authentication. |
 | `base` | `String` | Base URL of the API server. |
 | `prefix` | `String` | URL path prefix prepended to all requests. |
 | `suffix` | `String` | URL path suffix appended to all requests. |

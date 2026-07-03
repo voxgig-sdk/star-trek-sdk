@@ -119,6 +119,7 @@ func speciesBasicSetup(extra map[string]any) *entityTestSetup {
 		"STARTREK_TEST_SPECIES_ENTID": idmap,
 		"STARTREK_TEST_LIVE":      "FALSE",
 		"STARTREK_TEST_EXPLAIN":   "FALSE",
+		"STARTREK_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["STARTREK_TEST_SPECIES_ENTID"])
@@ -129,6 +130,7 @@ func speciesBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["STARTREK_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["STARTREK_APIKEY"],
 			},
 			extra,
 		})

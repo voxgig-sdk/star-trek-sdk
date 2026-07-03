@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'STARTREK_TEST_SPECIES_ENTID': {},
     'STARTREK_TEST_LIVE': 'FALSE',
+    'STARTREK_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.STARTREK_TEST_LIVE
 
   if (live) {
     const client = new StarTrekSDK({
+      apikey: env.STARTREK_APIKEY,
     })
 
     let idmap: any = env['STARTREK_TEST_SPECIES_ENTID']

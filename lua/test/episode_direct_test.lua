@@ -63,12 +63,14 @@ function episode_direct_setup(mockres)
   local env = runner.env_override({
     ["STARTREK_TEST_EPISODE_ENTID"] = {},
     ["STARTREK_TEST_LIVE"] = "FALSE",
+    ["STARTREK_APIKEY"] = "NONE",
   })
 
   local live = env["STARTREK_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["STARTREK_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

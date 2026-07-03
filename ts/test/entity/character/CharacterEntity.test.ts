@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'STAR_TREK_TEST_CHARACTER_ENTID': idmap,
     'STAR_TREK_TEST_LIVE': 'FALSE',
     'STAR_TREK_TEST_EXPLAIN': 'FALSE',
+    'STAR_TREK_APIKEY': 'NONE',
   })
 
   idmap = env['STAR_TREK_TEST_CHARACTER_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new StarTrekSDK(merge([
       {
+        apikey: env.STAR_TREK_APIKEY,
       },
       extra
     ]))
