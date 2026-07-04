@@ -50,8 +50,7 @@ class SpacecraftEntityTest extends TestCase
         $spacecraft_ref01_ent = $client->Spacecraft(null);
         $spacecraft_ref01_match = [];
 
-        [$spacecraft_ref01_list_result, $err] = $spacecraft_ref01_ent->list($spacecraft_ref01_match, null);
-        $this->assertNull($err);
+        $spacecraft_ref01_list_result = $spacecraft_ref01_ent->list($spacecraft_ref01_match, null);
         $this->assertIsArray($spacecraft_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function spacecraft_basic_setup($extra)
         "STARTREK_TEST_SPACECRAFT_ENTID" => $idmap,
         "STARTREK_TEST_LIVE" => "FALSE",
         "STARTREK_TEST_EXPLAIN" => "FALSE",
-        "STARTREK_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function spacecraft_basic_setup($extra)
     if ($env["STARTREK_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["STARTREK_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -5,6 +5,8 @@ import { EpisodeEntity } from './entity/EpisodeEntity'
 import { SpacecraftEntity } from './entity/SpacecraftEntity'
 import { SpeciesEntity } from './entity/SpeciesEntity'
 
+export type * from './StarTrekTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -205,24 +207,56 @@ class StarTrekSDK {
 
 
 
+  _character?: CharacterEntity
+
+  // Idiomatic facade: `client.character.list()` / `client.character.load({ id })`.
+  get character(): CharacterEntity {
+    return (this._character ??= new CharacterEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.character` instead. */
   Character(data?: any) {
     const self = this
     return new CharacterEntity(self,data)
   }
 
 
+  _episode?: EpisodeEntity
+
+  // Idiomatic facade: `client.episode.list()` / `client.episode.load({ id })`.
+  get episode(): EpisodeEntity {
+    return (this._episode ??= new EpisodeEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.episode` instead. */
   Episode(data?: any) {
     const self = this
     return new EpisodeEntity(self,data)
   }
 
 
+  _spacecraft?: SpacecraftEntity
+
+  // Idiomatic facade: `client.spacecraft.list()` / `client.spacecraft.load({ id })`.
+  get spacecraft(): SpacecraftEntity {
+    return (this._spacecraft ??= new SpacecraftEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.spacecraft` instead. */
   Spacecraft(data?: any) {
     const self = this
     return new SpacecraftEntity(self,data)
   }
 
 
+  _species?: SpeciesEntity
+
+  // Idiomatic facade: `client.species.list()` / `client.species.load({ id })`.
+  get species(): SpeciesEntity {
+    return (this._species ??= new SpeciesEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.species` instead. */
   Species(data?: any) {
     const self = this
     return new SpeciesEntity(self,data)

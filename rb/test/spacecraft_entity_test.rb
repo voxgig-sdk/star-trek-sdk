@@ -43,8 +43,7 @@ class SpacecraftEntityTest < Minitest::Test
     spacecraft_ref01_ent = client.Spacecraft(nil)
     spacecraft_ref01_match = {}
 
-    spacecraft_ref01_list_result, err = spacecraft_ref01_ent.list(spacecraft_ref01_match, nil)
-    assert_nil err
+    spacecraft_ref01_list_result = spacecraft_ref01_ent.list(spacecraft_ref01_match, nil)
     assert spacecraft_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def spacecraft_basic_setup(extra)
     "STARTREK_TEST_SPACECRAFT_ENTID" => idmap,
     "STARTREK_TEST_LIVE" => "FALSE",
     "STARTREK_TEST_EXPLAIN" => "FALSE",
-    "STARTREK_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def spacecraft_basic_setup(extra)
   if env["STARTREK_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["STARTREK_APIKEY"],
       },
       extra || {},
     ])

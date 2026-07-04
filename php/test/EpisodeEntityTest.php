@@ -50,8 +50,7 @@ class EpisodeEntityTest extends TestCase
         $episode_ref01_ent = $client->Episode(null);
         $episode_ref01_match = [];
 
-        [$episode_ref01_list_result, $err] = $episode_ref01_ent->list($episode_ref01_match, null);
-        $this->assertNull($err);
+        $episode_ref01_list_result = $episode_ref01_ent->list($episode_ref01_match, null);
         $this->assertIsArray($episode_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function episode_basic_setup($extra)
         "STARTREK_TEST_EPISODE_ENTID" => $idmap,
         "STARTREK_TEST_LIVE" => "FALSE",
         "STARTREK_TEST_EXPLAIN" => "FALSE",
-        "STARTREK_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function episode_basic_setup($extra)
     if ($env["STARTREK_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["STARTREK_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -146,7 +145,7 @@ Alias for `StarTrekSDK.test()`.
 ## CharacterEntity
 
 ```ts
-const character = client.Character()
+const character = client.character
 ```
 
 ### Fields
@@ -171,7 +170,7 @@ const character = client.Character()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Character().list()
+const results = await client.character.list()
 ```
 
 ### Common Methods
@@ -205,7 +204,7 @@ Return a copy of the entity options.
 ## EpisodeEntity
 
 ```ts
-const episode = client.Episode()
+const episode = client.episode
 ```
 
 ### Fields
@@ -231,7 +230,7 @@ const episode = client.Episode()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Episode().list()
+const results = await client.episode.list()
 ```
 
 ### Common Methods
@@ -265,7 +264,7 @@ Return a copy of the entity options.
 ## SpacecraftEntity
 
 ```ts
-const spacecraft = client.Spacecraft()
+const spacecraft = client.spacecraft
 ```
 
 ### Fields
@@ -288,7 +287,7 @@ const spacecraft = client.Spacecraft()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Spacecraft().list()
+const results = await client.spacecraft.list()
 ```
 
 ### Common Methods
@@ -322,7 +321,7 @@ Return a copy of the entity options.
 ## SpeciesEntity
 
 ```ts
-const species = client.Species()
+const species = client.species
 ```
 
 ### Fields
@@ -345,7 +344,7 @@ const species = client.Species()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Species().list()
+const results = await client.species.list()
 ```
 
 ### Common Methods

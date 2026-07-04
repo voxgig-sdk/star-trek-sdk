@@ -45,6 +45,7 @@ class SpacecraftEntity
     end
   end
 
+  # @return [Spacecraft, Hash] the current Spacecraft data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class SpacecraftEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Spacecraft fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class SpacecraftEntity
   
 
   
+  # List Spacecraft items matching the given filter.
+  #
+  # @param reqmatch [SpacecraftListMatch, Hash, nil] match filter (any subset of Spacecraft fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Spacecraft>, Array] the matching Spacecraft items; raises StarTrekError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

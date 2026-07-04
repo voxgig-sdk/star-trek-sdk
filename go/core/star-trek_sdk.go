@@ -245,21 +245,33 @@ func (sdk *StarTrekSDK) Direct(fetchargs map[string]any) (map[string]any, error)
 }
 
 
+// Character returns a Character entity bound to this client.
+// Idiomatic usage: client.Character(nil).List(nil, nil) or
+// client.Character(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *StarTrekSDK) Character(data map[string]any) StarTrekEntity {
 	return NewCharacterEntityFunc(sdk, data)
 }
 
 
+// Episode returns a Episode entity bound to this client.
+// Idiomatic usage: client.Episode(nil).List(nil, nil) or
+// client.Episode(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *StarTrekSDK) Episode(data map[string]any) StarTrekEntity {
 	return NewEpisodeEntityFunc(sdk, data)
 }
 
 
+// Spacecraft returns a Spacecraft entity bound to this client.
+// Idiomatic usage: client.Spacecraft(nil).List(nil, nil) or
+// client.Spacecraft(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *StarTrekSDK) Spacecraft(data map[string]any) StarTrekEntity {
 	return NewSpacecraftEntityFunc(sdk, data)
 }
 
 
+// Species returns a Species entity bound to this client.
+// Idiomatic usage: client.Species(nil).List(nil, nil) or
+// client.Species(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *StarTrekSDK) Species(data map[string]any) StarTrekEntity {
 	return NewSpeciesEntityFunc(sdk, data)
 }

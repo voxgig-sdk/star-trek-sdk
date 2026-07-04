@@ -9,12 +9,9 @@ The Lua SDK for the StarTrek API — an entity-oriented client using Lua convent
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-star-trek
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/star-trek-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("star-trek_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("STAR-TREK_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 2. List characters
 
 ```lua
-local result, err = client:Character():list()
+local result, err = client:character():list()
 if err then error(err) end
 
 if type(result) == "table" then
@@ -93,7 +88,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:StarTrek():load({ id = "test01" })
+local result, err = client:character():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -126,8 +121,7 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-STAR-TREK_TEST_LIVE=TRUE
-STAR-TREK_APIKEY=<your-key>
+STAR_TREK_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -150,7 +144,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -293,7 +286,7 @@ API path: `/species/search`
 
 ### Character
 
-Create an instance: `const character = client.Character()`
+Create an instance: `const character = client.character`
 
 #### Operations
 
@@ -319,13 +312,13 @@ Create an instance: `const character = client.Character()`
 #### Example: List
 
 ```ts
-const characters = await client.Character().list()
+const characters = await client.character.list()
 ```
 
 
 ### Episode
 
-Create an instance: `const episode = client.Episode()`
+Create an instance: `const episode = client.episode`
 
 #### Operations
 
@@ -352,13 +345,13 @@ Create an instance: `const episode = client.Episode()`
 #### Example: List
 
 ```ts
-const episodes = await client.Episode().list()
+const episodes = await client.episode.list()
 ```
 
 
 ### Spacecraft
 
-Create an instance: `const spacecraft = client.Spacecraft()`
+Create an instance: `const spacecraft = client.spacecraft`
 
 #### Operations
 
@@ -382,13 +375,13 @@ Create an instance: `const spacecraft = client.Spacecraft()`
 #### Example: List
 
 ```ts
-const spacecrafts = await client.Spacecraft().list()
+const spacecrafts = await client.spacecraft.list()
 ```
 
 
 ### Species
 
-Create an instance: `const species = client.Species()`
+Create an instance: `const species = client.species`
 
 #### Operations
 
@@ -412,7 +405,7 @@ Create an instance: `const species = client.Species()`
 #### Example: List
 
 ```ts
-const speciess = await client.Species().list()
+const speciess = await client.species.list()
 ```
 
 
@@ -487,11 +480,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local character = client:character()
+character:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- character:data_get() now returns the loaded character data
+-- character:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch SpacecraftListMatch
+---@param ctrl? table
+---@return Spacecraft[]
+---@return string? err
 function SpacecraftEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

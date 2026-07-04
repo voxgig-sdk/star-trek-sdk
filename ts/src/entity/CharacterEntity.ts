@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Character,
+  CharacterListMatch,
+} from '../StarTrekTypes'
 
 // TODO: needs Entity superclass
-class CharacterEntity extends StarTrekEntityBase {
+class CharacterEntity extends StarTrekEntityBase<Character> {
 
   constructor(client: StarTrekSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class CharacterEntity extends StarTrekEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: CharacterListMatch, ctrl?: Control): Promise<Character[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class CharacterEntity extends StarTrekEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Character[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

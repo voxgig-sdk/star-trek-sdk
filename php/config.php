@@ -20,9 +20,6 @@ class StarTrekConfig
             ],
             "options" => [
                 "base" => "https://stapi.co/api/v1/rest",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
