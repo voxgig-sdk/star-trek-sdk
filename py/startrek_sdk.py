@@ -220,73 +220,33 @@ class StarTrekSDK:
         }
 
 
-    @property
-    def character(self):
-        """Idiomatic facade: client.character.list() / client.character.load({"id": ...})."""
-        from entity.character_entity import CharacterEntity
-        cached = getattr(self, "_character", None)
-        if cached is None:
-            cached = CharacterEntity(self, None)
-            self._character = cached
-        return cached
-
-    def Character(self, data=None):
-        # Deprecated: use client.character instead.
+    def Character(self, data=None) -> "CharacterEntity":
+        """Entity factory: client.Character().list({}) / client.Character().load({"id": ...})."""
         from entity.character_entity import CharacterEntity
         return CharacterEntity(self, data)
 
 
-    @property
-    def episode(self):
-        """Idiomatic facade: client.episode.list() / client.episode.load({"id": ...})."""
-        from entity.episode_entity import EpisodeEntity
-        cached = getattr(self, "_episode", None)
-        if cached is None:
-            cached = EpisodeEntity(self, None)
-            self._episode = cached
-        return cached
-
-    def Episode(self, data=None):
-        # Deprecated: use client.episode instead.
+    def Episode(self, data=None) -> "EpisodeEntity":
+        """Entity factory: client.Episode().list({}) / client.Episode().load({"id": ...})."""
         from entity.episode_entity import EpisodeEntity
         return EpisodeEntity(self, data)
 
 
-    @property
-    def spacecraft(self):
-        """Idiomatic facade: client.spacecraft.list() / client.spacecraft.load({"id": ...})."""
-        from entity.spacecraft_entity import SpacecraftEntity
-        cached = getattr(self, "_spacecraft", None)
-        if cached is None:
-            cached = SpacecraftEntity(self, None)
-            self._spacecraft = cached
-        return cached
-
-    def Spacecraft(self, data=None):
-        # Deprecated: use client.spacecraft instead.
+    def Spacecraft(self, data=None) -> "SpacecraftEntity":
+        """Entity factory: client.Spacecraft().list({}) / client.Spacecraft().load({"id": ...})."""
         from entity.spacecraft_entity import SpacecraftEntity
         return SpacecraftEntity(self, data)
 
 
-    @property
-    def species(self):
-        """Idiomatic facade: client.species.list() / client.species.load({"id": ...})."""
-        from entity.species_entity import SpeciesEntity
-        cached = getattr(self, "_species", None)
-        if cached is None:
-            cached = SpeciesEntity(self, None)
-            self._species = cached
-        return cached
-
-    def Species(self, data=None):
-        # Deprecated: use client.species instead.
+    def Species(self, data=None) -> "SpeciesEntity":
+        """Entity factory: client.Species().list({}) / client.Species().load({"id": ...})."""
         from entity.species_entity import SpeciesEntity
         return SpeciesEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "StarTrekSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -306,3 +266,12 @@ class StarTrekSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.character_entity import CharacterEntity
+    from entity.episode_entity import EpisodeEntity
+    from entity.spacecraft_entity import SpacecraftEntity
+    from entity.species_entity import SpeciesEntity

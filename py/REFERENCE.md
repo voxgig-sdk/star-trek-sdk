@@ -92,7 +92,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## CharacterEntity
 
 ```python
-character = client.character
+character = client.Character()
 ```
 
 ### Fields
@@ -117,7 +117,9 @@ character = client.character
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.character.list({})
+results = client.Character().list({})
+for character in results:
+    print(character)
 ```
 
 ### Common Methods
@@ -152,7 +154,7 @@ Return the entity name.
 ## EpisodeEntity
 
 ```python
-episode = client.episode
+episode = client.Episode()
 ```
 
 ### Fields
@@ -178,7 +180,9 @@ episode = client.episode
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.episode.list({})
+results = client.Episode().list({})
+for episode in results:
+    print(episode)
 ```
 
 ### Common Methods
@@ -213,7 +217,7 @@ Return the entity name.
 ## SpacecraftEntity
 
 ```python
-spacecraft = client.spacecraft
+spacecraft = client.Spacecraft()
 ```
 
 ### Fields
@@ -236,7 +240,9 @@ spacecraft = client.spacecraft
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.spacecraft.list({})
+results = client.Spacecraft().list({})
+for spacecraft in results:
+    print(spacecraft)
 ```
 
 ### Common Methods
@@ -271,7 +277,7 @@ Return the entity name.
 ## SpeciesEntity
 
 ```python
-species = client.species
+species = client.Species()
 ```
 
 ### Fields
@@ -294,7 +300,9 @@ species = client.species
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.species.list({})
+results = client.Species().list({})
+for species in results:
+    print(species)
 ```
 
 ### Common Methods

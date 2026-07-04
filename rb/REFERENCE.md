@@ -98,7 +98,7 @@ same parameters as `direct()`. Raises on error.
 ## CharacterEntity
 
 ```ruby
-character = client.character
+character = client.Character
 ```
 
 ### Fields
@@ -123,7 +123,7 @@ character = client.character
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.character.list(nil)
+results = client.Character.list(nil)
 ```
 
 ### Common Methods
@@ -159,7 +159,7 @@ Return the entity name.
 ## EpisodeEntity
 
 ```ruby
-episode = client.episode
+episode = client.Episode
 ```
 
 ### Fields
@@ -185,7 +185,7 @@ episode = client.episode
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.episode.list(nil)
+results = client.Episode.list(nil)
 ```
 
 ### Common Methods
@@ -221,7 +221,7 @@ Return the entity name.
 ## SpacecraftEntity
 
 ```ruby
-spacecraft = client.spacecraft
+spacecraft = client.Spacecraft
 ```
 
 ### Fields
@@ -244,7 +244,7 @@ spacecraft = client.spacecraft
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.spacecraft.list(nil)
+results = client.Spacecraft.list(nil)
 ```
 
 ### Common Methods
@@ -280,7 +280,7 @@ Return the entity name.
 ## SpeciesEntity
 
 ```ruby
-species = client.species
+species = client.Species
 ```
 
 ### Fields
@@ -303,7 +303,7 @@ species = client.species
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.species.list(nil)
+results = client.Species.list(nil)
 ```
 
 ### Common Methods

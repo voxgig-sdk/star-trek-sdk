@@ -95,7 +95,7 @@ same parameters as `direct()`.
 ## CharacterEntity
 
 ```lua
-local character = client:character(nil)
+local character = client:Character(nil)
 ```
 
 ### Fields
@@ -120,7 +120,7 @@ local character = client:character(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:character():list()
+local results, err = client:Character():list()
 ```
 
 ### Common Methods
@@ -156,7 +156,7 @@ Return the entity name.
 ## EpisodeEntity
 
 ```lua
-local episode = client:episode(nil)
+local episode = client:Episode(nil)
 ```
 
 ### Fields
@@ -182,7 +182,7 @@ local episode = client:episode(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:episode():list()
+local results, err = client:Episode():list()
 ```
 
 ### Common Methods
@@ -218,7 +218,7 @@ Return the entity name.
 ## SpacecraftEntity
 
 ```lua
-local spacecraft = client:spacecraft(nil)
+local spacecraft = client:Spacecraft(nil)
 ```
 
 ### Fields
@@ -241,7 +241,7 @@ local spacecraft = client:spacecraft(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:spacecraft():list()
+local results, err = client:Spacecraft():list()
 ```
 
 ### Common Methods
@@ -277,7 +277,7 @@ Return the entity name.
 ## SpeciesEntity
 
 ```lua
-local species = client:species(nil)
+local species = client:Species(nil)
 ```
 
 ### Fields
@@ -300,7 +300,7 @@ local species = client:species(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:species():list()
+local results, err = client:Species():list()
 ```
 
 ### Common Methods

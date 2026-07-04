@@ -97,7 +97,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## CharacterEntity
 
 ```php
-$character = $client->character();
+$character = $client->Character();
 ```
 
 ### Fields
@@ -122,7 +122,7 @@ $character = $client->character();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->character()->list([]);
+$results = $client->Character()->list([]);
 ```
 
 ### Common Methods
@@ -158,7 +158,7 @@ Return the entity name.
 ## EpisodeEntity
 
 ```php
-$episode = $client->episode();
+$episode = $client->Episode();
 ```
 
 ### Fields
@@ -184,7 +184,7 @@ $episode = $client->episode();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->episode()->list([]);
+$results = $client->Episode()->list([]);
 ```
 
 ### Common Methods
@@ -220,7 +220,7 @@ Return the entity name.
 ## SpacecraftEntity
 
 ```php
-$spacecraft = $client->spacecraft();
+$spacecraft = $client->Spacecraft();
 ```
 
 ### Fields
@@ -243,7 +243,7 @@ $spacecraft = $client->spacecraft();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->spacecraft()->list([]);
+$results = $client->Spacecraft()->list([]);
 ```
 
 ### Common Methods
@@ -279,7 +279,7 @@ Return the entity name.
 ## SpeciesEntity
 
 ```php
-$species = $client->species();
+$species = $client->Species();
 ```
 
 ### Fields
@@ -302,7 +302,7 @@ $species = $client->species();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->species()->list([]);
+$results = $client->Species()->list([]);
 ```
 
 ### Common Methods

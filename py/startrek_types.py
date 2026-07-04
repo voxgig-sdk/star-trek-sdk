@@ -4,115 +4,111 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Character:
-    deceased: Optional[bool] = None
-    fictional_character: Optional[bool] = None
-    gender: Optional[str] = None
-    height: Optional[int] = None
-    hologram: Optional[bool] = None
-    name: Optional[str] = None
-    uid: Optional[str] = None
-    weight: Optional[int] = None
-    year_of_birth: Optional[int] = None
-    year_of_death: Optional[int] = None
+class Character(TypedDict, total=False):
+    deceased: bool
+    fictional_character: bool
+    gender: str
+    height: int
+    hologram: bool
+    name: str
+    uid: str
+    weight: int
+    year_of_birth: int
+    year_of_death: int
 
 
-@dataclass
-class CharacterListMatch:
-    deceased: Optional[bool] = None
-    fictional_character: Optional[bool] = None
-    gender: Optional[str] = None
-    height: Optional[int] = None
-    hologram: Optional[bool] = None
-    name: Optional[str] = None
-    uid: Optional[str] = None
-    weight: Optional[int] = None
-    year_of_birth: Optional[int] = None
-    year_of_death: Optional[int] = None
+class CharacterListMatch(TypedDict, total=False):
+    deceased: bool
+    fictional_character: bool
+    gender: str
+    height: int
+    hologram: bool
+    name: str
+    uid: str
+    weight: int
+    year_of_birth: int
+    year_of_death: int
 
 
-@dataclass
-class Episode:
-    episode_number: Optional[int] = None
-    feature_length: Optional[bool] = None
-    production_serial_number: Optional[str] = None
-    season_number: Optional[int] = None
-    stardate_from: Optional[float] = None
-    stardate_to: Optional[float] = None
-    title: Optional[str] = None
-    uid: Optional[str] = None
-    us_air_date: Optional[str] = None
-    year_from: Optional[int] = None
-    year_to: Optional[int] = None
+class Episode(TypedDict, total=False):
+    episode_number: int
+    feature_length: bool
+    production_serial_number: str
+    season_number: int
+    stardate_from: float
+    stardate_to: float
+    title: str
+    uid: str
+    us_air_date: str
+    year_from: int
+    year_to: int
 
 
-@dataclass
-class EpisodeListMatch:
-    episode_number: Optional[int] = None
-    feature_length: Optional[bool] = None
-    production_serial_number: Optional[str] = None
-    season_number: Optional[int] = None
-    stardate_from: Optional[float] = None
-    stardate_to: Optional[float] = None
-    title: Optional[str] = None
-    uid: Optional[str] = None
-    us_air_date: Optional[str] = None
-    year_from: Optional[int] = None
-    year_to: Optional[int] = None
+class EpisodeListMatch(TypedDict, total=False):
+    episode_number: int
+    feature_length: bool
+    production_serial_number: str
+    season_number: int
+    stardate_from: float
+    stardate_to: float
+    title: str
+    uid: str
+    us_air_date: str
+    year_from: int
+    year_to: int
 
 
-@dataclass
-class Spacecraft:
-    date_status: Optional[str] = None
-    name: Optional[str] = None
-    operator: Optional[str] = None
-    owner: Optional[str] = None
-    registry: Optional[str] = None
-    spacecraft_class: Optional[str] = None
-    status: Optional[str] = None
-    uid: Optional[str] = None
+class Spacecraft(TypedDict, total=False):
+    date_status: str
+    name: str
+    operator: str
+    owner: str
+    registry: str
+    spacecraft_class: str
+    status: str
+    uid: str
 
 
-@dataclass
-class SpacecraftListMatch:
-    date_status: Optional[str] = None
-    name: Optional[str] = None
-    operator: Optional[str] = None
-    owner: Optional[str] = None
-    registry: Optional[str] = None
-    spacecraft_class: Optional[str] = None
-    status: Optional[str] = None
-    uid: Optional[str] = None
+class SpacecraftListMatch(TypedDict, total=False):
+    date_status: str
+    name: str
+    operator: str
+    owner: str
+    registry: str
+    spacecraft_class: str
+    status: str
+    uid: str
 
 
-@dataclass
-class Species:
-    extinct_species: Optional[bool] = None
-    extra_galactic_species: Optional[bool] = None
-    homeworld: Optional[str] = None
-    humanoid_species: Optional[bool] = None
-    name: Optional[str] = None
-    quadrant: Optional[str] = None
-    uid: Optional[str] = None
-    warp_capable_species: Optional[bool] = None
+class Species(TypedDict, total=False):
+    extinct_species: bool
+    extra_galactic_species: bool
+    homeworld: str
+    humanoid_species: bool
+    name: str
+    quadrant: str
+    uid: str
+    warp_capable_species: bool
 
 
-@dataclass
-class SpeciesListMatch:
-    extinct_species: Optional[bool] = None
-    extra_galactic_species: Optional[bool] = None
-    homeworld: Optional[str] = None
-    humanoid_species: Optional[bool] = None
-    name: Optional[str] = None
-    quadrant: Optional[str] = None
-    uid: Optional[str] = None
-    warp_capable_species: Optional[bool] = None
-
+class SpeciesListMatch(TypedDict, total=False):
+    extinct_species: bool
+    extra_galactic_species: bool
+    homeworld: str
+    humanoid_species: bool
+    name: str
+    quadrant: str
+    uid: str
+    warp_capable_species: bool

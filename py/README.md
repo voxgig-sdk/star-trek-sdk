@@ -31,14 +31,16 @@ from startrek_sdk import StarTrekSDK
 client = StarTrekSDK()
 ```
 
-### 2. List characters
+### 2. List character records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.character.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    characters = client.Character().list({})
+    for character in characters:
+        print(character)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = StarTrekSDK.test()
 
-result = client.character.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+character = client.Character().load({"id": "test01"})
+# character contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -164,7 +167,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
 | `Character` | `(data) -> CharacterEntity` | Create a Character entity instance. |
-| `Episode` | `(data) -> EpisodeEntity` | Create a Episode entity instance. |
+| `Episode` | `(data) -> EpisodeEntity` | Create an Episode entity instance. |
 | `Spacecraft` | `(data) -> SpacecraftEntity` | Create a Spacecraft entity instance. |
 | `Species` | `(data) -> SpeciesEntity` | Create a Species entity instance. |
 
@@ -286,7 +289,7 @@ API path: `/species/search`
 
 ### Character
 
-Create an instance: `const character = client.character`
+Create an instance: `character = client.Character()`
 
 #### Operations
 
@@ -311,14 +314,14 @@ Create an instance: `const character = client.character`
 
 #### Example: List
 
-```ts
-const characters = await client.character.list()
+```python
+characters = client.Character().list({})
 ```
 
 
 ### Episode
 
-Create an instance: `const episode = client.episode`
+Create an instance: `episode = client.Episode()`
 
 #### Operations
 
@@ -344,14 +347,14 @@ Create an instance: `const episode = client.episode`
 
 #### Example: List
 
-```ts
-const episodes = await client.episode.list()
+```python
+episodes = client.Episode().list({})
 ```
 
 
 ### Spacecraft
 
-Create an instance: `const spacecraft = client.spacecraft`
+Create an instance: `spacecraft = client.Spacecraft()`
 
 #### Operations
 
@@ -374,14 +377,14 @@ Create an instance: `const spacecraft = client.spacecraft`
 
 #### Example: List
 
-```ts
-const spacecrafts = await client.spacecraft.list()
+```python
+spacecrafts = client.Spacecraft().list({})
 ```
 
 
 ### Species
 
-Create an instance: `const species = client.species`
+Create an instance: `species = client.Species()`
 
 #### Operations
 
@@ -404,8 +407,8 @@ Create an instance: `const species = client.species`
 
 #### Example: List
 
-```ts
-const speciess = await client.species.list()
+```python
+speciess = client.Species().list({})
 ```
 
 
@@ -479,7 +482,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-character = client.character
+character = client.Character()
 character.load({"id": "example_id"})
 
 # character.data_get() now returns the loaded character data

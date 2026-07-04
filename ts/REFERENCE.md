@@ -145,7 +145,7 @@ Alias for `StarTrekSDK.test()`.
 ## CharacterEntity
 
 ```ts
-const character = client.character
+const character = client.Character()
 ```
 
 ### Fields
@@ -170,7 +170,7 @@ const character = client.character
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.character.list()
+const results = await client.Character().list()
 ```
 
 ### Common Methods
@@ -204,7 +204,7 @@ Return a copy of the entity options.
 ## EpisodeEntity
 
 ```ts
-const episode = client.episode
+const episode = client.Episode()
 ```
 
 ### Fields
@@ -230,7 +230,7 @@ const episode = client.episode
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.episode.list()
+const results = await client.Episode().list()
 ```
 
 ### Common Methods
@@ -264,7 +264,7 @@ Return a copy of the entity options.
 ## SpacecraftEntity
 
 ```ts
-const spacecraft = client.spacecraft
+const spacecraft = client.Spacecraft()
 ```
 
 ### Fields
@@ -287,7 +287,7 @@ const spacecraft = client.spacecraft
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.spacecraft.list()
+const results = await client.Spacecraft().list()
 ```
 
 ### Common Methods
@@ -321,7 +321,7 @@ Return a copy of the entity options.
 ## SpeciesEntity
 
 ```ts
-const species = client.species
+const species = client.Species()
 ```
 
 ### Fields
@@ -344,7 +344,7 @@ const species = client.species
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.species.list()
+const results = await client.Species().list()
 ```
 
 ### Common Methods

@@ -29,18 +29,16 @@ require_once 'startrek_sdk.php';
 $client = new StarTrekSDK();
 ```
 
-### 2. List characters
+### 2. List character records
 
 ```php
 try {
-    $result = $client->character()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Character records — iterate directly.
+    $characters = $client->Character()->list();
+    foreach ($characters as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = StarTrekSDK::test();
+$client = StarTrekSDK::test([
+    "entity" => ["character" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->character()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$character = $client->Character()->load(["id" => "test01"]);
+print_r($character);
 ```
 
 ### Use a custom fetch function
@@ -172,7 +174,7 @@ Creates a test-mode client with mock transport. Both arguments may be `null`.
 | `prepare` | `(array $fetchargs): array` | Build an HTTP request definition without sending. |
 | `direct` | `(array $fetchargs): array` | Build and send an HTTP request. |
 | `Character` | `($data): CharacterEntity` | Create a Character entity instance. |
-| `Episode` | `($data): EpisodeEntity` | Create a Episode entity instance. |
+| `Episode` | `($data): EpisodeEntity` | Create an Episode entity instance. |
 | `Spacecraft` | `($data): SpacecraftEntity` | Create a Spacecraft entity instance. |
 | `Species` | `($data): SpeciesEntity` | Create a Species entity instance. |
 
@@ -294,7 +296,7 @@ API path: `/species/search`
 
 ### Character
 
-Create an instance: `const character = client.character`
+Create an instance: `$character = $client->Character();`
 
 #### Operations
 
@@ -319,14 +321,15 @@ Create an instance: `const character = client.character`
 
 #### Example: List
 
-```ts
-const characters = await client.character.list()
+```php
+// list() returns an array of Character records (throws on error).
+$characters = $client->Character()->list();
 ```
 
 
 ### Episode
 
-Create an instance: `const episode = client.episode`
+Create an instance: `$episode = $client->Episode();`
 
 #### Operations
 
@@ -352,14 +355,15 @@ Create an instance: `const episode = client.episode`
 
 #### Example: List
 
-```ts
-const episodes = await client.episode.list()
+```php
+// list() returns an array of Episode records (throws on error).
+$episodes = $client->Episode()->list();
 ```
 
 
 ### Spacecraft
 
-Create an instance: `const spacecraft = client.spacecraft`
+Create an instance: `$spacecraft = $client->Spacecraft();`
 
 #### Operations
 
@@ -382,14 +386,15 @@ Create an instance: `const spacecraft = client.spacecraft`
 
 #### Example: List
 
-```ts
-const spacecrafts = await client.spacecraft.list()
+```php
+// list() returns an array of Spacecraft records (throws on error).
+$spacecrafts = $client->Spacecraft()->list();
 ```
 
 
 ### Species
 
-Create an instance: `const species = client.species`
+Create an instance: `$species = $client->Species();`
 
 #### Operations
 
@@ -412,8 +417,9 @@ Create an instance: `const species = client.species`
 
 #### Example: List
 
-```ts
-const speciess = await client.species.list()
+```php
+// list() returns an array of Species records (throws on error).
+$speciess = $client->Species()->list();
 ```
 
 
@@ -488,7 +494,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$character = $client->character();
+$character = $client->Character();
 $character->load(["id" => "example_id"]);
 
 // $character->dataGet() now returns the loaded character data

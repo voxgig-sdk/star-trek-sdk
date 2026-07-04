@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:character():list() / client:character():load({ id = ... })
-function StarTrekSDK:character(data)
+-- Idiomatic facade: client:Character():list() / client:Character():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function StarTrekSDK:Character(data)
   local EntityMod = require("entity.character_entity")
   if data == nil then
     if self._character == nil then
@@ -256,15 +257,10 @@ function StarTrekSDK:character(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:character() instead.
-function StarTrekSDK:Character(data)
-  local EntityMod = require("entity.character_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:episode():list() / client:episode():load({ id = ... })
-function StarTrekSDK:episode(data)
+-- Idiomatic facade: client:Episode():list() / client:Episode():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function StarTrekSDK:Episode(data)
   local EntityMod = require("entity.episode_entity")
   if data == nil then
     if self._episode == nil then
@@ -275,15 +271,10 @@ function StarTrekSDK:episode(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:episode() instead.
-function StarTrekSDK:Episode(data)
-  local EntityMod = require("entity.episode_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:spacecraft():list() / client:spacecraft():load({ id = ... })
-function StarTrekSDK:spacecraft(data)
+-- Idiomatic facade: client:Spacecraft():list() / client:Spacecraft():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function StarTrekSDK:Spacecraft(data)
   local EntityMod = require("entity.spacecraft_entity")
   if data == nil then
     if self._spacecraft == nil then
@@ -294,15 +285,10 @@ function StarTrekSDK:spacecraft(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:spacecraft() instead.
-function StarTrekSDK:Spacecraft(data)
-  local EntityMod = require("entity.spacecraft_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:species():list() / client:species():load({ id = ... })
-function StarTrekSDK:species(data)
+-- Idiomatic facade: client:Species():list() / client:Species():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function StarTrekSDK:Species(data)
   local EntityMod = require("entity.species_entity")
   if data == nil then
     if self._species == nil then
@@ -310,12 +296,6 @@ function StarTrekSDK:species(data)
     end
     return self._species
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:species() instead.
-function StarTrekSDK:Species(data)
-  local EntityMod = require("entity.species_entity")
   return EntityMod.new(self, data)
 end
 
