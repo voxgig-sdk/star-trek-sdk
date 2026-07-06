@@ -53,7 +53,7 @@ Character = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Character#list (any subset of Character fields).
+# Request payload for Character#list.
 #
 # @!attribute [rw] deceased
 #   @return [Boolean, nil]
@@ -147,7 +147,7 @@ Episode = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Episode#list (any subset of Episode fields).
+# Request payload for Episode#list.
 #
 # @!attribute [rw] episode_number
 #   @return [Integer, nil]
@@ -233,7 +233,7 @@ Spacecraft = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Spacecraft#list (any subset of Spacecraft fields).
+# Request payload for Spacecraft#list.
 #
 # @!attribute [rw] date_status
 #   @return [String, nil]
@@ -307,7 +307,7 @@ Species = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Species#list (any subset of Species fields).
+# Request payload for Species#list.
 #
 # @!attribute [rw] extinct_species
 #   @return [Boolean, nil]

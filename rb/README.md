@@ -4,6 +4,8 @@
 
 The Ruby SDK for the StarTrek API — an entity-oriented client using idiomatic Ruby conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.Character` — with named operations (`list`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -35,11 +37,38 @@ begin
   # list returns an Array of Character records — iterate directly.
   characters = client.Character.list
   characters.each do |item|
-    puts "#{item["id"]} #{item["name"]}"
+    puts "#{item["deceased"]}"
   end
 rescue => err
   warn "list failed: #{err}"
 end
+```
+
+
+## Error handling
+
+Entity operations raise on failure, so rescue them:
+
+```ruby
+begin
+  characters = client.Character.list()
+rescue => err
+  warn "list failed: #{err}"
+end
+```
+
+`direct` does **not** raise — it returns the result hash. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```ruby
+result = client.direct({
+  "path" => "/api/resource/{id}",
+  "method" => "GET",
+  "params" => { "id" => "example_id" },
+})
+
+warn "request failed: #{result["err"] || "HTTP #{result["status"]}"}" unless result["ok"]
 ```
 
 
@@ -60,7 +89,9 @@ if result["ok"]
   puts result["status"]  # 200
   puts result["data"]    # response body
 else
-  warn result["err"]
+  # On an HTTP error status there is no err (only a transport failure sets
+  # it), so fall back to the status code.
+  warn(result["err"] || "HTTP #{result["status"]}")
 end
 ```
 
@@ -83,16 +114,13 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```ruby
-client = StarTrekSDK.test({
-  "entity" => { "character" => { "test01" => { "id" => "test01" } } },
-})
+client = StarTrekSDK.test
 
-# load returns the bare mock record (raises on error).
-character = client.Character.load({ "id" => "test01" })
+# Entity ops return the bare mock record (raises on error).
+character = client.Character.list()
 puts character
 ```
 
@@ -180,11 +208,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
-| `list` | `(reqmatch, ctrl) -> Array` | List entities matching the criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
-| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
-| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
+| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all). Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -303,16 +327,16 @@ Create an instance: `character = client.Character`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `deceased` | ``$BOOLEAN`` |  |
-| `fictional_character` | ``$BOOLEAN`` |  |
-| `gender` | ``$STRING`` |  |
-| `height` | ``$INTEGER`` |  |
-| `hologram` | ``$BOOLEAN`` |  |
-| `name` | ``$STRING`` |  |
-| `uid` | ``$STRING`` |  |
-| `weight` | ``$INTEGER`` |  |
-| `year_of_birth` | ``$INTEGER`` |  |
-| `year_of_death` | ``$INTEGER`` |  |
+| `deceased` | `Boolean` |  |
+| `fictional_character` | `Boolean` |  |
+| `gender` | `String` |  |
+| `height` | `Integer` |  |
+| `hologram` | `Boolean` |  |
+| `name` | `String` |  |
+| `uid` | `String` |  |
+| `weight` | `Integer` |  |
+| `year_of_birth` | `Integer` |  |
+| `year_of_death` | `Integer` |  |
 
 #### Example: List
 
@@ -336,17 +360,17 @@ Create an instance: `episode = client.Episode`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `episode_number` | ``$INTEGER`` |  |
-| `feature_length` | ``$BOOLEAN`` |  |
-| `production_serial_number` | ``$STRING`` |  |
-| `season_number` | ``$INTEGER`` |  |
-| `stardate_from` | ``$NUMBER`` |  |
-| `stardate_to` | ``$NUMBER`` |  |
-| `title` | ``$STRING`` |  |
-| `uid` | ``$STRING`` |  |
-| `us_air_date` | ``$STRING`` |  |
-| `year_from` | ``$INTEGER`` |  |
-| `year_to` | ``$INTEGER`` |  |
+| `episode_number` | `Integer` |  |
+| `feature_length` | `Boolean` |  |
+| `production_serial_number` | `String` |  |
+| `season_number` | `Integer` |  |
+| `stardate_from` | `Float` |  |
+| `stardate_to` | `Float` |  |
+| `title` | `String` |  |
+| `uid` | `String` |  |
+| `us_air_date` | `String` |  |
+| `year_from` | `Integer` |  |
+| `year_to` | `Integer` |  |
 
 #### Example: List
 
@@ -370,14 +394,14 @@ Create an instance: `spacecraft = client.Spacecraft`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_status` | ``$STRING`` |  |
-| `name` | ``$STRING`` |  |
-| `operator` | ``$STRING`` |  |
-| `owner` | ``$STRING`` |  |
-| `registry` | ``$STRING`` |  |
-| `spacecraft_class` | ``$STRING`` |  |
-| `status` | ``$STRING`` |  |
-| `uid` | ``$STRING`` |  |
+| `date_status` | `String` |  |
+| `name` | `String` |  |
+| `operator` | `String` |  |
+| `owner` | `String` |  |
+| `registry` | `String` |  |
+| `spacecraft_class` | `String` |  |
+| `status` | `String` |  |
+| `uid` | `String` |  |
 
 #### Example: List
 
@@ -401,14 +425,14 @@ Create an instance: `species = client.Species`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `extinct_species` | ``$BOOLEAN`` |  |
-| `extra_galactic_species` | ``$BOOLEAN`` |  |
-| `homeworld` | ``$STRING`` |  |
-| `humanoid_species` | ``$BOOLEAN`` |  |
-| `name` | ``$STRING`` |  |
-| `quadrant` | ``$STRING`` |  |
-| `uid` | ``$STRING`` |  |
-| `warp_capable_species` | ``$BOOLEAN`` |  |
+| `extinct_species` | `Boolean` |  |
+| `extra_galactic_species` | `Boolean` |  |
+| `homeworld` | `String` |  |
+| `humanoid_species` | `Boolean` |  |
+| `name` | `String` |  |
+| `quadrant` | `String` |  |
+| `uid` | `String` |  |
+| `warp_capable_species` | `Boolean` |  |
 
 #### Example: List
 
@@ -418,12 +442,16 @@ speciess = client.Species.list
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -440,8 +468,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as a second return value.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -485,14 +514,14 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
 character = client.Character
-character.load({ "id" => "example_id" })
+character.list()
 
-# character.data_get now returns the loaded character data
+# character.data_get now returns the character data from the last list
 # character.match_get returns the last match criteria
 ```
 

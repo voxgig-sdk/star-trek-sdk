@@ -221,25 +221,25 @@ class StarTrekSDK:
 
 
     def Character(self, data=None) -> "CharacterEntity":
-        """Entity factory: client.Character().list({}) / client.Character().load({"id": ...})."""
+        """Entity factory: client.Character().list() / client.Character().load({"id": ...})."""
         from entity.character_entity import CharacterEntity
         return CharacterEntity(self, data)
 
 
     def Episode(self, data=None) -> "EpisodeEntity":
-        """Entity factory: client.Episode().list({}) / client.Episode().load({"id": ...})."""
+        """Entity factory: client.Episode().list() / client.Episode().load({"id": ...})."""
         from entity.episode_entity import EpisodeEntity
         return EpisodeEntity(self, data)
 
 
     def Spacecraft(self, data=None) -> "SpacecraftEntity":
-        """Entity factory: client.Spacecraft().list({}) / client.Spacecraft().load({"id": ...})."""
+        """Entity factory: client.Spacecraft().list() / client.Spacecraft().load({"id": ...})."""
         from entity.spacecraft_entity import SpacecraftEntity
         return SpacecraftEntity(self, data)
 
 
     def Species(self, data=None) -> "SpeciesEntity":
-        """Entity factory: client.Species().list({}) / client.Species().load({"id": ...})."""
+        """Entity factory: client.Species().list() / client.Species().load({"id": ...})."""
         from entity.species_entity import SpeciesEntity
         return SpeciesEntity(self, data)
 

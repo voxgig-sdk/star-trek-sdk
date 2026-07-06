@@ -27,7 +27,7 @@ class Character
     public ?int $year_of_death = null;
 }
 
-/** Match filter for Character#list (any subset of Character fields). */
+/** Request payload for Character#list. */
 class CharacterListMatch
 {
     public ?bool $deceased = null;
@@ -58,7 +58,7 @@ class Episode
     public ?int $year_to = null;
 }
 
-/** Match filter for Episode#list (any subset of Episode fields). */
+/** Request payload for Episode#list. */
 class EpisodeListMatch
 {
     public ?int $episode_number = null;
@@ -87,7 +87,7 @@ class Spacecraft
     public ?string $uid = null;
 }
 
-/** Match filter for Spacecraft#list (any subset of Spacecraft fields). */
+/** Request payload for Spacecraft#list. */
 class SpacecraftListMatch
 {
     public ?string $date_status = null;
@@ -113,7 +113,7 @@ class Species
     public ?bool $warp_capable_species = null;
 }
 
-/** Match filter for Species#list (any subset of Species fields). */
+/** Request payload for Species#list. */
 class SpeciesListMatch
 {
     public ?bool $extinct_species = null;

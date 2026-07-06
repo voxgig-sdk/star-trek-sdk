@@ -8,7 +8,7 @@ Complete API reference for the StarTrek Python SDK.
 ### Constructor
 
 ```python
-from star-trek_sdk import StarTrekSDK
+from startrek_sdk import StarTrekSDK
 
 client = StarTrekSDK(options)
 ```
@@ -99,25 +99,25 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `deceased` | ``$BOOLEAN`` | No |  |
-| `fictional_character` | ``$BOOLEAN`` | No |  |
-| `gender` | ``$STRING`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `hologram` | ``$BOOLEAN`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `weight` | ``$INTEGER`` | No |  |
-| `year_of_birth` | ``$INTEGER`` | No |  |
-| `year_of_death` | ``$INTEGER`` | No |  |
+| `deceased` | `bool` | No |  |
+| `fictional_character` | `bool` | No |  |
+| `gender` | `str` | No |  |
+| `height` | `int` | No |  |
+| `hologram` | `bool` | No |  |
+| `name` | `str` | No |  |
+| `uid` | `str` | No |  |
+| `weight` | `int` | No |  |
+| `year_of_birth` | `int` | No |  |
+| `year_of_death` | `int` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Character().list({})
+results = client.Character().list()
 for character in results:
     print(character)
 ```
@@ -161,26 +161,26 @@ episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episode_number` | ``$INTEGER`` | No |  |
-| `feature_length` | ``$BOOLEAN`` | No |  |
-| `production_serial_number` | ``$STRING`` | No |  |
-| `season_number` | ``$INTEGER`` | No |  |
-| `stardate_from` | ``$NUMBER`` | No |  |
-| `stardate_to` | ``$NUMBER`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `us_air_date` | ``$STRING`` | No |  |
-| `year_from` | ``$INTEGER`` | No |  |
-| `year_to` | ``$INTEGER`` | No |  |
+| `episode_number` | `int` | No |  |
+| `feature_length` | `bool` | No |  |
+| `production_serial_number` | `str` | No |  |
+| `season_number` | `int` | No |  |
+| `stardate_from` | `float` | No |  |
+| `stardate_to` | `float` | No |  |
+| `title` | `str` | No |  |
+| `uid` | `str` | No |  |
+| `us_air_date` | `str` | No |  |
+| `year_from` | `int` | No |  |
+| `year_to` | `int` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Episode().list({})
+results = client.Episode().list()
 for episode in results:
     print(episode)
 ```
@@ -224,23 +224,23 @@ spacecraft = client.Spacecraft()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_status` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `operator` | ``$STRING`` | No |  |
-| `owner` | ``$STRING`` | No |  |
-| `registry` | ``$STRING`` | No |  |
-| `spacecraft_class` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
+| `date_status` | `str` | No |  |
+| `name` | `str` | No |  |
+| `operator` | `str` | No |  |
+| `owner` | `str` | No |  |
+| `registry` | `str` | No |  |
+| `spacecraft_class` | `str` | No |  |
+| `status` | `str` | No |  |
+| `uid` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Spacecraft().list({})
+results = client.Spacecraft().list()
 for spacecraft in results:
     print(spacecraft)
 ```
@@ -284,23 +284,23 @@ species = client.Species()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinct_species` | ``$BOOLEAN`` | No |  |
-| `extra_galactic_species` | ``$BOOLEAN`` | No |  |
-| `homeworld` | ``$STRING`` | No |  |
-| `humanoid_species` | ``$BOOLEAN`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `quadrant` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `warp_capable_species` | ``$BOOLEAN`` | No |  |
+| `extinct_species` | `bool` | No |  |
+| `extra_galactic_species` | `bool` | No |  |
+| `homeworld` | `str` | No |  |
+| `humanoid_species` | `bool` | No |  |
+| `name` | `str` | No |  |
+| `quadrant` | `str` | No |  |
+| `uid` | `str` | No |  |
+| `warp_capable_species` | `bool` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Species().list({})
+results = client.Species().list()
 for species in results:
     print(species)
 ```

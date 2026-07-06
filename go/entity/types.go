@@ -22,8 +22,7 @@ type Character struct {
 	YearOfDeath *int `json:"year_of_death,omitempty"`
 }
 
-// CharacterListMatch mirrors the character fields as an all-optional match
-// filter (Go analog of Partial<Character>).
+// CharacterListMatch is the typed request payload for Character.ListTyped.
 type CharacterListMatch struct {
 	Deceased *bool `json:"deceased,omitempty"`
 	FictionalCharacter *bool `json:"fictional_character,omitempty"`
@@ -52,8 +51,7 @@ type Episode struct {
 	YearTo *int `json:"year_to,omitempty"`
 }
 
-// EpisodeListMatch mirrors the episode fields as an all-optional match
-// filter (Go analog of Partial<Episode>).
+// EpisodeListMatch is the typed request payload for Episode.ListTyped.
 type EpisodeListMatch struct {
 	EpisodeNumber *int `json:"episode_number,omitempty"`
 	FeatureLength *bool `json:"feature_length,omitempty"`
@@ -80,8 +78,7 @@ type Spacecraft struct {
 	Uid *string `json:"uid,omitempty"`
 }
 
-// SpacecraftListMatch mirrors the spacecraft fields as an all-optional match
-// filter (Go analog of Partial<Spacecraft>).
+// SpacecraftListMatch is the typed request payload for Spacecraft.ListTyped.
 type SpacecraftListMatch struct {
 	DateStatus *string `json:"date_status,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -105,8 +102,7 @@ type Species struct {
 	WarpCapableSpecies *bool `json:"warp_capable_species,omitempty"`
 }
 
-// SpeciesListMatch mirrors the species fields as an all-optional match
-// filter (Go analog of Partial<Species>).
+// SpeciesListMatch is the typed request payload for Species.ListTyped.
 type SpeciesListMatch struct {
 	ExtinctSpecies *bool `json:"extinct_species,omitempty"`
 	ExtraGalacticSpecies *bool `json:"extra_galactic_species,omitempty"`

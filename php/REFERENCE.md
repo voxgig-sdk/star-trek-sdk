@@ -8,7 +8,7 @@ Complete API reference for the StarTrek PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/star-trek_sdk.php';
+require_once __DIR__ . '/startrek_sdk.php';
 
 $client = new StarTrekSDK($options);
 ```
@@ -57,11 +57,11 @@ Create a new `SpacecraftEntity` instance. Pass `null` for no initial data.
 
 Create a new `SpeciesEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): StarTrekUtility`
 
 Return a copy of the SDK utility object.
 
@@ -104,42 +104,42 @@ $character = $client->Character();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `deceased` | ``$BOOLEAN`` | No |  |
-| `fictional_character` | ``$BOOLEAN`` | No |  |
-| `gender` | ``$STRING`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `hologram` | ``$BOOLEAN`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `weight` | ``$INTEGER`` | No |  |
-| `year_of_birth` | ``$INTEGER`` | No |  |
-| `year_of_death` | ``$INTEGER`` | No |  |
+| `deceased` | `bool` | No |  |
+| `fictional_character` | `bool` | No |  |
+| `gender` | `string` | No |  |
+| `height` | `int` | No |  |
+| `hologram` | `bool` | No |  |
+| `name` | `string` | No |  |
+| `uid` | `string` | No |  |
+| `weight` | `int` | No |  |
+| `year_of_birth` | `int` | No |  |
+| `year_of_death` | `int` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Character()->list([]);
+$results = $client->Character()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -148,7 +148,7 @@ Set the entity match criteria.
 Create a new `CharacterEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -165,43 +165,43 @@ $episode = $client->Episode();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episode_number` | ``$INTEGER`` | No |  |
-| `feature_length` | ``$BOOLEAN`` | No |  |
-| `production_serial_number` | ``$STRING`` | No |  |
-| `season_number` | ``$INTEGER`` | No |  |
-| `stardate_from` | ``$NUMBER`` | No |  |
-| `stardate_to` | ``$NUMBER`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `us_air_date` | ``$STRING`` | No |  |
-| `year_from` | ``$INTEGER`` | No |  |
-| `year_to` | ``$INTEGER`` | No |  |
+| `episode_number` | `int` | No |  |
+| `feature_length` | `bool` | No |  |
+| `production_serial_number` | `string` | No |  |
+| `season_number` | `int` | No |  |
+| `stardate_from` | `float` | No |  |
+| `stardate_to` | `float` | No |  |
+| `title` | `string` | No |  |
+| `uid` | `string` | No |  |
+| `us_air_date` | `string` | No |  |
+| `year_from` | `int` | No |  |
+| `year_to` | `int` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Episode()->list([]);
+$results = $client->Episode()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -210,7 +210,7 @@ Set the entity match criteria.
 Create a new `EpisodeEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -227,40 +227,40 @@ $spacecraft = $client->Spacecraft();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_status` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `operator` | ``$STRING`` | No |  |
-| `owner` | ``$STRING`` | No |  |
-| `registry` | ``$STRING`` | No |  |
-| `spacecraft_class` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
+| `date_status` | `string` | No |  |
+| `name` | `string` | No |  |
+| `operator` | `string` | No |  |
+| `owner` | `string` | No |  |
+| `registry` | `string` | No |  |
+| `spacecraft_class` | `string` | No |  |
+| `status` | `string` | No |  |
+| `uid` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Spacecraft()->list([]);
+$results = $client->Spacecraft()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -269,7 +269,7 @@ Set the entity match criteria.
 Create a new `SpacecraftEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -286,40 +286,40 @@ $species = $client->Species();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinct_species` | ``$BOOLEAN`` | No |  |
-| `extra_galactic_species` | ``$BOOLEAN`` | No |  |
-| `homeworld` | ``$STRING`` | No |  |
-| `humanoid_species` | ``$BOOLEAN`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `quadrant` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `warp_capable_species` | ``$BOOLEAN`` | No |  |
+| `extinct_species` | `bool` | No |  |
+| `extra_galactic_species` | `bool` | No |  |
+| `homeworld` | `string` | No |  |
+| `humanoid_species` | `bool` | No |  |
+| `name` | `string` | No |  |
+| `quadrant` | `string` | No |  |
+| `uid` | `string` | No |  |
+| `warp_capable_species` | `bool` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Species()->list([]);
+$results = $client->Species()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -328,7 +328,7 @@ Set the entity match criteria.
 Create a new `SpeciesEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

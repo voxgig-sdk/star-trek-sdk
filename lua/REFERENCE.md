@@ -102,16 +102,16 @@ local character = client:Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `deceased` | ``$BOOLEAN`` | No |  |
-| `fictional_character` | ``$BOOLEAN`` | No |  |
-| `gender` | ``$STRING`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `hologram` | ``$BOOLEAN`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `weight` | ``$INTEGER`` | No |  |
-| `year_of_birth` | ``$INTEGER`` | No |  |
-| `year_of_death` | ``$INTEGER`` | No |  |
+| `deceased` | `boolean` | No |  |
+| `fictional_character` | `boolean` | No |  |
+| `gender` | `string` | No |  |
+| `height` | `number` | No |  |
+| `hologram` | `boolean` | No |  |
+| `name` | `string` | No |  |
+| `uid` | `string` | No |  |
+| `weight` | `number` | No |  |
+| `year_of_birth` | `number` | No |  |
+| `year_of_death` | `number` | No |  |
 
 ### Operations
 
@@ -163,17 +163,17 @@ local episode = client:Episode(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episode_number` | ``$INTEGER`` | No |  |
-| `feature_length` | ``$BOOLEAN`` | No |  |
-| `production_serial_number` | ``$STRING`` | No |  |
-| `season_number` | ``$INTEGER`` | No |  |
-| `stardate_from` | ``$NUMBER`` | No |  |
-| `stardate_to` | ``$NUMBER`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `us_air_date` | ``$STRING`` | No |  |
-| `year_from` | ``$INTEGER`` | No |  |
-| `year_to` | ``$INTEGER`` | No |  |
+| `episode_number` | `number` | No |  |
+| `feature_length` | `boolean` | No |  |
+| `production_serial_number` | `string` | No |  |
+| `season_number` | `number` | No |  |
+| `stardate_from` | `number` | No |  |
+| `stardate_to` | `number` | No |  |
+| `title` | `string` | No |  |
+| `uid` | `string` | No |  |
+| `us_air_date` | `string` | No |  |
+| `year_from` | `number` | No |  |
+| `year_to` | `number` | No |  |
 
 ### Operations
 
@@ -225,14 +225,14 @@ local spacecraft = client:Spacecraft(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_status` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `operator` | ``$STRING`` | No |  |
-| `owner` | ``$STRING`` | No |  |
-| `registry` | ``$STRING`` | No |  |
-| `spacecraft_class` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
+| `date_status` | `string` | No |  |
+| `name` | `string` | No |  |
+| `operator` | `string` | No |  |
+| `owner` | `string` | No |  |
+| `registry` | `string` | No |  |
+| `spacecraft_class` | `string` | No |  |
+| `status` | `string` | No |  |
+| `uid` | `string` | No |  |
 
 ### Operations
 
@@ -284,14 +284,14 @@ local species = client:Species(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinct_species` | ``$BOOLEAN`` | No |  |
-| `extra_galactic_species` | ``$BOOLEAN`` | No |  |
-| `homeworld` | ``$STRING`` | No |  |
-| `humanoid_species` | ``$BOOLEAN`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `quadrant` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `warp_capable_species` | ``$BOOLEAN`` | No |  |
+| `extinct_species` | `boolean` | No |  |
+| `extra_galactic_species` | `boolean` | No |  |
+| `homeworld` | `string` | No |  |
+| `humanoid_species` | `boolean` | No |  |
+| `name` | `string` | No |  |
+| `quadrant` | `string` | No |  |
+| `uid` | `string` | No |  |
+| `warp_capable_species` | `boolean` | No |  |
 
 ### Operations
 

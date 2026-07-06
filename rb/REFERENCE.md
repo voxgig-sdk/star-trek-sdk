@@ -8,7 +8,7 @@ Complete API reference for the StarTrek Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'star-trek_sdk'
+require_relative 'StarTrek_sdk'
 
 client = StarTrekSDK.new(options)
 ```
@@ -105,25 +105,25 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `deceased` | ``$BOOLEAN`` | No |  |
-| `fictional_character` | ``$BOOLEAN`` | No |  |
-| `gender` | ``$STRING`` | No |  |
-| `height` | ``$INTEGER`` | No |  |
-| `hologram` | ``$BOOLEAN`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `weight` | ``$INTEGER`` | No |  |
-| `year_of_birth` | ``$INTEGER`` | No |  |
-| `year_of_death` | ``$INTEGER`` | No |  |
+| `deceased` | `Boolean` | No |  |
+| `fictional_character` | `Boolean` | No |  |
+| `gender` | `String` | No |  |
+| `height` | `Integer` | No |  |
+| `hologram` | `Boolean` | No |  |
+| `name` | `String` | No |  |
+| `uid` | `String` | No |  |
+| `weight` | `Integer` | No |  |
+| `year_of_birth` | `Integer` | No |  |
+| `year_of_death` | `Integer` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Character.list(nil)
+results = client.Character.list
 ```
 
 ### Common Methods
@@ -166,26 +166,26 @@ episode = client.Episode
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episode_number` | ``$INTEGER`` | No |  |
-| `feature_length` | ``$BOOLEAN`` | No |  |
-| `production_serial_number` | ``$STRING`` | No |  |
-| `season_number` | ``$INTEGER`` | No |  |
-| `stardate_from` | ``$NUMBER`` | No |  |
-| `stardate_to` | ``$NUMBER`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `us_air_date` | ``$STRING`` | No |  |
-| `year_from` | ``$INTEGER`` | No |  |
-| `year_to` | ``$INTEGER`` | No |  |
+| `episode_number` | `Integer` | No |  |
+| `feature_length` | `Boolean` | No |  |
+| `production_serial_number` | `String` | No |  |
+| `season_number` | `Integer` | No |  |
+| `stardate_from` | `Float` | No |  |
+| `stardate_to` | `Float` | No |  |
+| `title` | `String` | No |  |
+| `uid` | `String` | No |  |
+| `us_air_date` | `String` | No |  |
+| `year_from` | `Integer` | No |  |
+| `year_to` | `Integer` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Episode.list(nil)
+results = client.Episode.list
 ```
 
 ### Common Methods
@@ -228,23 +228,23 @@ spacecraft = client.Spacecraft
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_status` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `operator` | ``$STRING`` | No |  |
-| `owner` | ``$STRING`` | No |  |
-| `registry` | ``$STRING`` | No |  |
-| `spacecraft_class` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
+| `date_status` | `String` | No |  |
+| `name` | `String` | No |  |
+| `operator` | `String` | No |  |
+| `owner` | `String` | No |  |
+| `registry` | `String` | No |  |
+| `spacecraft_class` | `String` | No |  |
+| `status` | `String` | No |  |
+| `uid` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Spacecraft.list(nil)
+results = client.Spacecraft.list
 ```
 
 ### Common Methods
@@ -287,23 +287,23 @@ species = client.Species
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinct_species` | ``$BOOLEAN`` | No |  |
-| `extra_galactic_species` | ``$BOOLEAN`` | No |  |
-| `homeworld` | ``$STRING`` | No |  |
-| `humanoid_species` | ``$BOOLEAN`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `quadrant` | ``$STRING`` | No |  |
-| `uid` | ``$STRING`` | No |  |
-| `warp_capable_species` | ``$BOOLEAN`` | No |  |
+| `extinct_species` | `Boolean` | No |  |
+| `extra_galactic_species` | `Boolean` | No |  |
+| `homeworld` | `String` | No |  |
+| `humanoid_species` | `Boolean` | No |  |
+| `name` | `String` | No |  |
+| `quadrant` | `String` | No |  |
+| `uid` | `String` | No |  |
+| `warp_capable_species` | `Boolean` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Species.list(nil)
+results = client.Species.list
 ```
 
 ### Common Methods

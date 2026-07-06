@@ -4,6 +4,8 @@
 
 The PHP SDK for the StarTrek API — an entity-oriented client using PHP conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `$client->Character()` — with named operations (`list`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -36,10 +38,41 @@ try {
     // list() returns an array of Character records — iterate directly.
     $characters = $client->Character()->list();
     foreach ($characters as $item) {
-        echo $item["id"] . " " . $item["name"] . "\n";
+        echo $item["deceased"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
+}
+```
+
+
+## Error handling
+
+Entity operations throw a `\Throwable` on failure, so wrap them in
+`try` / `catch`:
+
+```php
+try {
+    $characters = $client->Character()->list();
+} catch (\Throwable $err) {
+    echo "Error: " . $err->getMessage();
+}
+```
+
+`direct()` does **not** throw — it returns the result array. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```php
+$result = $client->direct([
+    "path" => "/api/resource/{id}",
+    "method" => "GET",
+    "params" => ["id" => "example_id"],
+]);
+
+if (! $result["ok"]) {
+    $err = $result["err"] ?? null;
+    echo "request failed: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -63,7 +96,10 @@ if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
 } else {
-    echo "Error: " . $result["err"]->getMessage();
+    // On an HTTP error status there is no err (only a transport failure sets
+    // it), so fall back to the status code.
+    $err = $result["err"] ?? null;
+    echo "Error: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -84,16 +120,13 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```php
-$client = StarTrekSDK::test([
-    "entity" => ["character" => ["test01" => ["id" => "test01"]]],
-]);
+$client = StarTrekSDK::test();
 
-// load() returns the bare mock record (throws on error).
-$character = $client->Character()->load(["id" => "test01"]);
+// Entity ops return the bare mock record (throws on error).
+$character = $client->Character()->list();
 print_r($character);
 ```
 
@@ -184,11 +217,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `($reqmatch, $ctrl): array` | Load a single entity by match criteria. |
-| `list` | `($reqmatch, $ctrl): array` | List entities matching the criteria. |
-| `create` | `($reqdata, $ctrl): array` | Create a new entity. |
-| `update` | `($reqdata, $ctrl): array` | Update an existing entity. |
-| `remove` | `($reqmatch, $ctrl): array` | Remove an entity. |
+| `list` | `(?array $reqmatch = null, $ctrl): array` | List entities matching the criteria (call with no argument to list all). |
 | `data_get` | `(): array` | Get entity data. |
 | `data_set` | `($data): void` | Set entity data. |
 | `match_get` | `(): array` | Get entity match criteria. |
@@ -308,16 +337,16 @@ Create an instance: `$character = $client->Character();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `deceased` | ``$BOOLEAN`` |  |
-| `fictional_character` | ``$BOOLEAN`` |  |
-| `gender` | ``$STRING`` |  |
-| `height` | ``$INTEGER`` |  |
-| `hologram` | ``$BOOLEAN`` |  |
-| `name` | ``$STRING`` |  |
-| `uid` | ``$STRING`` |  |
-| `weight` | ``$INTEGER`` |  |
-| `year_of_birth` | ``$INTEGER`` |  |
-| `year_of_death` | ``$INTEGER`` |  |
+| `deceased` | `bool` |  |
+| `fictional_character` | `bool` |  |
+| `gender` | `string` |  |
+| `height` | `int` |  |
+| `hologram` | `bool` |  |
+| `name` | `string` |  |
+| `uid` | `string` |  |
+| `weight` | `int` |  |
+| `year_of_birth` | `int` |  |
+| `year_of_death` | `int` |  |
 
 #### Example: List
 
@@ -341,17 +370,17 @@ Create an instance: `$episode = $client->Episode();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `episode_number` | ``$INTEGER`` |  |
-| `feature_length` | ``$BOOLEAN`` |  |
-| `production_serial_number` | ``$STRING`` |  |
-| `season_number` | ``$INTEGER`` |  |
-| `stardate_from` | ``$NUMBER`` |  |
-| `stardate_to` | ``$NUMBER`` |  |
-| `title` | ``$STRING`` |  |
-| `uid` | ``$STRING`` |  |
-| `us_air_date` | ``$STRING`` |  |
-| `year_from` | ``$INTEGER`` |  |
-| `year_to` | ``$INTEGER`` |  |
+| `episode_number` | `int` |  |
+| `feature_length` | `bool` |  |
+| `production_serial_number` | `string` |  |
+| `season_number` | `int` |  |
+| `stardate_from` | `float` |  |
+| `stardate_to` | `float` |  |
+| `title` | `string` |  |
+| `uid` | `string` |  |
+| `us_air_date` | `string` |  |
+| `year_from` | `int` |  |
+| `year_to` | `int` |  |
 
 #### Example: List
 
@@ -375,14 +404,14 @@ Create an instance: `$spacecraft = $client->Spacecraft();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_status` | ``$STRING`` |  |
-| `name` | ``$STRING`` |  |
-| `operator` | ``$STRING`` |  |
-| `owner` | ``$STRING`` |  |
-| `registry` | ``$STRING`` |  |
-| `spacecraft_class` | ``$STRING`` |  |
-| `status` | ``$STRING`` |  |
-| `uid` | ``$STRING`` |  |
+| `date_status` | `string` |  |
+| `name` | `string` |  |
+| `operator` | `string` |  |
+| `owner` | `string` |  |
+| `registry` | `string` |  |
+| `spacecraft_class` | `string` |  |
+| `status` | `string` |  |
+| `uid` | `string` |  |
 
 #### Example: List
 
@@ -406,14 +435,14 @@ Create an instance: `$species = $client->Species();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `extinct_species` | ``$BOOLEAN`` |  |
-| `extra_galactic_species` | ``$BOOLEAN`` |  |
-| `homeworld` | ``$STRING`` |  |
-| `humanoid_species` | ``$BOOLEAN`` |  |
-| `name` | ``$STRING`` |  |
-| `quadrant` | ``$STRING`` |  |
-| `uid` | ``$STRING`` |  |
-| `warp_capable_species` | ``$BOOLEAN`` |  |
+| `extinct_species` | `bool` |  |
+| `extra_galactic_species` | `bool` |  |
+| `homeworld` | `string` |  |
+| `humanoid_species` | `bool` |  |
+| `name` | `string` |  |
+| `quadrant` | `string` |  |
+| `uid` | `string` |  |
+| `warp_capable_species` | `bool` |  |
 
 #### Example: List
 
@@ -423,12 +452,16 @@ $speciess = $client->Species()->list();
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -445,8 +478,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return array.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -490,15 +524,15 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
 $character = $client->Character();
-$character->load(["id" => "example_id"]);
+$character->list();
 
-// $character->dataGet() now returns the loaded character data
-// $character->matchGet() returns the last match criteria
+// $character->data_get() now returns the character data from the last list
+// $character->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration
