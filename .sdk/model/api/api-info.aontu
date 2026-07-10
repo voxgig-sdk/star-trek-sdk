@@ -16,9 +16,9 @@ main: {
           url: "https://stapi.co/api/v1/rest"
         }
       ]
+      summary: "STAPI is the first public REST API dedicated to all things Star Trek."
       title: "Star Trek API"
       version: "1.0.0"
+      website: "https://stapi.co"
     }
   }
-}
-

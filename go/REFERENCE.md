@@ -103,6 +103,7 @@ same parameters as `Direct()`.
 
 ```go
 character := client.Character(nil)
+fmt.Println(character.GetName()) // "character"
 ```
 
 ### Fields
@@ -128,6 +129,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Character(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -158,6 +163,7 @@ Return the entity name.
 
 ```go
 episode := client.Episode(nil)
+fmt.Println(episode.GetName()) // "episode"
 ```
 
 ### Fields
@@ -184,6 +190,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Episode(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -214,6 +224,7 @@ Return the entity name.
 
 ```go
 spacecraft := client.Spacecraft(nil)
+fmt.Println(spacecraft.GetName()) // "spacecraft"
 ```
 
 ### Fields
@@ -237,6 +248,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Spacecraft(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -267,6 +282,7 @@ Return the entity name.
 
 ```go
 species := client.Species(nil)
+fmt.Println(species.GetName()) // "species"
 ```
 
 ### Fields
@@ -290,6 +306,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Species(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

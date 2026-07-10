@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -762,14 +759,17 @@
           "url": "https://stapi.co/"
         },
         "description": "STAPI is the first public REST API dedicated to all things Star Trek. It provides access to a comprehensive read-only model that includes characters, species, episodes, spacecraft, and much more, making it invaluable for fans and developers alike.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production API Server",
             "url": "https://stapi.co/api/v1/rest"
           }
         ],
+        "summary": "STAPI is the first public REST API dedicated to all things Star Trek.",
         "title": "Star Trek API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://stapi.co"
       },
       "option": {},
       "target": {
@@ -822,6 +822,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -872,6 +875,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
