@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- StarTrek SDK exists test
 
 local sdk = require("star-trek_sdk")
 
