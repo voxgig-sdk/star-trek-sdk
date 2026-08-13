@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'StarTrek',
   }
 
 
@@ -72,7 +72,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fictional_character",
+          "name": "fictionalCharacter",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 1
@@ -121,14 +121,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "year_of_birth",
+          "name": "yearOfBirth",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "year_of_death",
+          "name": "yearOfDeath",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 9
@@ -180,6 +180,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/character/search",
               "parts": [
@@ -213,42 +214,42 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "episode_number",
+          "name": "episodeNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "feature_length",
+          "name": "featureLength",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "production_serial_number",
+          "name": "productionSerialNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "season_number",
+          "name": "seasonNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "stardate_from",
+          "name": "stardateFrom",
           "req": false,
           "type": "`$NUMBER`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "stardate_to",
+          "name": "stardateTo",
           "req": false,
           "type": "`$NUMBER`",
           "index$": 5
@@ -269,21 +270,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "us_air_date",
+          "name": "usAirDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "year_from",
+          "name": "yearFrom",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "year_to",
+          "name": "yearTo",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 10
@@ -343,6 +344,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/episode/search",
               "parts": [
@@ -377,7 +379,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "date_status",
+          "name": "dateStatus",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
@@ -412,7 +414,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "spacecraft_class",
+          "name": "spacecraftClass",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -470,6 +472,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/spacecraft/search",
               "parts": [
@@ -502,14 +505,14 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "extinct_species",
+          "name": "extinctSpecies",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "extra_galactic_species",
+          "name": "extraGalacticSpecies",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 1
@@ -523,7 +526,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "humanoid_species",
+          "name": "humanoidSpecies",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 3
@@ -551,7 +554,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "warp_capable_species",
+          "name": "warpCapableSpecies",
           "req": false,
           "type": "`$BOOLEAN`",
           "index$": 7
@@ -595,6 +598,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/species/search",
               "parts": [

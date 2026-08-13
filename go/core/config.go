@@ -36,7 +36,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fictional_character",
+						"name": "fictionalCharacter",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 1,
@@ -85,14 +85,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "year_of_birth",
+						"name": "yearOfBirth",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 8,
 					},
 					map[string]any{
 						"active": true,
-						"name": "year_of_death",
+						"name": "yearOfDeath",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 9,
@@ -144,6 +144,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/character/search",
 								"parts": []any{
@@ -166,7 +167,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -177,42 +177,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "episode_number",
+						"name": "episodeNumber",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 0,
 					},
 					map[string]any{
 						"active": true,
-						"name": "feature_length",
+						"name": "featureLength",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 1,
 					},
 					map[string]any{
 						"active": true,
-						"name": "production_serial_number",
+						"name": "productionSerialNumber",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 2,
 					},
 					map[string]any{
 						"active": true,
-						"name": "season_number",
+						"name": "seasonNumber",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 3,
 					},
 					map[string]any{
 						"active": true,
-						"name": "stardate_from",
+						"name": "stardateFrom",
 						"req": false,
 						"type": "`$NUMBER`",
 						"index$": 4,
 					},
 					map[string]any{
 						"active": true,
-						"name": "stardate_to",
+						"name": "stardateTo",
 						"req": false,
 						"type": "`$NUMBER`",
 						"index$": 5,
@@ -233,21 +233,21 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "us_air_date",
+						"name": "usAirDate",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 8,
 					},
 					map[string]any{
 						"active": true,
-						"name": "year_from",
+						"name": "yearFrom",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 9,
 					},
 					map[string]any{
 						"active": true,
-						"name": "year_to",
+						"name": "yearTo",
 						"req": false,
 						"type": "`$INTEGER`",
 						"index$": 10,
@@ -307,6 +307,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/episode/search",
 								"parts": []any{
@@ -330,7 +331,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -341,7 +341,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "date_status",
+						"name": "dateStatus",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 0,
@@ -376,7 +376,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "spacecraft_class",
+						"name": "spacecraftClass",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 5,
@@ -434,6 +434,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/spacecraft/search",
 								"parts": []any{
@@ -455,7 +456,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -466,14 +466,14 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "extinct_species",
+						"name": "extinctSpecies",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 0,
 					},
 					map[string]any{
 						"active": true,
-						"name": "extra_galactic_species",
+						"name": "extraGalacticSpecies",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 1,
@@ -487,7 +487,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "humanoid_species",
+						"name": "humanoidSpecies",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 3,
@@ -515,7 +515,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "warp_capable_species",
+						"name": "warpCapableSpecies",
 						"req": false,
 						"type": "`$BOOLEAN`",
 						"index$": 7,
@@ -559,6 +559,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/species/search",
 								"parts": []any{
@@ -580,7 +581,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

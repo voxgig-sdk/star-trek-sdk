@@ -7,99 +7,123 @@
 
 export interface Character {
   deceased?: boolean
-  fictional_character?: boolean
+  fictionalCharacter?: boolean
   gender?: string
   height?: number
   hologram?: boolean
   name?: string
   uid?: string
   weight?: number
-  year_of_birth?: number
-  year_of_death?: number
+  yearOfBirth?: number
+  yearOfDeath?: number
 }
 
 export interface CharacterListMatch {
   deceased?: boolean
-  fictional_character?: boolean
+  fictionalCharacter?: boolean
   gender?: string
   height?: number
   hologram?: boolean
   name?: string
   uid?: string
   weight?: number
-  year_of_birth?: number
-  year_of_death?: number
+  yearOfBirth?: number
+  yearOfDeath?: number
+
+  // Selects a custom action instead of the plain list:
+  //   'search'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface Episode {
-  episode_number?: number
-  feature_length?: boolean
-  production_serial_number?: string
-  season_number?: number
-  stardate_from?: number
-  stardate_to?: number
+  episodeNumber?: number
+  featureLength?: boolean
+  productionSerialNumber?: string
+  seasonNumber?: number
+  stardateFrom?: number
+  stardateTo?: number
   title?: string
   uid?: string
-  us_air_date?: string
-  year_from?: number
-  year_to?: number
+  usAirDate?: string
+  yearFrom?: number
+  yearTo?: number
 }
 
 export interface EpisodeListMatch {
-  episode_number?: number
-  feature_length?: boolean
-  production_serial_number?: string
-  season_number?: number
-  stardate_from?: number
-  stardate_to?: number
+  episodeNumber?: number
+  featureLength?: boolean
+  productionSerialNumber?: string
+  seasonNumber?: number
+  stardateFrom?: number
+  stardateTo?: number
   title?: string
   uid?: string
-  us_air_date?: string
-  year_from?: number
-  year_to?: number
+  usAirDate?: string
+  yearFrom?: number
+  yearTo?: number
+
+  // Selects a custom action instead of the plain list:
+  //   'search'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface Spacecraft {
-  date_status?: string
+  dateStatus?: string
   name?: string
   operator?: string
   owner?: string
   registry?: string
-  spacecraft_class?: string
+  spacecraftClass?: string
   status?: string
   uid?: string
 }
 
 export interface SpacecraftListMatch {
-  date_status?: string
+  dateStatus?: string
   name?: string
   operator?: string
   owner?: string
   registry?: string
-  spacecraft_class?: string
+  spacecraftClass?: string
   status?: string
   uid?: string
+
+  // Selects a custom action instead of the plain list:
+  //   'search'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface Species {
-  extinct_species?: boolean
-  extra_galactic_species?: boolean
+  extinctSpecies?: boolean
+  extraGalacticSpecies?: boolean
   homeworld?: string
-  humanoid_species?: boolean
+  humanoidSpecies?: boolean
   name?: string
   quadrant?: string
   uid?: string
-  warp_capable_species?: boolean
+  warpCapableSpecies?: boolean
 }
 
 export interface SpeciesListMatch {
-  extinct_species?: boolean
-  extra_galactic_species?: boolean
+  extinctSpecies?: boolean
+  extraGalacticSpecies?: boolean
   homeworld?: string
-  humanoid_species?: boolean
+  humanoidSpecies?: boolean
   name?: string
   quadrant?: string
   uid?: string
-  warp_capable_species?: boolean
+  warpCapableSpecies?: boolean
+
+  // Selects a custom action instead of the plain list:
+  //   'search'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 

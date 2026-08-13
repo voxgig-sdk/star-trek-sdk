@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from startrek_sdk.utility.voxgig_struct import voxgig_struct as vs
 from startrek_sdk import StarTrekSDK
-from core import helpers
+from startrek_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _episode_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "STARTREK_TEST_EPISODE_ENTID": {},
-        "STARTREK_TEST_LIVE": "FALSE",
+        "STAR_TREK_TEST_EPISODE_ENTID": {},
+        "STAR_TREK_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("STARTREK_TEST_LIVE") == "TRUE"
+    live = env.get("STAR_TREK_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

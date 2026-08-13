@@ -66,11 +66,11 @@ function character_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "STARTREK_TEST_CHARACTER_ENTID" => [],
-        "STARTREK_TEST_LIVE" => "FALSE",
+        "STAR_TREK_TEST_CHARACTER_ENTID" => [],
+        "STAR_TREK_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["STARTREK_TEST_LIVE"] === "TRUE";
+    $live = $env["STAR_TREK_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

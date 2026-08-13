@@ -221,9 +221,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local character, err = client:Character():load()
+    local character, err = client:Character():list()
     if err then error(err) end
-    -- character is the loaded record
+    -- character is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -235,15 +235,15 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | Field | Description |
 | --- | --- |
 | `deceased` |  |
-| `fictional_character` |  |
+| `fictionalCharacter` |  |
 | `gender` |  |
 | `height` |  |
 | `hologram` |  |
 | `name` |  |
 | `uid` |  |
 | `weight` |  |
-| `year_of_birth` |  |
-| `year_of_death` |  |
+| `yearOfBirth` |  |
+| `yearOfDeath` |  |
 
 Operations: List.
 
@@ -253,17 +253,17 @@ API path: `/character/search`
 
 | Field | Description |
 | --- | --- |
-| `episode_number` |  |
-| `feature_length` |  |
-| `production_serial_number` |  |
-| `season_number` |  |
-| `stardate_from` |  |
-| `stardate_to` |  |
+| `episodeNumber` |  |
+| `featureLength` |  |
+| `productionSerialNumber` |  |
+| `seasonNumber` |  |
+| `stardateFrom` |  |
+| `stardateTo` |  |
 | `title` |  |
 | `uid` |  |
-| `us_air_date` |  |
-| `year_from` |  |
-| `year_to` |  |
+| `usAirDate` |  |
+| `yearFrom` |  |
+| `yearTo` |  |
 
 Operations: List.
 
@@ -273,12 +273,12 @@ API path: `/episode/search`
 
 | Field | Description |
 | --- | --- |
-| `date_status` |  |
+| `dateStatus` |  |
 | `name` |  |
 | `operator` |  |
 | `owner` |  |
 | `registry` |  |
-| `spacecraft_class` |  |
+| `spacecraftClass` |  |
 | `status` |  |
 | `uid` |  |
 
@@ -290,14 +290,14 @@ API path: `/spacecraft/search`
 
 | Field | Description |
 | --- | --- |
-| `extinct_species` |  |
-| `extra_galactic_species` |  |
+| `extinctSpecies` |  |
+| `extraGalacticSpecies` |  |
 | `homeworld` |  |
-| `humanoid_species` |  |
+| `humanoidSpecies` |  |
 | `name` |  |
 | `quadrant` |  |
 | `uid` |  |
-| `warp_capable_species` |  |
+| `warpCapableSpecies` |  |
 
 Operations: List.
 
@@ -323,15 +323,15 @@ Create an instance: `local character = client:Character(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `deceased` | `boolean` |  |
-| `fictional_character` | `boolean` |  |
+| `fictionalCharacter` | `boolean` |  |
 | `gender` | `string` |  |
 | `height` | `number` |  |
 | `hologram` | `boolean` |  |
 | `name` | `string` |  |
 | `uid` | `string` |  |
 | `weight` | `number` |  |
-| `year_of_birth` | `number` |  |
-| `year_of_death` | `number` |  |
+| `yearOfBirth` | `number` |  |
+| `yearOfDeath` | `number` |  |
 
 #### Example: List
 
@@ -354,17 +354,17 @@ Create an instance: `local episode = client:Episode(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `episode_number` | `number` |  |
-| `feature_length` | `boolean` |  |
-| `production_serial_number` | `string` |  |
-| `season_number` | `number` |  |
-| `stardate_from` | `number` |  |
-| `stardate_to` | `number` |  |
+| `episodeNumber` | `number` |  |
+| `featureLength` | `boolean` |  |
+| `productionSerialNumber` | `string` |  |
+| `seasonNumber` | `number` |  |
+| `stardateFrom` | `number` |  |
+| `stardateTo` | `number` |  |
 | `title` | `string` |  |
 | `uid` | `string` |  |
-| `us_air_date` | `string` |  |
-| `year_from` | `number` |  |
-| `year_to` | `number` |  |
+| `usAirDate` | `string` |  |
+| `yearFrom` | `number` |  |
+| `yearTo` | `number` |  |
 
 #### Example: List
 
@@ -387,12 +387,12 @@ Create an instance: `local spacecraft = client:Spacecraft(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_status` | `string` |  |
+| `dateStatus` | `string` |  |
 | `name` | `string` |  |
 | `operator` | `string` |  |
 | `owner` | `string` |  |
 | `registry` | `string` |  |
-| `spacecraft_class` | `string` |  |
+| `spacecraftClass` | `string` |  |
 | `status` | `string` |  |
 | `uid` | `string` |  |
 
@@ -417,14 +417,14 @@ Create an instance: `local species = client:Species(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `extinct_species` | `boolean` |  |
-| `extra_galactic_species` | `boolean` |  |
+| `extinctSpecies` | `boolean` |  |
+| `extraGalacticSpecies` | `boolean` |  |
 | `homeworld` | `string` |  |
-| `humanoid_species` | `boolean` |  |
+| `humanoidSpecies` | `boolean` |  |
 | `name` | `string` |  |
 | `quadrant` | `string` |  |
 | `uid` | `string` |  |
-| `warp_capable_species` | `boolean` |  |
+| `warpCapableSpecies` | `boolean` |  |
 
 #### Example: List
 

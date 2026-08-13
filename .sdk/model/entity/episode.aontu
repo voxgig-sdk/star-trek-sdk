@@ -6,32 +6,32 @@ main: kit: entity: episode: {
 
   fields: [
     {
-      name: "episode_number"
+      name: "episodeNumber"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "feature_length"
+      name: "featureLength"
       req: false
       type: "`$BOOLEAN`"
     }
     {
-      name: "production_serial_number"
+      name: "productionSerialNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "season_number"
+      name: "seasonNumber"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "stardate_from"
+      name: "stardateFrom"
       req: false
       type: "`$NUMBER`"
     }
     {
-      name: "stardate_to"
+      name: "stardateTo"
       req: false
       type: "`$NUMBER`"
     }
@@ -46,17 +46,17 @@ main: kit: entity: episode: {
       type: "`$STRING`"
     }
     {
-      name: "us_air_date"
+      name: "usAirDate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "year_from"
+      name: "yearFrom"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "year_to"
+      name: "yearTo"
       req: false
       type: "`$INTEGER`"
     }

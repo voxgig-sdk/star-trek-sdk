@@ -6,7 +6,7 @@ main: kit: entity: spacecraft: {
 
   fields: [
     {
-      name: "date_status"
+      name: "dateStatus"
       req: false
       type: "`$STRING`"
     }
@@ -31,7 +31,7 @@ main: kit: entity: spacecraft: {
       type: "`$STRING`"
     }
     {
-      name: "spacecraft_class"
+      name: "spacecraftClass"
       req: false
       type: "`$STRING`"
     }

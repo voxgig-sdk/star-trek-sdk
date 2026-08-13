@@ -106,15 +106,15 @@ character = client.Character
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `deceased` | `Boolean` | No |  |
-| `fictional_character` | `Boolean` | No |  |
+| `fictionalCharacter` | `Boolean` | No |  |
 | `gender` | `String` | No |  |
 | `height` | `Integer` | No |  |
 | `hologram` | `Boolean` | No |  |
 | `name` | `String` | No |  |
 | `uid` | `String` | No |  |
 | `weight` | `Integer` | No |  |
-| `year_of_birth` | `Integer` | No |  |
-| `year_of_death` | `Integer` | No |  |
+| `yearOfBirth` | `Integer` | No |  |
+| `yearOfDeath` | `Integer` | No |  |
 
 ### Operations
 
@@ -166,17 +166,17 @@ episode = client.Episode
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episode_number` | `Integer` | No |  |
-| `feature_length` | `Boolean` | No |  |
-| `production_serial_number` | `String` | No |  |
-| `season_number` | `Integer` | No |  |
-| `stardate_from` | `Float` | No |  |
-| `stardate_to` | `Float` | No |  |
+| `episodeNumber` | `Integer` | No |  |
+| `featureLength` | `Boolean` | No |  |
+| `productionSerialNumber` | `String` | No |  |
+| `seasonNumber` | `Integer` | No |  |
+| `stardateFrom` | `Float` | No |  |
+| `stardateTo` | `Float` | No |  |
 | `title` | `String` | No |  |
 | `uid` | `String` | No |  |
-| `us_air_date` | `String` | No |  |
-| `year_from` | `Integer` | No |  |
-| `year_to` | `Integer` | No |  |
+| `usAirDate` | `String` | No |  |
+| `yearFrom` | `Integer` | No |  |
+| `yearTo` | `Integer` | No |  |
 
 ### Operations
 
@@ -228,12 +228,12 @@ spacecraft = client.Spacecraft
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_status` | `String` | No |  |
+| `dateStatus` | `String` | No |  |
 | `name` | `String` | No |  |
 | `operator` | `String` | No |  |
 | `owner` | `String` | No |  |
 | `registry` | `String` | No |  |
-| `spacecraft_class` | `String` | No |  |
+| `spacecraftClass` | `String` | No |  |
 | `status` | `String` | No |  |
 | `uid` | `String` | No |  |
 
@@ -287,14 +287,14 @@ species = client.Species
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinct_species` | `Boolean` | No |  |
-| `extra_galactic_species` | `Boolean` | No |  |
+| `extinctSpecies` | `Boolean` | No |  |
+| `extraGalacticSpecies` | `Boolean` | No |  |
 | `homeworld` | `String` | No |  |
-| `humanoid_species` | `Boolean` | No |  |
+| `humanoidSpecies` | `Boolean` | No |  |
 | `name` | `String` | No |  |
 | `quadrant` | `String` | No |  |
 | `uid` | `String` | No |  |
-| `warp_capable_species` | `Boolean` | No |  |
+| `warpCapableSpecies` | `Boolean` | No |  |
 
 ### Operations
 

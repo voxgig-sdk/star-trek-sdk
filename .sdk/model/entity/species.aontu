@@ -6,12 +6,12 @@ main: kit: entity: species: {
 
   fields: [
     {
-      name: "extinct_species"
+      name: "extinctSpecies"
       req: false
       type: "`$BOOLEAN`"
     }
     {
-      name: "extra_galactic_species"
+      name: "extraGalacticSpecies"
       req: false
       type: "`$BOOLEAN`"
     }
@@ -21,7 +21,7 @@ main: kit: entity: species: {
       type: "`$STRING`"
     }
     {
-      name: "humanoid_species"
+      name: "humanoidSpecies"
       req: false
       type: "`$BOOLEAN`"
     }
@@ -41,7 +41,7 @@ main: kit: entity: species: {
       type: "`$STRING`"
     }
     {
-      name: "warp_capable_species"
+      name: "warpCapableSpecies"
       req: false
       type: "`$BOOLEAN`"
     }

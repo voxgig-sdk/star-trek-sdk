@@ -1,0 +1,596 @@
+# StarTrek SDK configuration
+
+
+def make_config():
+    return {
+        "main": {
+            "name": "StarTrek",
+        },
+        "feature": {
+            "test": {
+        "options": {
+          "active": False,
+        },
+      },
+        },
+        "options": {
+            "base": "https://stapi.co/api/v1/rest",
+            "headers": {
+        "content-type": "application/json",
+      },
+            "entity": {
+                "character": {},
+                "episode": {},
+                "spacecraft": {},
+                "species": {},
+            },
+        },
+        "entity": {
+      "character": {
+        "fields": [
+          {
+            "active": True,
+            "name": "deceased",
+            "req": False,
+            "type": "`$BOOLEAN`",
+            "index$": 0,
+          },
+          {
+            "active": True,
+            "name": "fictionalCharacter",
+            "req": False,
+            "type": "`$BOOLEAN`",
+            "index$": 1,
+          },
+          {
+            "active": True,
+            "name": "gender",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 2,
+          },
+          {
+            "active": True,
+            "name": "height",
+            "req": False,
+            "type": "`$INTEGER`",
+            "index$": 3,
+          },
+          {
+            "active": True,
+            "name": "hologram",
+            "req": False,
+            "type": "`$BOOLEAN`",
+            "index$": 4,
+          },
+          {
+            "active": True,
+            "name": "name",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 5,
+          },
+          {
+            "active": True,
+            "name": "uid",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 6,
+          },
+          {
+            "active": True,
+            "name": "weight",
+            "req": False,
+            "type": "`$INTEGER`",
+            "index$": 7,
+          },
+          {
+            "active": True,
+            "name": "yearOfBirth",
+            "req": False,
+            "type": "`$INTEGER`",
+            "index$": 8,
+          },
+          {
+            "active": True,
+            "name": "yearOfDeath",
+            "req": False,
+            "type": "`$INTEGER`",
+            "index$": 9,
+          },
+        ],
+        "name": "character",
+        "op": {
+          "list": {
+            "input": "data",
+            "name": "list",
+            "points": [
+              {
+                "active": True,
+                "args": {
+                  "query": [
+                    {
+                      "active": True,
+                      "kind": "query",
+                      "name": "gender",
+                      "orig": "gender",
+                      "reqd": False,
+                      "type": "`$STRING`",
+                    },
+                    {
+                      "active": True,
+                      "kind": "query",
+                      "name": "name",
+                      "orig": "name",
+                      "reqd": False,
+                      "type": "`$STRING`",
+                    },
+                    {
+                      "active": True,
+                      "example": 0,
+                      "kind": "query",
+                      "name": "page_number",
+                      "orig": "page_number",
+                      "reqd": False,
+                      "type": "`$INTEGER`",
+                    },
+                    {
+                      "active": True,
+                      "example": 50,
+                      "kind": "query",
+                      "name": "page_size",
+                      "orig": "page_size",
+                      "reqd": False,
+                      "type": "`$INTEGER`",
+                    },
+                  ],
+                },
+                "kind": "http",
+                "method": "GET",
+                "orig": "/character/search",
+                "parts": [
+                  "character",
+                  "search",
+                ],
+                "select": {
+                  "$action": "search",
+                  "exist": [
+                    "gender",
+                    "name",
+                    "page_number",
+                    "page_size",
+                  ],
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "index$": 0,
+              },
+            ],
+            "key$": "list",
+          },
+        },
+        "relations": {
+          "ancestors": [],
+        },
+      },
+      "episode": {
+        "fields": [
+          {
+            "active": True,
+            "name": "episodeNumber",
+            "req": False,
+            "type": "`$INTEGER`",
+            "index$": 0,
+          },
+          {
+            "active": True,
+            "name": "featureLength",
+            "req": False,
+            "type": "`$BOOLEAN`",
+            "index$": 1,
+          },
+          {
+            "active": True,
+            "name": "productionSerialNumber",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 2,
+          },
+          {
+            "active": True,
+            "name": "seasonNumber",
+            "req": False,
+            "type": "`$INTEGER`",
+            "index$": 3,
+          },
+          {
+            "active": True,
+            "name": "stardateFrom",
+            "req": False,
+            "type": "`$NUMBER`",
+            "index$": 4,
+          },
+          {
+            "active": True,
+            "name": "stardateTo",
+            "req": False,
+            "type": "`$NUMBER`",
+            "index$": 5,
+          },
+          {
+            "active": True,
+            "name": "title",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 6,
+          },
+          {
+            "active": True,
+            "name": "uid",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 7,
+          },
+          {
+            "active": True,
+            "name": "usAirDate",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 8,
+          },
+          {
+            "active": True,
+            "name": "yearFrom",
+            "req": False,
+            "type": "`$INTEGER`",
+            "index$": 9,
+          },
+          {
+            "active": True,
+            "name": "yearTo",
+            "req": False,
+            "type": "`$INTEGER`",
+            "index$": 10,
+          },
+        ],
+        "name": "episode",
+        "op": {
+          "list": {
+            "input": "data",
+            "name": "list",
+            "points": [
+              {
+                "active": True,
+                "args": {
+                  "query": [
+                    {
+                      "active": True,
+                      "kind": "query",
+                      "name": "episode_number",
+                      "orig": "episode_number",
+                      "reqd": False,
+                      "type": "`$INTEGER`",
+                    },
+                    {
+                      "active": True,
+                      "example": 0,
+                      "kind": "query",
+                      "name": "page_number",
+                      "orig": "page_number",
+                      "reqd": False,
+                      "type": "`$INTEGER`",
+                    },
+                    {
+                      "active": True,
+                      "example": 50,
+                      "kind": "query",
+                      "name": "page_size",
+                      "orig": "page_size",
+                      "reqd": False,
+                      "type": "`$INTEGER`",
+                    },
+                    {
+                      "active": True,
+                      "kind": "query",
+                      "name": "season_number",
+                      "orig": "season_number",
+                      "reqd": False,
+                      "type": "`$INTEGER`",
+                    },
+                    {
+                      "active": True,
+                      "kind": "query",
+                      "name": "title",
+                      "orig": "title",
+                      "reqd": False,
+                      "type": "`$STRING`",
+                    },
+                  ],
+                },
+                "kind": "http",
+                "method": "GET",
+                "orig": "/episode/search",
+                "parts": [
+                  "episode",
+                  "search",
+                ],
+                "select": {
+                  "$action": "search",
+                  "exist": [
+                    "episode_number",
+                    "page_number",
+                    "page_size",
+                    "season_number",
+                    "title",
+                  ],
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "index$": 0,
+              },
+            ],
+            "key$": "list",
+          },
+        },
+        "relations": {
+          "ancestors": [],
+        },
+      },
+      "spacecraft": {
+        "fields": [
+          {
+            "active": True,
+            "name": "dateStatus",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 0,
+          },
+          {
+            "active": True,
+            "name": "name",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 1,
+          },
+          {
+            "active": True,
+            "name": "operator",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 2,
+          },
+          {
+            "active": True,
+            "name": "owner",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 3,
+          },
+          {
+            "active": True,
+            "name": "registry",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 4,
+          },
+          {
+            "active": True,
+            "name": "spacecraftClass",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 5,
+          },
+          {
+            "active": True,
+            "name": "status",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 6,
+          },
+          {
+            "active": True,
+            "name": "uid",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 7,
+          },
+        ],
+        "name": "spacecraft",
+        "op": {
+          "list": {
+            "input": "data",
+            "name": "list",
+            "points": [
+              {
+                "active": True,
+                "args": {
+                  "query": [
+                    {
+                      "active": True,
+                      "kind": "query",
+                      "name": "name",
+                      "orig": "name",
+                      "reqd": False,
+                      "type": "`$STRING`",
+                    },
+                    {
+                      "active": True,
+                      "example": 0,
+                      "kind": "query",
+                      "name": "page_number",
+                      "orig": "page_number",
+                      "reqd": False,
+                      "type": "`$INTEGER`",
+                    },
+                    {
+                      "active": True,
+                      "example": 50,
+                      "kind": "query",
+                      "name": "page_size",
+                      "orig": "page_size",
+                      "reqd": False,
+                      "type": "`$INTEGER`",
+                    },
+                  ],
+                },
+                "kind": "http",
+                "method": "GET",
+                "orig": "/spacecraft/search",
+                "parts": [
+                  "spacecraft",
+                  "search",
+                ],
+                "select": {
+                  "$action": "search",
+                  "exist": [
+                    "name",
+                    "page_number",
+                    "page_size",
+                  ],
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body.spacecraft`",
+                },
+                "index$": 0,
+              },
+            ],
+            "key$": "list",
+          },
+        },
+        "relations": {
+          "ancestors": [],
+        },
+      },
+      "species": {
+        "fields": [
+          {
+            "active": True,
+            "name": "extinctSpecies",
+            "req": False,
+            "type": "`$BOOLEAN`",
+            "index$": 0,
+          },
+          {
+            "active": True,
+            "name": "extraGalacticSpecies",
+            "req": False,
+            "type": "`$BOOLEAN`",
+            "index$": 1,
+          },
+          {
+            "active": True,
+            "name": "homeworld",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 2,
+          },
+          {
+            "active": True,
+            "name": "humanoidSpecies",
+            "req": False,
+            "type": "`$BOOLEAN`",
+            "index$": 3,
+          },
+          {
+            "active": True,
+            "name": "name",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 4,
+          },
+          {
+            "active": True,
+            "name": "quadrant",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 5,
+          },
+          {
+            "active": True,
+            "name": "uid",
+            "req": False,
+            "type": "`$STRING`",
+            "index$": 6,
+          },
+          {
+            "active": True,
+            "name": "warpCapableSpecies",
+            "req": False,
+            "type": "`$BOOLEAN`",
+            "index$": 7,
+          },
+        ],
+        "name": "species",
+        "op": {
+          "list": {
+            "input": "data",
+            "name": "list",
+            "points": [
+              {
+                "active": True,
+                "args": {
+                  "query": [
+                    {
+                      "active": True,
+                      "kind": "query",
+                      "name": "name",
+                      "orig": "name",
+                      "reqd": False,
+                      "type": "`$STRING`",
+                    },
+                    {
+                      "active": True,
+                      "example": 0,
+                      "kind": "query",
+                      "name": "page_number",
+                      "orig": "page_number",
+                      "reqd": False,
+                      "type": "`$INTEGER`",
+                    },
+                    {
+                      "active": True,
+                      "example": 50,
+                      "kind": "query",
+                      "name": "page_size",
+                      "orig": "page_size",
+                      "reqd": False,
+                      "type": "`$INTEGER`",
+                    },
+                  ],
+                },
+                "kind": "http",
+                "method": "GET",
+                "orig": "/species/search",
+                "parts": [
+                  "species",
+                  "search",
+                ],
+                "select": {
+                  "$action": "search",
+                  "exist": [
+                    "name",
+                    "page_number",
+                    "page_size",
+                  ],
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body.species`",
+                },
+                "index$": 0,
+              },
+            ],
+            "key$": "list",
+          },
+        },
+        "relations": {
+          "ancestors": [],
+        },
+      },
+    },
+    }

@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = StarTrekSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 character = client.Character().list()
 # character contains the mock response record
 ```
@@ -223,7 +224,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -246,15 +247,15 @@ On error, `ok` is `False` and `err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `deceased` |  |
-| `fictional_character` |  |
+| `fictionalCharacter` |  |
 | `gender` |  |
 | `height` |  |
 | `hologram` |  |
 | `name` |  |
 | `uid` |  |
 | `weight` |  |
-| `year_of_birth` |  |
-| `year_of_death` |  |
+| `yearOfBirth` |  |
+| `yearOfDeath` |  |
 
 Operations: List.
 
@@ -264,17 +265,17 @@ API path: `/character/search`
 
 | Field | Description |
 | --- | --- |
-| `episode_number` |  |
-| `feature_length` |  |
-| `production_serial_number` |  |
-| `season_number` |  |
-| `stardate_from` |  |
-| `stardate_to` |  |
+| `episodeNumber` |  |
+| `featureLength` |  |
+| `productionSerialNumber` |  |
+| `seasonNumber` |  |
+| `stardateFrom` |  |
+| `stardateTo` |  |
 | `title` |  |
 | `uid` |  |
-| `us_air_date` |  |
-| `year_from` |  |
-| `year_to` |  |
+| `usAirDate` |  |
+| `yearFrom` |  |
+| `yearTo` |  |
 
 Operations: List.
 
@@ -284,12 +285,12 @@ API path: `/episode/search`
 
 | Field | Description |
 | --- | --- |
-| `date_status` |  |
+| `dateStatus` |  |
 | `name` |  |
 | `operator` |  |
 | `owner` |  |
 | `registry` |  |
-| `spacecraft_class` |  |
+| `spacecraftClass` |  |
 | `status` |  |
 | `uid` |  |
 
@@ -301,14 +302,14 @@ API path: `/spacecraft/search`
 
 | Field | Description |
 | --- | --- |
-| `extinct_species` |  |
-| `extra_galactic_species` |  |
+| `extinctSpecies` |  |
+| `extraGalacticSpecies` |  |
 | `homeworld` |  |
-| `humanoid_species` |  |
+| `humanoidSpecies` |  |
 | `name` |  |
 | `quadrant` |  |
 | `uid` |  |
-| `warp_capable_species` |  |
+| `warpCapableSpecies` |  |
 
 Operations: List.
 
@@ -334,15 +335,15 @@ Create an instance: `character = client.Character()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `deceased` | `bool` |  |
-| `fictional_character` | `bool` |  |
+| `fictionalCharacter` | `bool` |  |
 | `gender` | `str` |  |
 | `height` | `int` |  |
 | `hologram` | `bool` |  |
 | `name` | `str` |  |
 | `uid` | `str` |  |
 | `weight` | `int` |  |
-| `year_of_birth` | `int` |  |
-| `year_of_death` | `int` |  |
+| `yearOfBirth` | `int` |  |
+| `yearOfDeath` | `int` |  |
 
 #### Example: List
 
@@ -365,17 +366,17 @@ Create an instance: `episode = client.Episode()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `episode_number` | `int` |  |
-| `feature_length` | `bool` |  |
-| `production_serial_number` | `str` |  |
-| `season_number` | `int` |  |
-| `stardate_from` | `float` |  |
-| `stardate_to` | `float` |  |
+| `episodeNumber` | `int` |  |
+| `featureLength` | `bool` |  |
+| `productionSerialNumber` | `str` |  |
+| `seasonNumber` | `int` |  |
+| `stardateFrom` | `float` |  |
+| `stardateTo` | `float` |  |
 | `title` | `str` |  |
 | `uid` | `str` |  |
-| `us_air_date` | `str` |  |
-| `year_from` | `int` |  |
-| `year_to` | `int` |  |
+| `usAirDate` | `str` |  |
+| `yearFrom` | `int` |  |
+| `yearTo` | `int` |  |
 
 #### Example: List
 
@@ -398,12 +399,12 @@ Create an instance: `spacecraft = client.Spacecraft()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_status` | `str` |  |
+| `dateStatus` | `str` |  |
 | `name` | `str` |  |
 | `operator` | `str` |  |
 | `owner` | `str` |  |
 | `registry` | `str` |  |
-| `spacecraft_class` | `str` |  |
+| `spacecraftClass` | `str` |  |
 | `status` | `str` |  |
 | `uid` | `str` |  |
 
@@ -428,14 +429,14 @@ Create an instance: `species = client.Species()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `extinct_species` | `bool` |  |
-| `extra_galactic_species` | `bool` |  |
+| `extinctSpecies` | `bool` |  |
+| `extraGalacticSpecies` | `bool` |  |
 | `homeworld` | `str` |  |
-| `humanoid_species` | `bool` |  |
+| `humanoidSpecies` | `bool` |  |
 | `name` | `str` |  |
 | `quadrant` | `str` |  |
 | `uid` | `str` |  |
-| `warp_capable_species` | `bool` |  |
+| `warpCapableSpecies` | `bool` |  |
 
 #### Example: List
 

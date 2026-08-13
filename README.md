@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = StarTrekSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = StarTrekSDK.test({
+  entity: {
+    character: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const characters = await client.Character().list()
-// characters is an array of bare Character records populated with mock data
+// characters is an array of Character entities, populated with mock data
+// — call characters[0].data() for the record itself
 console.log(characters)
 ```
 
@@ -110,7 +119,7 @@ import { StarTrekSDK } from '@voxgig-sdk/star-trek'
 
 const client = new StarTrekSDK()
 
-// List all characters (returns Character[])
+// List all characters (returns CharacterEntity[] — .data() for the record)
 const characters = await client.Character().list()
 for (const character of characters) {
   console.log(character)
@@ -346,6 +355,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://stapi.co/](https://stapi.co/)
 

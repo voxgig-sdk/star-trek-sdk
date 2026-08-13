@@ -11,7 +11,7 @@ main: kit: entity: character: {
       type: "`$BOOLEAN`"
     }
     {
-      name: "fictional_character"
+      name: "fictionalCharacter"
       req: false
       type: "`$BOOLEAN`"
     }
@@ -46,12 +46,12 @@ main: kit: entity: character: {
       type: "`$INTEGER`"
     }
     {
-      name: "year_of_birth"
+      name: "yearOfBirth"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "year_of_death"
+      name: "yearOfDeath"
       req: false
       type: "`$INTEGER`"
     }

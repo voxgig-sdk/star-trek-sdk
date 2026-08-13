@@ -16,73 +16,73 @@ declare(strict_types=1);
 class Character
 {
     public ?bool $deceased = null;
-    public ?bool $fictional_character = null;
+    public ?bool $fictionalCharacter = null;
     public ?string $gender = null;
     public ?int $height = null;
     public ?bool $hologram = null;
     public ?string $name = null;
     public ?string $uid = null;
     public ?int $weight = null;
-    public ?int $year_of_birth = null;
-    public ?int $year_of_death = null;
+    public ?int $yearOfBirth = null;
+    public ?int $yearOfDeath = null;
 }
 
 /** Request payload for Character#list. */
 class CharacterListMatch
 {
     public ?bool $deceased = null;
-    public ?bool $fictional_character = null;
+    public ?bool $fictionalCharacter = null;
     public ?string $gender = null;
     public ?int $height = null;
     public ?bool $hologram = null;
     public ?string $name = null;
     public ?string $uid = null;
     public ?int $weight = null;
-    public ?int $year_of_birth = null;
-    public ?int $year_of_death = null;
+    public ?int $yearOfBirth = null;
+    public ?int $yearOfDeath = null;
 }
 
 /** Episode entity data model. */
 class Episode
 {
-    public ?int $episode_number = null;
-    public ?bool $feature_length = null;
-    public ?string $production_serial_number = null;
-    public ?int $season_number = null;
-    public ?float $stardate_from = null;
-    public ?float $stardate_to = null;
+    public ?int $episodeNumber = null;
+    public ?bool $featureLength = null;
+    public ?string $productionSerialNumber = null;
+    public ?int $seasonNumber = null;
+    public ?float $stardateFrom = null;
+    public ?float $stardateTo = null;
     public ?string $title = null;
     public ?string $uid = null;
-    public ?string $us_air_date = null;
-    public ?int $year_from = null;
-    public ?int $year_to = null;
+    public ?string $usAirDate = null;
+    public ?int $yearFrom = null;
+    public ?int $yearTo = null;
 }
 
 /** Request payload for Episode#list. */
 class EpisodeListMatch
 {
-    public ?int $episode_number = null;
-    public ?bool $feature_length = null;
-    public ?string $production_serial_number = null;
-    public ?int $season_number = null;
-    public ?float $stardate_from = null;
-    public ?float $stardate_to = null;
+    public ?int $episodeNumber = null;
+    public ?bool $featureLength = null;
+    public ?string $productionSerialNumber = null;
+    public ?int $seasonNumber = null;
+    public ?float $stardateFrom = null;
+    public ?float $stardateTo = null;
     public ?string $title = null;
     public ?string $uid = null;
-    public ?string $us_air_date = null;
-    public ?int $year_from = null;
-    public ?int $year_to = null;
+    public ?string $usAirDate = null;
+    public ?int $yearFrom = null;
+    public ?int $yearTo = null;
 }
 
 /** Spacecraft entity data model. */
 class Spacecraft
 {
-    public ?string $date_status = null;
+    public ?string $dateStatus = null;
     public ?string $name = null;
     public ?string $operator = null;
     public ?string $owner = null;
     public ?string $registry = null;
-    public ?string $spacecraft_class = null;
+    public ?string $spacecraftClass = null;
     public ?string $status = null;
     public ?string $uid = null;
 }
@@ -90,12 +90,12 @@ class Spacecraft
 /** Request payload for Spacecraft#list. */
 class SpacecraftListMatch
 {
-    public ?string $date_status = null;
+    public ?string $dateStatus = null;
     public ?string $name = null;
     public ?string $operator = null;
     public ?string $owner = null;
     public ?string $registry = null;
-    public ?string $spacecraft_class = null;
+    public ?string $spacecraftClass = null;
     public ?string $status = null;
     public ?string $uid = null;
 }
@@ -103,26 +103,26 @@ class SpacecraftListMatch
 /** Species entity data model. */
 class Species
 {
-    public ?bool $extinct_species = null;
-    public ?bool $extra_galactic_species = null;
+    public ?bool $extinctSpecies = null;
+    public ?bool $extraGalacticSpecies = null;
     public ?string $homeworld = null;
-    public ?bool $humanoid_species = null;
+    public ?bool $humanoidSpecies = null;
     public ?string $name = null;
     public ?string $quadrant = null;
     public ?string $uid = null;
-    public ?bool $warp_capable_species = null;
+    public ?bool $warpCapableSpecies = null;
 }
 
 /** Request payload for Species#list. */
 class SpeciesListMatch
 {
-    public ?bool $extinct_species = null;
-    public ?bool $extra_galactic_species = null;
+    public ?bool $extinctSpecies = null;
+    public ?bool $extraGalacticSpecies = null;
     public ?string $homeworld = null;
-    public ?bool $humanoid_species = null;
+    public ?bool $humanoidSpecies = null;
     public ?string $name = null;
     public ?string $quadrant = null;
     public ?string $uid = null;
-    public ?bool $warp_capable_species = null;
+    public ?bool $warpCapableSpecies = null;
 }
 

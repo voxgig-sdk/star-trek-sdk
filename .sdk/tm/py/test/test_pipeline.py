@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import StarTrekSDK
-from core.error import StarTrekError
-from core.result import StarTrekResult
-from core.response import StarTrekResponse
-from core.spec import StarTrekSpec
-from feature.base_feature import StarTrekBaseFeature
+from projectname_sdk.core.error import StarTrekError
+from projectname_sdk.core.result import StarTrekResult
+from projectname_sdk.core.response import StarTrekResponse
+from projectname_sdk.core.spec import StarTrekSpec
+from projectname_sdk.feature.base_feature import StarTrekBaseFeature
 
 
 def _client():

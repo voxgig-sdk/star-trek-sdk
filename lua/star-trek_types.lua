@@ -8,93 +8,93 @@
 
 ---@class Character
 ---@field deceased? boolean
----@field fictional_character? boolean
+---@field fictionalCharacter? boolean
 ---@field gender? string
 ---@field height? number
 ---@field hologram? boolean
 ---@field name? string
 ---@field uid? string
 ---@field weight? number
----@field year_of_birth? number
----@field year_of_death? number
+---@field yearOfBirth? number
+---@field yearOfDeath? number
 
 ---@class CharacterListMatch
 ---@field deceased? boolean
----@field fictional_character? boolean
+---@field fictionalCharacter? boolean
 ---@field gender? string
 ---@field height? number
 ---@field hologram? boolean
 ---@field name? string
 ---@field uid? string
 ---@field weight? number
----@field year_of_birth? number
----@field year_of_death? number
+---@field yearOfBirth? number
+---@field yearOfDeath? number
 
 ---@class Episode
----@field episode_number? number
----@field feature_length? boolean
----@field production_serial_number? string
----@field season_number? number
----@field stardate_from? number
----@field stardate_to? number
+---@field episodeNumber? number
+---@field featureLength? boolean
+---@field productionSerialNumber? string
+---@field seasonNumber? number
+---@field stardateFrom? number
+---@field stardateTo? number
 ---@field title? string
 ---@field uid? string
----@field us_air_date? string
----@field year_from? number
----@field year_to? number
+---@field usAirDate? string
+---@field yearFrom? number
+---@field yearTo? number
 
 ---@class EpisodeListMatch
----@field episode_number? number
----@field feature_length? boolean
----@field production_serial_number? string
----@field season_number? number
----@field stardate_from? number
----@field stardate_to? number
+---@field episodeNumber? number
+---@field featureLength? boolean
+---@field productionSerialNumber? string
+---@field seasonNumber? number
+---@field stardateFrom? number
+---@field stardateTo? number
 ---@field title? string
 ---@field uid? string
----@field us_air_date? string
----@field year_from? number
----@field year_to? number
+---@field usAirDate? string
+---@field yearFrom? number
+---@field yearTo? number
 
 ---@class Spacecraft
----@field date_status? string
+---@field dateStatus? string
 ---@field name? string
 ---@field operator? string
 ---@field owner? string
 ---@field registry? string
----@field spacecraft_class? string
+---@field spacecraftClass? string
 ---@field status? string
 ---@field uid? string
 
 ---@class SpacecraftListMatch
----@field date_status? string
+---@field dateStatus? string
 ---@field name? string
 ---@field operator? string
 ---@field owner? string
 ---@field registry? string
----@field spacecraft_class? string
+---@field spacecraftClass? string
 ---@field status? string
 ---@field uid? string
 
 ---@class Species
----@field extinct_species? boolean
----@field extra_galactic_species? boolean
+---@field extinctSpecies? boolean
+---@field extraGalacticSpecies? boolean
 ---@field homeworld? string
----@field humanoid_species? boolean
+---@field humanoidSpecies? boolean
 ---@field name? string
 ---@field quadrant? string
 ---@field uid? string
----@field warp_capable_species? boolean
+---@field warpCapableSpecies? boolean
 
 ---@class SpeciesListMatch
----@field extinct_species? boolean
----@field extra_galactic_species? boolean
+---@field extinctSpecies? boolean
+---@field extraGalacticSpecies? boolean
 ---@field homeworld? string
----@field humanoid_species? boolean
+---@field humanoidSpecies? boolean
 ---@field name? string
 ---@field quadrant? string
 ---@field uid? string
----@field warp_capable_species? boolean
+---@field warpCapableSpecies? boolean
 
 local M = {}
 

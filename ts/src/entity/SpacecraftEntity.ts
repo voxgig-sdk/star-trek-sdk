@@ -37,7 +37,7 @@ class SpacecraftEntity extends StarTrekEntityBase<Spacecraft> {
 
 
 
-  async list(this: any, reqmatch?: SpacecraftListMatch, ctrl?: Control): Promise<Spacecraft[]> {
+  async list(this: any, reqmatch?: SpacecraftListMatch, ctrl?: Control): Promise<SpacecraftEntity[]> {
 
     const utility = this._utility
 

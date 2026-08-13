@@ -43,8 +43,8 @@ class StarTrekTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('STARTREK_TEST_LIVE');
-        $override = self::getenv('STARTREK_TEST_OVERRIDE');
+        $live = self::getenv('STAR_TREK_TEST_LIVE');
+        $override = self::getenv('STAR_TREK_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class StarTrekTestRunner
             }
         }
 
-        $explain = self::getenv('STARTREK_TEST_EXPLAIN');
+        $explain = self::getenv('STAR_TREK_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['STARTREK_TEST_EXPLAIN'] = $explain;
+            $m['STAR_TREK_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

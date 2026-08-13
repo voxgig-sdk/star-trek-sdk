@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = StarTrekSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 character = client.Character.list()
 puts character
 ```
@@ -240,15 +241,15 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `deceased` |  |
-| `fictional_character` |  |
+| `fictionalCharacter` |  |
 | `gender` |  |
 | `height` |  |
 | `hologram` |  |
 | `name` |  |
 | `uid` |  |
 | `weight` |  |
-| `year_of_birth` |  |
-| `year_of_death` |  |
+| `yearOfBirth` |  |
+| `yearOfDeath` |  |
 
 Operations: List.
 
@@ -258,17 +259,17 @@ API path: `/character/search`
 
 | Field | Description |
 | --- | --- |
-| `episode_number` |  |
-| `feature_length` |  |
-| `production_serial_number` |  |
-| `season_number` |  |
-| `stardate_from` |  |
-| `stardate_to` |  |
+| `episodeNumber` |  |
+| `featureLength` |  |
+| `productionSerialNumber` |  |
+| `seasonNumber` |  |
+| `stardateFrom` |  |
+| `stardateTo` |  |
 | `title` |  |
 | `uid` |  |
-| `us_air_date` |  |
-| `year_from` |  |
-| `year_to` |  |
+| `usAirDate` |  |
+| `yearFrom` |  |
+| `yearTo` |  |
 
 Operations: List.
 
@@ -278,12 +279,12 @@ API path: `/episode/search`
 
 | Field | Description |
 | --- | --- |
-| `date_status` |  |
+| `dateStatus` |  |
 | `name` |  |
 | `operator` |  |
 | `owner` |  |
 | `registry` |  |
-| `spacecraft_class` |  |
+| `spacecraftClass` |  |
 | `status` |  |
 | `uid` |  |
 
@@ -295,14 +296,14 @@ API path: `/spacecraft/search`
 
 | Field | Description |
 | --- | --- |
-| `extinct_species` |  |
-| `extra_galactic_species` |  |
+| `extinctSpecies` |  |
+| `extraGalacticSpecies` |  |
 | `homeworld` |  |
-| `humanoid_species` |  |
+| `humanoidSpecies` |  |
 | `name` |  |
 | `quadrant` |  |
 | `uid` |  |
-| `warp_capable_species` |  |
+| `warpCapableSpecies` |  |
 
 Operations: List.
 
@@ -328,15 +329,15 @@ Create an instance: `character = client.Character`
 | Field | Type | Description |
 | --- | --- | --- |
 | `deceased` | `Boolean` |  |
-| `fictional_character` | `Boolean` |  |
+| `fictionalCharacter` | `Boolean` |  |
 | `gender` | `String` |  |
 | `height` | `Integer` |  |
 | `hologram` | `Boolean` |  |
 | `name` | `String` |  |
 | `uid` | `String` |  |
 | `weight` | `Integer` |  |
-| `year_of_birth` | `Integer` |  |
-| `year_of_death` | `Integer` |  |
+| `yearOfBirth` | `Integer` |  |
+| `yearOfDeath` | `Integer` |  |
 
 #### Example: List
 
@@ -360,17 +361,17 @@ Create an instance: `episode = client.Episode`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `episode_number` | `Integer` |  |
-| `feature_length` | `Boolean` |  |
-| `production_serial_number` | `String` |  |
-| `season_number` | `Integer` |  |
-| `stardate_from` | `Float` |  |
-| `stardate_to` | `Float` |  |
+| `episodeNumber` | `Integer` |  |
+| `featureLength` | `Boolean` |  |
+| `productionSerialNumber` | `String` |  |
+| `seasonNumber` | `Integer` |  |
+| `stardateFrom` | `Float` |  |
+| `stardateTo` | `Float` |  |
 | `title` | `String` |  |
 | `uid` | `String` |  |
-| `us_air_date` | `String` |  |
-| `year_from` | `Integer` |  |
-| `year_to` | `Integer` |  |
+| `usAirDate` | `String` |  |
+| `yearFrom` | `Integer` |  |
+| `yearTo` | `Integer` |  |
 
 #### Example: List
 
@@ -394,12 +395,12 @@ Create an instance: `spacecraft = client.Spacecraft`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_status` | `String` |  |
+| `dateStatus` | `String` |  |
 | `name` | `String` |  |
 | `operator` | `String` |  |
 | `owner` | `String` |  |
 | `registry` | `String` |  |
-| `spacecraft_class` | `String` |  |
+| `spacecraftClass` | `String` |  |
 | `status` | `String` |  |
 | `uid` | `String` |  |
 
@@ -425,14 +426,14 @@ Create an instance: `species = client.Species`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `extinct_species` | `Boolean` |  |
-| `extra_galactic_species` | `Boolean` |  |
+| `extinctSpecies` | `Boolean` |  |
+| `extraGalacticSpecies` | `Boolean` |  |
 | `homeworld` | `String` |  |
-| `humanoid_species` | `Boolean` |  |
+| `humanoidSpecies` | `Boolean` |  |
 | `name` | `String` |  |
 | `quadrant` | `String` |  |
 | `uid` | `String` |  |
-| `warp_capable_species` | `Boolean` |  |
+| `warpCapableSpecies` | `Boolean` |  |
 
 #### Example: List
 

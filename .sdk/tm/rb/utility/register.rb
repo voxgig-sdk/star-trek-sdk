@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ StarTrekUtility.registrar = ->(u) {
   u.prepare_params = StarTrekUtilities::PrepareParams
   u.prepare_path = StarTrekUtilities::PreparePath
   u.prepare_query = StarTrekUtilities::PrepareQuery
+  u.graphql_body = StarTrekUtilities::GraphqlBody
+  u.graphql_errors = StarTrekUtilities::GraphqlErrors
   u.result_basic = StarTrekUtilities::ResultBasic
   u.result_body = StarTrekUtilities::ResultBody
   u.result_headers = StarTrekUtilities::ResultHeaders

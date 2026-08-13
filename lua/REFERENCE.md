@@ -103,15 +103,15 @@ local character = client:Character(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `deceased` | `boolean` | No |  |
-| `fictional_character` | `boolean` | No |  |
+| `fictionalCharacter` | `boolean` | No |  |
 | `gender` | `string` | No |  |
 | `height` | `number` | No |  |
 | `hologram` | `boolean` | No |  |
 | `name` | `string` | No |  |
 | `uid` | `string` | No |  |
 | `weight` | `number` | No |  |
-| `year_of_birth` | `number` | No |  |
-| `year_of_death` | `number` | No |  |
+| `yearOfBirth` | `number` | No |  |
+| `yearOfDeath` | `number` | No |  |
 
 ### Operations
 
@@ -163,17 +163,17 @@ local episode = client:Episode(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episode_number` | `number` | No |  |
-| `feature_length` | `boolean` | No |  |
-| `production_serial_number` | `string` | No |  |
-| `season_number` | `number` | No |  |
-| `stardate_from` | `number` | No |  |
-| `stardate_to` | `number` | No |  |
+| `episodeNumber` | `number` | No |  |
+| `featureLength` | `boolean` | No |  |
+| `productionSerialNumber` | `string` | No |  |
+| `seasonNumber` | `number` | No |  |
+| `stardateFrom` | `number` | No |  |
+| `stardateTo` | `number` | No |  |
 | `title` | `string` | No |  |
 | `uid` | `string` | No |  |
-| `us_air_date` | `string` | No |  |
-| `year_from` | `number` | No |  |
-| `year_to` | `number` | No |  |
+| `usAirDate` | `string` | No |  |
+| `yearFrom` | `number` | No |  |
+| `yearTo` | `number` | No |  |
 
 ### Operations
 
@@ -225,12 +225,12 @@ local spacecraft = client:Spacecraft(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_status` | `string` | No |  |
+| `dateStatus` | `string` | No |  |
 | `name` | `string` | No |  |
 | `operator` | `string` | No |  |
 | `owner` | `string` | No |  |
 | `registry` | `string` | No |  |
-| `spacecraft_class` | `string` | No |  |
+| `spacecraftClass` | `string` | No |  |
 | `status` | `string` | No |  |
 | `uid` | `string` | No |  |
 
@@ -284,14 +284,14 @@ local species = client:Species(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinct_species` | `boolean` | No |  |
-| `extra_galactic_species` | `boolean` | No |  |
+| `extinctSpecies` | `boolean` | No |  |
+| `extraGalacticSpecies` | `boolean` | No |  |
 | `homeworld` | `string` | No |  |
-| `humanoid_species` | `boolean` | No |  |
+| `humanoidSpecies` | `boolean` | No |  |
 | `name` | `string` | No |  |
 | `quadrant` | `string` | No |  |
 | `uid` | `string` | No |  |
-| `warp_capable_species` | `boolean` | No |  |
+| `warpCapableSpecies` | `boolean` | No |  |
 
 ### Operations
 

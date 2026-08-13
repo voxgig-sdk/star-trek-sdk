@@ -13,7 +13,7 @@
 # @!attribute [rw] deceased
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] fictional_character
+# @!attribute [rw] fictionalCharacter
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] gender
@@ -34,22 +34,22 @@
 # @!attribute [rw] weight
 #   @return [Integer, nil]
 #
-# @!attribute [rw] year_of_birth
+# @!attribute [rw] yearOfBirth
 #   @return [Integer, nil]
 #
-# @!attribute [rw] year_of_death
+# @!attribute [rw] yearOfDeath
 #   @return [Integer, nil]
 Character = Struct.new(
   :deceased,
-  :fictional_character,
+  :fictionalCharacter,
   :gender,
   :height,
   :hologram,
   :name,
   :uid,
   :weight,
-  :year_of_birth,
-  :year_of_death,
+  :yearOfBirth,
+  :yearOfDeath,
   keyword_init: true
 )
 
@@ -58,7 +58,7 @@ Character = Struct.new(
 # @!attribute [rw] deceased
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] fictional_character
+# @!attribute [rw] fictionalCharacter
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] gender
@@ -79,43 +79,43 @@ Character = Struct.new(
 # @!attribute [rw] weight
 #   @return [Integer, nil]
 #
-# @!attribute [rw] year_of_birth
+# @!attribute [rw] yearOfBirth
 #   @return [Integer, nil]
 #
-# @!attribute [rw] year_of_death
+# @!attribute [rw] yearOfDeath
 #   @return [Integer, nil]
 CharacterListMatch = Struct.new(
   :deceased,
-  :fictional_character,
+  :fictionalCharacter,
   :gender,
   :height,
   :hologram,
   :name,
   :uid,
   :weight,
-  :year_of_birth,
-  :year_of_death,
+  :yearOfBirth,
+  :yearOfDeath,
   keyword_init: true
 )
 
 # Episode entity data model.
 #
-# @!attribute [rw] episode_number
+# @!attribute [rw] episodeNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] feature_length
+# @!attribute [rw] featureLength
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] production_serial_number
+# @!attribute [rw] productionSerialNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] season_number
+# @!attribute [rw] seasonNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] stardate_from
+# @!attribute [rw] stardateFrom
 #   @return [Float, nil]
 #
-# @!attribute [rw] stardate_to
+# @!attribute [rw] stardateTo
 #   @return [Float, nil]
 #
 # @!attribute [rw] title
@@ -124,47 +124,47 @@ CharacterListMatch = Struct.new(
 # @!attribute [rw] uid
 #   @return [String, nil]
 #
-# @!attribute [rw] us_air_date
+# @!attribute [rw] usAirDate
 #   @return [String, nil]
 #
-# @!attribute [rw] year_from
+# @!attribute [rw] yearFrom
 #   @return [Integer, nil]
 #
-# @!attribute [rw] year_to
+# @!attribute [rw] yearTo
 #   @return [Integer, nil]
 Episode = Struct.new(
-  :episode_number,
-  :feature_length,
-  :production_serial_number,
-  :season_number,
-  :stardate_from,
-  :stardate_to,
+  :episodeNumber,
+  :featureLength,
+  :productionSerialNumber,
+  :seasonNumber,
+  :stardateFrom,
+  :stardateTo,
   :title,
   :uid,
-  :us_air_date,
-  :year_from,
-  :year_to,
+  :usAirDate,
+  :yearFrom,
+  :yearTo,
   keyword_init: true
 )
 
 # Request payload for Episode#list.
 #
-# @!attribute [rw] episode_number
+# @!attribute [rw] episodeNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] feature_length
+# @!attribute [rw] featureLength
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] production_serial_number
+# @!attribute [rw] productionSerialNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] season_number
+# @!attribute [rw] seasonNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] stardate_from
+# @!attribute [rw] stardateFrom
 #   @return [Float, nil]
 #
-# @!attribute [rw] stardate_to
+# @!attribute [rw] stardateTo
 #   @return [Float, nil]
 #
 # @!attribute [rw] title
@@ -173,32 +173,32 @@ Episode = Struct.new(
 # @!attribute [rw] uid
 #   @return [String, nil]
 #
-# @!attribute [rw] us_air_date
+# @!attribute [rw] usAirDate
 #   @return [String, nil]
 #
-# @!attribute [rw] year_from
+# @!attribute [rw] yearFrom
 #   @return [Integer, nil]
 #
-# @!attribute [rw] year_to
+# @!attribute [rw] yearTo
 #   @return [Integer, nil]
 EpisodeListMatch = Struct.new(
-  :episode_number,
-  :feature_length,
-  :production_serial_number,
-  :season_number,
-  :stardate_from,
-  :stardate_to,
+  :episodeNumber,
+  :featureLength,
+  :productionSerialNumber,
+  :seasonNumber,
+  :stardateFrom,
+  :stardateTo,
   :title,
   :uid,
-  :us_air_date,
-  :year_from,
-  :year_to,
+  :usAirDate,
+  :yearFrom,
+  :yearTo,
   keyword_init: true
 )
 
 # Spacecraft entity data model.
 #
-# @!attribute [rw] date_status
+# @!attribute [rw] dateStatus
 #   @return [String, nil]
 #
 # @!attribute [rw] name
@@ -213,7 +213,7 @@ EpisodeListMatch = Struct.new(
 # @!attribute [rw] registry
 #   @return [String, nil]
 #
-# @!attribute [rw] spacecraft_class
+# @!attribute [rw] spacecraftClass
 #   @return [String, nil]
 #
 # @!attribute [rw] status
@@ -222,12 +222,12 @@ EpisodeListMatch = Struct.new(
 # @!attribute [rw] uid
 #   @return [String, nil]
 Spacecraft = Struct.new(
-  :date_status,
+  :dateStatus,
   :name,
   :operator,
   :owner,
   :registry,
-  :spacecraft_class,
+  :spacecraftClass,
   :status,
   :uid,
   keyword_init: true
@@ -235,7 +235,7 @@ Spacecraft = Struct.new(
 
 # Request payload for Spacecraft#list.
 #
-# @!attribute [rw] date_status
+# @!attribute [rw] dateStatus
 #   @return [String, nil]
 #
 # @!attribute [rw] name
@@ -250,7 +250,7 @@ Spacecraft = Struct.new(
 # @!attribute [rw] registry
 #   @return [String, nil]
 #
-# @!attribute [rw] spacecraft_class
+# @!attribute [rw] spacecraftClass
 #   @return [String, nil]
 #
 # @!attribute [rw] status
@@ -259,12 +259,12 @@ Spacecraft = Struct.new(
 # @!attribute [rw] uid
 #   @return [String, nil]
 SpacecraftListMatch = Struct.new(
-  :date_status,
+  :dateStatus,
   :name,
   :operator,
   :owner,
   :registry,
-  :spacecraft_class,
+  :spacecraftClass,
   :status,
   :uid,
   keyword_init: true
@@ -272,16 +272,16 @@ SpacecraftListMatch = Struct.new(
 
 # Species entity data model.
 #
-# @!attribute [rw] extinct_species
+# @!attribute [rw] extinctSpecies
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] extra_galactic_species
+# @!attribute [rw] extraGalacticSpecies
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] homeworld
 #   @return [String, nil]
 #
-# @!attribute [rw] humanoid_species
+# @!attribute [rw] humanoidSpecies
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] name
@@ -293,32 +293,32 @@ SpacecraftListMatch = Struct.new(
 # @!attribute [rw] uid
 #   @return [String, nil]
 #
-# @!attribute [rw] warp_capable_species
+# @!attribute [rw] warpCapableSpecies
 #   @return [Boolean, nil]
 Species = Struct.new(
-  :extinct_species,
-  :extra_galactic_species,
+  :extinctSpecies,
+  :extraGalacticSpecies,
   :homeworld,
-  :humanoid_species,
+  :humanoidSpecies,
   :name,
   :quadrant,
   :uid,
-  :warp_capable_species,
+  :warpCapableSpecies,
   keyword_init: true
 )
 
 # Request payload for Species#list.
 #
-# @!attribute [rw] extinct_species
+# @!attribute [rw] extinctSpecies
 #   @return [Boolean, nil]
 #
-# @!attribute [rw] extra_galactic_species
+# @!attribute [rw] extraGalacticSpecies
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] homeworld
 #   @return [String, nil]
 #
-# @!attribute [rw] humanoid_species
+# @!attribute [rw] humanoidSpecies
 #   @return [Boolean, nil]
 #
 # @!attribute [rw] name
@@ -330,17 +330,17 @@ Species = Struct.new(
 # @!attribute [rw] uid
 #   @return [String, nil]
 #
-# @!attribute [rw] warp_capable_species
+# @!attribute [rw] warpCapableSpecies
 #   @return [Boolean, nil]
 SpeciesListMatch = Struct.new(
-  :extinct_species,
-  :extra_galactic_species,
+  :extinctSpecies,
+  :extraGalacticSpecies,
   :homeworld,
-  :humanoid_species,
+  :humanoidSpecies,
   :name,
   :quadrant,
   :uid,
-  :warp_capable_species,
+  :warpCapableSpecies,
   keyword_init: true
 )
 

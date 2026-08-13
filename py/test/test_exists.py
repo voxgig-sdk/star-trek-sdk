@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# StarTrek SDK exists test
 
 import pytest
 from startrek_sdk import StarTrekSDK

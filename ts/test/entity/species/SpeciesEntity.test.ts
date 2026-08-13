@@ -26,8 +26,8 @@ import {
 describe('SpeciesEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when STARTREK_TEST_LIVE=TRUE.
-  afterEach(liveDelay('STARTREK_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when STAR_TREK_TEST_LIVE=TRUE.
+  afterEach(liveDelay('STAR_TREK_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = StarTrekSDK.test()
@@ -63,7 +63,7 @@ describe('SpeciesEntity', async () => {
     const species_ref01_ent = client.Species()
     const species_ref01_match: any = {}
 
-    const species_ref01_list = await species_ref01_ent.list(species_ref01_match)
+    const species_ref01_list = (await species_ref01_ent.list(species_ref01_match)).map((e: any) => e.data())
 
 
   })

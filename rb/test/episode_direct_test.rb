@@ -60,11 +60,11 @@ def episode_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "STARTREK_TEST_EPISODE_ENTID" => {},
-    "STARTREK_TEST_LIVE" => "FALSE",
+    "STAR_TREK_TEST_EPISODE_ENTID" => {},
+    "STAR_TREK_TEST_LIVE" => "FALSE",
   })
 
-  live = env["STARTREK_TEST_LIVE"] == "TRUE"
+  live = env["STAR_TREK_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

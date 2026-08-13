@@ -264,15 +264,15 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"deceased"` |  |
-| `"fictional_character"` |  |
+| `"fictionalCharacter"` |  |
 | `"gender"` |  |
 | `"height"` |  |
 | `"hologram"` |  |
 | `"name"` |  |
 | `"uid"` |  |
 | `"weight"` |  |
-| `"year_of_birth"` |  |
-| `"year_of_death"` |  |
+| `"yearOfBirth"` |  |
+| `"yearOfDeath"` |  |
 
 Operations: List.
 
@@ -282,17 +282,17 @@ API path: `/character/search`
 
 | Field | Description |
 | --- | --- |
-| `"episode_number"` |  |
-| `"feature_length"` |  |
-| `"production_serial_number"` |  |
-| `"season_number"` |  |
-| `"stardate_from"` |  |
-| `"stardate_to"` |  |
+| `"episodeNumber"` |  |
+| `"featureLength"` |  |
+| `"productionSerialNumber"` |  |
+| `"seasonNumber"` |  |
+| `"stardateFrom"` |  |
+| `"stardateTo"` |  |
 | `"title"` |  |
 | `"uid"` |  |
-| `"us_air_date"` |  |
-| `"year_from"` |  |
-| `"year_to"` |  |
+| `"usAirDate"` |  |
+| `"yearFrom"` |  |
+| `"yearTo"` |  |
 
 Operations: List.
 
@@ -302,12 +302,12 @@ API path: `/episode/search`
 
 | Field | Description |
 | --- | --- |
-| `"date_status"` |  |
+| `"dateStatus"` |  |
 | `"name"` |  |
 | `"operator"` |  |
 | `"owner"` |  |
 | `"registry"` |  |
-| `"spacecraft_class"` |  |
+| `"spacecraftClass"` |  |
 | `"status"` |  |
 | `"uid"` |  |
 
@@ -319,14 +319,14 @@ API path: `/spacecraft/search`
 
 | Field | Description |
 | --- | --- |
-| `"extinct_species"` |  |
-| `"extra_galactic_species"` |  |
+| `"extinctSpecies"` |  |
+| `"extraGalacticSpecies"` |  |
 | `"homeworld"` |  |
-| `"humanoid_species"` |  |
+| `"humanoidSpecies"` |  |
 | `"name"` |  |
 | `"quadrant"` |  |
 | `"uid"` |  |
-| `"warp_capable_species"` |  |
+| `"warpCapableSpecies"` |  |
 
 Operations: List.
 
@@ -352,15 +352,15 @@ Create an instance: `character := client.Character(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `deceased` | `bool` |  |
-| `fictional_character` | `bool` |  |
+| `fictionalCharacter` | `bool` |  |
 | `gender` | `string` |  |
 | `height` | `int` |  |
 | `hologram` | `bool` |  |
 | `name` | `string` |  |
 | `uid` | `string` |  |
 | `weight` | `int` |  |
-| `year_of_birth` | `int` |  |
-| `year_of_death` | `int` |  |
+| `yearOfBirth` | `int` |  |
+| `yearOfDeath` | `int` |  |
 
 #### Example: List
 
@@ -387,17 +387,17 @@ Create an instance: `episode := client.Episode(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `episode_number` | `int` |  |
-| `feature_length` | `bool` |  |
-| `production_serial_number` | `string` |  |
-| `season_number` | `int` |  |
-| `stardate_from` | `float64` |  |
-| `stardate_to` | `float64` |  |
+| `episodeNumber` | `int` |  |
+| `featureLength` | `bool` |  |
+| `productionSerialNumber` | `string` |  |
+| `seasonNumber` | `int` |  |
+| `stardateFrom` | `float64` |  |
+| `stardateTo` | `float64` |  |
 | `title` | `string` |  |
 | `uid` | `string` |  |
-| `us_air_date` | `string` |  |
-| `year_from` | `int` |  |
-| `year_to` | `int` |  |
+| `usAirDate` | `string` |  |
+| `yearFrom` | `int` |  |
+| `yearTo` | `int` |  |
 
 #### Example: List
 
@@ -424,12 +424,12 @@ Create an instance: `spacecraft := client.Spacecraft(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date_status` | `string` |  |
+| `dateStatus` | `string` |  |
 | `name` | `string` |  |
 | `operator` | `string` |  |
 | `owner` | `string` |  |
 | `registry` | `string` |  |
-| `spacecraft_class` | `string` |  |
+| `spacecraftClass` | `string` |  |
 | `status` | `string` |  |
 | `uid` | `string` |  |
 
@@ -458,14 +458,14 @@ Create an instance: `species := client.Species(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `extinct_species` | `bool` |  |
-| `extra_galactic_species` | `bool` |  |
+| `extinctSpecies` | `bool` |  |
+| `extraGalacticSpecies` | `bool` |  |
 | `homeworld` | `string` |  |
-| `humanoid_species` | `bool` |  |
+| `humanoidSpecies` | `bool` |  |
 | `name` | `string` |  |
 | `quadrant` | `string` |  |
 | `uid` | `string` |  |
-| `warp_capable_species` | `bool` |  |
+| `warpCapableSpecies` | `bool` |  |
 
 #### Example: List
 

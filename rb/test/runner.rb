@@ -23,8 +23,8 @@ module StarTrekTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("STARTREK_TEST_LIVE")
-    override = getenv("STARTREK_TEST_OVERRIDE")
+    live = getenv("STAR_TREK_TEST_LIVE")
+    override = getenv("STAR_TREK_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module StarTrekTestRunner
       end
     end
 
-    explain = getenv("STARTREK_TEST_EXPLAIN")
-    m["STARTREK_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("STAR_TREK_TEST_EXPLAIN")
+    m["STAR_TREK_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

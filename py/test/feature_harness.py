@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import StarTrekControl
-from core.error import StarTrekError
-from core.result import StarTrekResult
-from core.spec import StarTrekSpec
+from startrek_sdk.config import make_config
+from startrek_sdk.features import _make_feature
+from startrek_sdk.core.control import StarTrekControl
+from startrek_sdk.core.error import StarTrekError
+from startrek_sdk.core.result import StarTrekResult
+from startrek_sdk.core.spec import StarTrekSpec
 
 
 # True when this SDK was generated with the named feature.

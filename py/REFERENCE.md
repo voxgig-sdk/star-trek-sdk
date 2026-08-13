@@ -100,15 +100,15 @@ character = client.Character()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `deceased` | `bool` | No |  |
-| `fictional_character` | `bool` | No |  |
+| `fictionalCharacter` | `bool` | No |  |
 | `gender` | `str` | No |  |
 | `height` | `int` | No |  |
 | `hologram` | `bool` | No |  |
 | `name` | `str` | No |  |
 | `uid` | `str` | No |  |
 | `weight` | `int` | No |  |
-| `year_of_birth` | `int` | No |  |
-| `year_of_death` | `int` | No |  |
+| `yearOfBirth` | `int` | No |  |
+| `yearOfDeath` | `int` | No |  |
 
 ### Operations
 
@@ -161,17 +161,17 @@ episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episode_number` | `int` | No |  |
-| `feature_length` | `bool` | No |  |
-| `production_serial_number` | `str` | No |  |
-| `season_number` | `int` | No |  |
-| `stardate_from` | `float` | No |  |
-| `stardate_to` | `float` | No |  |
+| `episodeNumber` | `int` | No |  |
+| `featureLength` | `bool` | No |  |
+| `productionSerialNumber` | `str` | No |  |
+| `seasonNumber` | `int` | No |  |
+| `stardateFrom` | `float` | No |  |
+| `stardateTo` | `float` | No |  |
 | `title` | `str` | No |  |
 | `uid` | `str` | No |  |
-| `us_air_date` | `str` | No |  |
-| `year_from` | `int` | No |  |
-| `year_to` | `int` | No |  |
+| `usAirDate` | `str` | No |  |
+| `yearFrom` | `int` | No |  |
+| `yearTo` | `int` | No |  |
 
 ### Operations
 
@@ -224,12 +224,12 @@ spacecraft = client.Spacecraft()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_status` | `str` | No |  |
+| `dateStatus` | `str` | No |  |
 | `name` | `str` | No |  |
 | `operator` | `str` | No |  |
 | `owner` | `str` | No |  |
 | `registry` | `str` | No |  |
-| `spacecraft_class` | `str` | No |  |
+| `spacecraftClass` | `str` | No |  |
 | `status` | `str` | No |  |
 | `uid` | `str` | No |  |
 
@@ -284,14 +284,14 @@ species = client.Species()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinct_species` | `bool` | No |  |
-| `extra_galactic_species` | `bool` | No |  |
+| `extinctSpecies` | `bool` | No |  |
+| `extraGalacticSpecies` | `bool` | No |  |
 | `homeworld` | `str` | No |  |
-| `humanoid_species` | `bool` | No |  |
+| `humanoidSpecies` | `bool` | No |  |
 | `name` | `str` | No |  |
 | `quadrant` | `str` | No |  |
 | `uid` | `str` | No |  |
-| `warp_capable_species` | `bool` | No |  |
+| `warpCapableSpecies` | `bool` | No |  |
 
 ### Operations
 

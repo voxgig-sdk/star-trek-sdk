@@ -26,8 +26,8 @@ import {
 describe('SpacecraftEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when STARTREK_TEST_LIVE=TRUE.
-  afterEach(liveDelay('STARTREK_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when STAR_TREK_TEST_LIVE=TRUE.
+  afterEach(liveDelay('STAR_TREK_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = StarTrekSDK.test()
@@ -63,7 +63,7 @@ describe('SpacecraftEntity', async () => {
     const spacecraft_ref01_ent = client.Spacecraft()
     const spacecraft_ref01_match: any = {}
 
-    const spacecraft_ref01_list = await spacecraft_ref01_ent.list(spacecraft_ref01_match)
+    const spacecraft_ref01_list = (await spacecraft_ref01_ent.list(spacecraft_ref01_match)).map((e: any) => e.data())
 
 
   })

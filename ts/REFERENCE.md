@@ -153,15 +153,35 @@ const character = client.Character()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `deceased` | `boolean` | No |  |
-| `fictional_character` | `boolean` | No |  |
+| `fictionalCharacter` | `boolean` | No |  |
 | `gender` | `string` | No |  |
 | `height` | `number` | No |  |
 | `hologram` | `boolean` | No |  |
 | `name` | `string` | No |  |
 | `uid` | `string` | No |  |
 | `weight` | `number` | No |  |
-| `year_of_birth` | `number` | No |  |
-| `year_of_death` | `number` | No |  |
+| `yearOfBirth` | `number` | No |  |
+| `yearOfDeath` | `number` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `search` | `/character/search` | `client.Character().list({ $action: 'search', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Character record — check the API definition for its shape.
+
+```ts
+const result = await client.Character().list({
+  $action: 'search',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -211,17 +231,37 @@ const episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episode_number` | `number` | No |  |
-| `feature_length` | `boolean` | No |  |
-| `production_serial_number` | `string` | No |  |
-| `season_number` | `number` | No |  |
-| `stardate_from` | `number` | No |  |
-| `stardate_to` | `number` | No |  |
+| `episodeNumber` | `number` | No |  |
+| `featureLength` | `boolean` | No |  |
+| `productionSerialNumber` | `string` | No |  |
+| `seasonNumber` | `number` | No |  |
+| `stardateFrom` | `number` | No |  |
+| `stardateTo` | `number` | No |  |
 | `title` | `string` | No |  |
 | `uid` | `string` | No |  |
-| `us_air_date` | `string` | No |  |
-| `year_from` | `number` | No |  |
-| `year_to` | `number` | No |  |
+| `usAirDate` | `string` | No |  |
+| `yearFrom` | `number` | No |  |
+| `yearTo` | `number` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `search` | `/episode/search` | `client.Episode().list({ $action: 'search', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Episode record — check the API definition for its shape.
+
+```ts
+const result = await client.Episode().list({
+  $action: 'search',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -271,14 +311,34 @@ const spacecraft = client.Spacecraft()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date_status` | `string` | No |  |
+| `dateStatus` | `string` | No |  |
 | `name` | `string` | No |  |
 | `operator` | `string` | No |  |
 | `owner` | `string` | No |  |
 | `registry` | `string` | No |  |
-| `spacecraft_class` | `string` | No |  |
+| `spacecraftClass` | `string` | No |  |
 | `status` | `string` | No |  |
 | `uid` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `search` | `/spacecraft/search` | `client.Spacecraft().list({ $action: 'search', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Spacecraft record — check the API definition for its shape.
+
+```ts
+const result = await client.Spacecraft().list({
+  $action: 'search',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -328,14 +388,34 @@ const species = client.Species()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinct_species` | `boolean` | No |  |
-| `extra_galactic_species` | `boolean` | No |  |
+| `extinctSpecies` | `boolean` | No |  |
+| `extraGalacticSpecies` | `boolean` | No |  |
 | `homeworld` | `string` | No |  |
-| `humanoid_species` | `boolean` | No |  |
+| `humanoidSpecies` | `boolean` | No |  |
 | `name` | `string` | No |  |
 | `quadrant` | `string` | No |  |
 | `uid` | `string` | No |  |
-| `warp_capable_species` | `boolean` | No |  |
+| `warpCapableSpecies` | `boolean` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `search` | `/species/search` | `client.Species().list({ $action: 'search', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Species record — check the API definition for its shape.
+
+```ts
+const result = await client.Species().list({
+  $action: 'search',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
