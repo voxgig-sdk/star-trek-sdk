@@ -28,7 +28,7 @@ class StarTrekSDK
     utility = StarTrekUtility.new
     @_utility = utility
 
-    config = StarTrekConfig.make_config
+    config = StarTrekConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

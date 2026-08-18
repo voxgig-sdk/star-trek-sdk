@@ -40,7 +40,7 @@ class StarTrekSDK
         $utility = new StarTrekUtility();
         $this->_utility = $utility;
 
-        $config = StarTrekConfig::make_config();
+        $config = StarTrekConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
