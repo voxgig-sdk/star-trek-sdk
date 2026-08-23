@@ -152,16 +152,16 @@ const character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `deceased` | `boolean` | No |  |
-| `fictionalCharacter` | `boolean` | No |  |
-| `gender` | `string` | No |  |
-| `height` | `number` | No |  |
-| `hologram` | `boolean` | No |  |
-| `name` | `string` | No |  |
-| `uid` | `string` | No |  |
-| `weight` | `number` | No |  |
-| `yearOfBirth` | `number` | No |  |
-| `yearOfDeath` | `number` | No |  |
+| `deceased` | `boolean` | No | Whether the character is deceased |
+| `fictionalCharacter` | `boolean` | No | Whether this is a fictional character within Star Trek |
+| `gender` | `string` | No | Character gender |
+| `height` | `number` | No | Height in centimeters |
+| `hologram` | `boolean` | No | Whether the character is a hologram |
+| `name` | `string` | No | Character name |
+| `uid` | `string` | No | Unique identifier |
+| `weight` | `number` | No | Weight in kilograms |
+| `yearOfBirth` | `number` | No | Year of birth |
+| `yearOfDeath` | `number` | No | Year of death |
 
 ### Actions
 
@@ -231,17 +231,17 @@ const episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episodeNumber` | `number` | No |  |
-| `featureLength` | `boolean` | No |  |
-| `productionSerialNumber` | `string` | No |  |
-| `seasonNumber` | `number` | No |  |
-| `stardateFrom` | `number` | No |  |
-| `stardateTo` | `number` | No |  |
-| `title` | `string` | No |  |
-| `uid` | `string` | No |  |
-| `usAirDate` | `string` | No |  |
-| `yearFrom` | `number` | No |  |
-| `yearTo` | `number` | No |  |
+| `episodeNumber` | `number` | No | Episode number |
+| `featureLength` | `boolean` | No | Whether this is a feature length episode |
+| `productionSerialNumber` | `string` | No | Production serial number |
+| `seasonNumber` | `number` | No | Season number |
+| `stardateFrom` | `number` | No | Starting stardate |
+| `stardateTo` | `number` | No | Ending stardate |
+| `title` | `string` | No | Episode title |
+| `uid` | `string` | No | Unique identifier |
+| `usAirDate` | `string` | No | US air date |
+| `yearFrom` | `number` | No | Starting year |
+| `yearTo` | `number` | No | Ending year |
 
 ### Actions
 
@@ -311,14 +311,14 @@ const spacecraft = client.Spacecraft()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `dateStatus` | `string` | No |  |
-| `name` | `string` | No |  |
-| `operator` | `string` | No |  |
-| `owner` | `string` | No |  |
-| `registry` | `string` | No |  |
-| `spacecraftClass` | `string` | No |  |
-| `status` | `string` | No |  |
-| `uid` | `string` | No |  |
+| `dateStatus` | `string` | No | Date of status |
+| `name` | `string` | No | Spacecraft name |
+| `operator` | `string` | No | Operating organization |
+| `owner` | `string` | No | Owner organization |
+| `registry` | `string` | No | Registry number |
+| `spacecraftClass` | `string` | No | Class of spacecraft |
+| `status` | `string` | No | Current status |
+| `uid` | `string` | No | Unique identifier |
 
 ### Actions
 
@@ -388,14 +388,14 @@ const species = client.Species()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinctSpecies` | `boolean` | No |  |
-| `extraGalacticSpecies` | `boolean` | No |  |
-| `homeworld` | `string` | No |  |
-| `humanoidSpecies` | `boolean` | No |  |
-| `name` | `string` | No |  |
-| `quadrant` | `string` | No |  |
-| `uid` | `string` | No |  |
-| `warpCapableSpecies` | `boolean` | No |  |
+| `extinctSpecies` | `boolean` | No | Whether the species is extinct |
+| `extraGalacticSpecies` | `boolean` | No | Whether the species is from outside the galaxy |
+| `homeworld` | `string` | No | Name of homeworld |
+| `humanoidSpecies` | `boolean` | No | Whether the species is humanoid |
+| `name` | `string` | No | Species name |
+| `quadrant` | `string` | No | Quadrant of origin |
+| `uid` | `string` | No | Unique identifier |
+| `warpCapableSpecies` | `boolean` | No | Whether the species is warp capable |
 
 ### Actions
 

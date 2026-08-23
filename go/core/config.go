@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "StarTrek",
+			"slug": "star-trek",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -36,42 +39,52 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "deceased",
+						"short": "Whether the character is deceased",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "fictionalCharacter",
+						"short": "Whether this is a fictional character within Star Trek",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "gender",
+						"short": "Character gender",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "height",
+						"short": "Height in centimeters",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "hologram",
+						"short": "Whether the character is a hologram",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Character name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "uid",
+						"short": "Unique identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "weight",
+						"short": "Weight in kilograms",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "yearOfBirth",
+						"short": "Year of birth",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "yearOfDeath",
+						"short": "Year of death",
 						"type": "`$INTEGER`",
 					},
 				},
@@ -144,46 +157,57 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "episodeNumber",
+						"short": "Episode number",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "featureLength",
+						"short": "Whether this is a feature length episode",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "productionSerialNumber",
+						"short": "Production serial number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "seasonNumber",
+						"short": "Season number",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "stardateFrom",
+						"short": "Starting stardate",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "stardateTo",
+						"short": "Ending stardate",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Episode title",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "uid",
+						"short": "Unique identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "usAirDate",
+						"short": "US air date",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "yearFrom",
+						"short": "Starting year",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "yearTo",
+						"short": "Ending year",
 						"type": "`$INTEGER`",
 					},
 				},
@@ -263,34 +287,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "dateStatus",
+						"short": "Date of status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Spacecraft name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "operator",
+						"short": "Operating organization",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "owner",
+						"short": "Owner organization",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "registry",
+						"short": "Registry number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "spacecraftClass",
+						"short": "Class of spacecraft",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Current status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "uid",
+						"short": "Unique identifier",
 						"type": "`$STRING`",
 					},
 				},
@@ -356,34 +388,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "extinctSpecies",
+						"short": "Whether the species is extinct",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "extraGalacticSpecies",
+						"short": "Whether the species is from outside the galaxy",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "homeworld",
+						"short": "Name of homeworld",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "humanoidSpecies",
+						"short": "Whether the species is humanoid",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Species name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "quadrant",
+						"short": "Quadrant of origin",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "uid",
+						"short": "Unique identifier",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "warpCapableSpecies",
+						"short": "Whether the species is warp capable",
 						"type": "`$BOOLEAN`",
 					},
 				},

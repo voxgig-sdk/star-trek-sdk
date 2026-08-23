@@ -250,16 +250,16 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `deceased` |  |
-| `fictionalCharacter` |  |
-| `gender` |  |
-| `height` |  |
-| `hologram` |  |
-| `name` |  |
-| `uid` |  |
-| `weight` |  |
-| `yearOfBirth` |  |
-| `yearOfDeath` |  |
+| `deceased` | Whether the character is deceased |
+| `fictionalCharacter` | Whether this is a fictional character within Star Trek |
+| `gender` | Character gender |
+| `height` | Height in centimeters |
+| `hologram` | Whether the character is a hologram |
+| `name` | Character name |
+| `uid` | Unique identifier |
+| `weight` | Weight in kilograms |
+| `yearOfBirth` | Year of birth |
+| `yearOfDeath` | Year of death |
 
 Operations: List.
 
@@ -269,17 +269,17 @@ API path: `/character/search`
 
 | Field | Description |
 | --- | --- |
-| `episodeNumber` |  |
-| `featureLength` |  |
-| `productionSerialNumber` |  |
-| `seasonNumber` |  |
-| `stardateFrom` |  |
-| `stardateTo` |  |
-| `title` |  |
-| `uid` |  |
-| `usAirDate` |  |
-| `yearFrom` |  |
-| `yearTo` |  |
+| `episodeNumber` | Episode number |
+| `featureLength` | Whether this is a feature length episode |
+| `productionSerialNumber` | Production serial number |
+| `seasonNumber` | Season number |
+| `stardateFrom` | Starting stardate |
+| `stardateTo` | Ending stardate |
+| `title` | Episode title |
+| `uid` | Unique identifier |
+| `usAirDate` | US air date |
+| `yearFrom` | Starting year |
+| `yearTo` | Ending year |
 
 Operations: List.
 
@@ -289,14 +289,14 @@ API path: `/episode/search`
 
 | Field | Description |
 | --- | --- |
-| `dateStatus` |  |
-| `name` |  |
-| `operator` |  |
-| `owner` |  |
-| `registry` |  |
-| `spacecraftClass` |  |
-| `status` |  |
-| `uid` |  |
+| `dateStatus` | Date of status |
+| `name` | Spacecraft name |
+| `operator` | Operating organization |
+| `owner` | Owner organization |
+| `registry` | Registry number |
+| `spacecraftClass` | Class of spacecraft |
+| `status` | Current status |
+| `uid` | Unique identifier |
 
 Operations: List.
 
@@ -306,14 +306,14 @@ API path: `/spacecraft/search`
 
 | Field | Description |
 | --- | --- |
-| `extinctSpecies` |  |
-| `extraGalacticSpecies` |  |
-| `homeworld` |  |
-| `humanoidSpecies` |  |
-| `name` |  |
-| `quadrant` |  |
-| `uid` |  |
-| `warpCapableSpecies` |  |
+| `extinctSpecies` | Whether the species is extinct |
+| `extraGalacticSpecies` | Whether the species is from outside the galaxy |
+| `homeworld` | Name of homeworld |
+| `humanoidSpecies` | Whether the species is humanoid |
+| `name` | Species name |
+| `quadrant` | Quadrant of origin |
+| `uid` | Unique identifier |
+| `warpCapableSpecies` | Whether the species is warp capable |
 
 Operations: List.
 
@@ -338,16 +338,16 @@ Create an instance: `$character = $client->Character();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `deceased` | `bool` |  |
-| `fictionalCharacter` | `bool` |  |
-| `gender` | `string` |  |
-| `height` | `int` |  |
-| `hologram` | `bool` |  |
-| `name` | `string` |  |
-| `uid` | `string` |  |
-| `weight` | `int` |  |
-| `yearOfBirth` | `int` |  |
-| `yearOfDeath` | `int` |  |
+| `deceased` | `bool` | Whether the character is deceased |
+| `fictionalCharacter` | `bool` | Whether this is a fictional character within Star Trek |
+| `gender` | `string` | Character gender |
+| `height` | `int` | Height in centimeters |
+| `hologram` | `bool` | Whether the character is a hologram |
+| `name` | `string` | Character name |
+| `uid` | `string` | Unique identifier |
+| `weight` | `int` | Weight in kilograms |
+| `yearOfBirth` | `int` | Year of birth |
+| `yearOfDeath` | `int` | Year of death |
 
 #### Example: List
 
@@ -371,17 +371,17 @@ Create an instance: `$episode = $client->Episode();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `episodeNumber` | `int` |  |
-| `featureLength` | `bool` |  |
-| `productionSerialNumber` | `string` |  |
-| `seasonNumber` | `int` |  |
-| `stardateFrom` | `float` |  |
-| `stardateTo` | `float` |  |
-| `title` | `string` |  |
-| `uid` | `string` |  |
-| `usAirDate` | `string` |  |
-| `yearFrom` | `int` |  |
-| `yearTo` | `int` |  |
+| `episodeNumber` | `int` | Episode number |
+| `featureLength` | `bool` | Whether this is a feature length episode |
+| `productionSerialNumber` | `string` | Production serial number |
+| `seasonNumber` | `int` | Season number |
+| `stardateFrom` | `float` | Starting stardate |
+| `stardateTo` | `float` | Ending stardate |
+| `title` | `string` | Episode title |
+| `uid` | `string` | Unique identifier |
+| `usAirDate` | `string` | US air date |
+| `yearFrom` | `int` | Starting year |
+| `yearTo` | `int` | Ending year |
 
 #### Example: List
 
@@ -405,14 +405,14 @@ Create an instance: `$spacecraft = $client->Spacecraft();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `dateStatus` | `string` |  |
-| `name` | `string` |  |
-| `operator` | `string` |  |
-| `owner` | `string` |  |
-| `registry` | `string` |  |
-| `spacecraftClass` | `string` |  |
-| `status` | `string` |  |
-| `uid` | `string` |  |
+| `dateStatus` | `string` | Date of status |
+| `name` | `string` | Spacecraft name |
+| `operator` | `string` | Operating organization |
+| `owner` | `string` | Owner organization |
+| `registry` | `string` | Registry number |
+| `spacecraftClass` | `string` | Class of spacecraft |
+| `status` | `string` | Current status |
+| `uid` | `string` | Unique identifier |
 
 #### Example: List
 
@@ -436,14 +436,14 @@ Create an instance: `$species = $client->Species();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `extinctSpecies` | `bool` |  |
-| `extraGalacticSpecies` | `bool` |  |
-| `homeworld` | `string` |  |
-| `humanoidSpecies` | `bool` |  |
-| `name` | `string` |  |
-| `quadrant` | `string` |  |
-| `uid` | `string` |  |
-| `warpCapableSpecies` | `bool` |  |
+| `extinctSpecies` | `bool` | Whether the species is extinct |
+| `extraGalacticSpecies` | `bool` | Whether the species is from outside the galaxy |
+| `homeworld` | `string` | Name of homeworld |
+| `humanoidSpecies` | `bool` | Whether the species is humanoid |
+| `name` | `string` | Species name |
+| `quadrant` | `string` | Quadrant of origin |
+| `uid` | `string` | Unique identifier |
+| `warpCapableSpecies` | `bool` | Whether the species is warp capable |
 
 #### Example: List
 

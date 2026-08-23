@@ -1,0 +1,150 @@
+# Entity: episode
+
+main: kit: entity: episode: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "episodeNumber"
+      req: false
+      short: "Episode number"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "featureLength"
+      req: false
+      short: "Whether this is a feature length episode"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "productionSerialNumber"
+      req: false
+      short: "Production serial number"
+      type: "`$STRING`"
+    }
+    {
+      name: "seasonNumber"
+      req: false
+      short: "Season number"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "stardateFrom"
+      req: false
+      short: "Starting stardate"
+      type: "`$NUMBER`"
+    }
+    {
+      name: "stardateTo"
+      req: false
+      short: "Ending stardate"
+      type: "`$NUMBER`"
+    }
+    {
+      name: "title"
+      req: false
+      short: "Episode title"
+      type: "`$STRING`"
+    }
+    {
+      name: "uid"
+      req: false
+      short: "Unique identifier"
+      type: "`$STRING`"
+    }
+    {
+      name: "usAirDate"
+      req: false
+      short: "US air date"
+      type: "`$STRING`"
+    }
+    {
+      name: "yearFrom"
+      req: false
+      short: "Starting year"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "yearTo"
+      req: false
+      short: "Ending year"
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "episode"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "episode_number"
+                orig: "episode_number"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "page_number"
+                orig: "page_number"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 50
+                kind: "query"
+                name: "page_size"
+                orig: "page_size"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "season_number"
+                orig: "season_number"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "title"
+                orig: "title"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/episode/search"
+          parts: [
+            "episode"
+            "search"
+          ]
+          select: {
+            "$action": "search"
+            exist: [
+              "episode_number"
+              "page_number"
+              "page_size"
+              "season_number"
+              "title"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

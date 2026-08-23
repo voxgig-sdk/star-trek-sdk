@@ -36,60 +36,70 @@
               "active": true,
               "name": "deceased",
               "req": false,
+              "short": "Whether the character is deceased",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "fictionalCharacter",
               "req": false,
+              "short": "Whether this is a fictional character within Star Trek",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "gender",
               "req": false,
+              "short": "Character gender",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "height",
               "req": false,
+              "short": "Height in centimeters",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "hologram",
               "req": false,
+              "short": "Whether the character is a hologram",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Character name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "uid",
               "req": false,
+              "short": "Unique identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "weight",
               "req": false,
+              "short": "Weight in kilograms",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "yearOfBirth",
               "req": false,
+              "short": "Year of birth",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "yearOfDeath",
               "req": false,
+              "short": "Year of death",
               "type": "`$INTEGER`"
             }
           ],
@@ -177,66 +187,77 @@
               "active": true,
               "name": "episodeNumber",
               "req": false,
+              "short": "Episode number",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "featureLength",
               "req": false,
+              "short": "Whether this is a feature length episode",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "productionSerialNumber",
               "req": false,
+              "short": "Production serial number",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "seasonNumber",
               "req": false,
+              "short": "Season number",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "stardateFrom",
               "req": false,
+              "short": "Starting stardate",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "stardateTo",
               "req": false,
+              "short": "Ending stardate",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Episode title",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "uid",
               "req": false,
+              "short": "Unique identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "usAirDate",
               "req": false,
+              "short": "US air date",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "yearFrom",
               "req": false,
+              "short": "Starting year",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "yearTo",
               "req": false,
+              "short": "Ending year",
               "type": "`$INTEGER`"
             }
           ],
@@ -333,48 +354,56 @@
               "active": true,
               "name": "dateStatus",
               "req": false,
+              "short": "Date of status",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Spacecraft name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "operator",
               "req": false,
+              "short": "Operating organization",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "owner",
               "req": false,
+              "short": "Owner organization",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "registry",
               "req": false,
+              "short": "Registry number",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "spacecraftClass",
               "req": false,
+              "short": "Class of spacecraft",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": false,
+              "short": "Current status",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "uid",
               "req": false,
+              "short": "Unique identifier",
               "type": "`$STRING`"
             }
           ],
@@ -453,48 +482,56 @@
               "active": true,
               "name": "extinctSpecies",
               "req": false,
+              "short": "Whether the species is extinct",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "extraGalacticSpecies",
               "req": false,
+              "short": "Whether the species is from outside the galaxy",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "homeworld",
               "req": false,
+              "short": "Name of homeworld",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "humanoidSpecies",
               "req": false,
+              "short": "Whether the species is humanoid",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "name",
               "req": false,
+              "short": "Species name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "quadrant",
               "req": false,
+              "short": "Quadrant of origin",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "uid",
               "req": false,
+              "short": "Unique identifier",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "warpCapableSpecies",
               "req": false,
+              "short": "Whether the species is warp capable",
               "type": "`$BOOLEAN`"
             }
           ],

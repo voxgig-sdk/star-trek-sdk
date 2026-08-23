@@ -1,0 +1,136 @@
+# Entity: character
+
+main: kit: entity: character: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "deceased"
+      req: false
+      short: "Whether the character is deceased"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "fictionalCharacter"
+      req: false
+      short: "Whether this is a fictional character within Star Trek"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "gender"
+      req: false
+      short: "Character gender"
+      type: "`$STRING`"
+    }
+    {
+      name: "height"
+      req: false
+      short: "Height in centimeters"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "hologram"
+      req: false
+      short: "Whether the character is a hologram"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "name"
+      req: false
+      short: "Character name"
+      type: "`$STRING`"
+    }
+    {
+      name: "uid"
+      req: false
+      short: "Unique identifier"
+      type: "`$STRING`"
+    }
+    {
+      name: "weight"
+      req: false
+      short: "Weight in kilograms"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "yearOfBirth"
+      req: false
+      short: "Year of birth"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "yearOfDeath"
+      req: false
+      short: "Year of death"
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "character"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "gender"
+                orig: "gender"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "name"
+                orig: "name"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "page_number"
+                orig: "page_number"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 50
+                kind: "query"
+                name: "page_size"
+                orig: "page_size"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/character/search"
+          parts: [
+            "character"
+            "search"
+          ]
+          select: {
+            "$action": "search"
+            exist: [
+              "gender"
+              "name"
+              "page_number"
+              "page_size"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -99,16 +99,16 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `deceased` | `bool` | No |  |
-| `fictionalCharacter` | `bool` | No |  |
-| `gender` | `str` | No |  |
-| `height` | `int` | No |  |
-| `hologram` | `bool` | No |  |
-| `name` | `str` | No |  |
-| `uid` | `str` | No |  |
-| `weight` | `int` | No |  |
-| `yearOfBirth` | `int` | No |  |
-| `yearOfDeath` | `int` | No |  |
+| `deceased` | `bool` | No | Whether the character is deceased |
+| `fictionalCharacter` | `bool` | No | Whether this is a fictional character within Star Trek |
+| `gender` | `str` | No | Character gender |
+| `height` | `int` | No | Height in centimeters |
+| `hologram` | `bool` | No | Whether the character is a hologram |
+| `name` | `str` | No | Character name |
+| `uid` | `str` | No | Unique identifier |
+| `weight` | `int` | No | Weight in kilograms |
+| `yearOfBirth` | `int` | No | Year of birth |
+| `yearOfDeath` | `int` | No | Year of death |
 
 ### Operations
 
@@ -161,17 +161,17 @@ episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episodeNumber` | `int` | No |  |
-| `featureLength` | `bool` | No |  |
-| `productionSerialNumber` | `str` | No |  |
-| `seasonNumber` | `int` | No |  |
-| `stardateFrom` | `float` | No |  |
-| `stardateTo` | `float` | No |  |
-| `title` | `str` | No |  |
-| `uid` | `str` | No |  |
-| `usAirDate` | `str` | No |  |
-| `yearFrom` | `int` | No |  |
-| `yearTo` | `int` | No |  |
+| `episodeNumber` | `int` | No | Episode number |
+| `featureLength` | `bool` | No | Whether this is a feature length episode |
+| `productionSerialNumber` | `str` | No | Production serial number |
+| `seasonNumber` | `int` | No | Season number |
+| `stardateFrom` | `float` | No | Starting stardate |
+| `stardateTo` | `float` | No | Ending stardate |
+| `title` | `str` | No | Episode title |
+| `uid` | `str` | No | Unique identifier |
+| `usAirDate` | `str` | No | US air date |
+| `yearFrom` | `int` | No | Starting year |
+| `yearTo` | `int` | No | Ending year |
 
 ### Operations
 
@@ -224,14 +224,14 @@ spacecraft = client.Spacecraft()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `dateStatus` | `str` | No |  |
-| `name` | `str` | No |  |
-| `operator` | `str` | No |  |
-| `owner` | `str` | No |  |
-| `registry` | `str` | No |  |
-| `spacecraftClass` | `str` | No |  |
-| `status` | `str` | No |  |
-| `uid` | `str` | No |  |
+| `dateStatus` | `str` | No | Date of status |
+| `name` | `str` | No | Spacecraft name |
+| `operator` | `str` | No | Operating organization |
+| `owner` | `str` | No | Owner organization |
+| `registry` | `str` | No | Registry number |
+| `spacecraftClass` | `str` | No | Class of spacecraft |
+| `status` | `str` | No | Current status |
+| `uid` | `str` | No | Unique identifier |
 
 ### Operations
 
@@ -284,14 +284,14 @@ species = client.Species()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinctSpecies` | `bool` | No |  |
-| `extraGalacticSpecies` | `bool` | No |  |
-| `homeworld` | `str` | No |  |
-| `humanoidSpecies` | `bool` | No |  |
-| `name` | `str` | No |  |
-| `quadrant` | `str` | No |  |
-| `uid` | `str` | No |  |
-| `warpCapableSpecies` | `bool` | No |  |
+| `extinctSpecies` | `bool` | No | Whether the species is extinct |
+| `extraGalacticSpecies` | `bool` | No | Whether the species is from outside the galaxy |
+| `homeworld` | `str` | No | Name of homeworld |
+| `humanoidSpecies` | `bool` | No | Whether the species is humanoid |
+| `name` | `str` | No | Species name |
+| `quadrant` | `str` | No | Quadrant of origin |
+| `uid` | `str` | No | Unique identifier |
+| `warpCapableSpecies` | `bool` | No | Whether the species is warp capable |
 
 ### Operations
 

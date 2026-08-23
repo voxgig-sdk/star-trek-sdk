@@ -104,16 +104,16 @@ $character = $client->Character();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `deceased` | `bool` | No |  |
-| `fictionalCharacter` | `bool` | No |  |
-| `gender` | `string` | No |  |
-| `height` | `int` | No |  |
-| `hologram` | `bool` | No |  |
-| `name` | `string` | No |  |
-| `uid` | `string` | No |  |
-| `weight` | `int` | No |  |
-| `yearOfBirth` | `int` | No |  |
-| `yearOfDeath` | `int` | No |  |
+| `deceased` | `bool` | No | Whether the character is deceased |
+| `fictionalCharacter` | `bool` | No | Whether this is a fictional character within Star Trek |
+| `gender` | `string` | No | Character gender |
+| `height` | `int` | No | Height in centimeters |
+| `hologram` | `bool` | No | Whether the character is a hologram |
+| `name` | `string` | No | Character name |
+| `uid` | `string` | No | Unique identifier |
+| `weight` | `int` | No | Weight in kilograms |
+| `yearOfBirth` | `int` | No | Year of birth |
+| `yearOfDeath` | `int` | No | Year of death |
 
 ### Operations
 
@@ -165,17 +165,17 @@ $episode = $client->Episode();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episodeNumber` | `int` | No |  |
-| `featureLength` | `bool` | No |  |
-| `productionSerialNumber` | `string` | No |  |
-| `seasonNumber` | `int` | No |  |
-| `stardateFrom` | `float` | No |  |
-| `stardateTo` | `float` | No |  |
-| `title` | `string` | No |  |
-| `uid` | `string` | No |  |
-| `usAirDate` | `string` | No |  |
-| `yearFrom` | `int` | No |  |
-| `yearTo` | `int` | No |  |
+| `episodeNumber` | `int` | No | Episode number |
+| `featureLength` | `bool` | No | Whether this is a feature length episode |
+| `productionSerialNumber` | `string` | No | Production serial number |
+| `seasonNumber` | `int` | No | Season number |
+| `stardateFrom` | `float` | No | Starting stardate |
+| `stardateTo` | `float` | No | Ending stardate |
+| `title` | `string` | No | Episode title |
+| `uid` | `string` | No | Unique identifier |
+| `usAirDate` | `string` | No | US air date |
+| `yearFrom` | `int` | No | Starting year |
+| `yearTo` | `int` | No | Ending year |
 
 ### Operations
 
@@ -227,14 +227,14 @@ $spacecraft = $client->Spacecraft();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `dateStatus` | `string` | No |  |
-| `name` | `string` | No |  |
-| `operator` | `string` | No |  |
-| `owner` | `string` | No |  |
-| `registry` | `string` | No |  |
-| `spacecraftClass` | `string` | No |  |
-| `status` | `string` | No |  |
-| `uid` | `string` | No |  |
+| `dateStatus` | `string` | No | Date of status |
+| `name` | `string` | No | Spacecraft name |
+| `operator` | `string` | No | Operating organization |
+| `owner` | `string` | No | Owner organization |
+| `registry` | `string` | No | Registry number |
+| `spacecraftClass` | `string` | No | Class of spacecraft |
+| `status` | `string` | No | Current status |
+| `uid` | `string` | No | Unique identifier |
 
 ### Operations
 
@@ -286,14 +286,14 @@ $species = $client->Species();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinctSpecies` | `bool` | No |  |
-| `extraGalacticSpecies` | `bool` | No |  |
-| `homeworld` | `string` | No |  |
-| `humanoidSpecies` | `bool` | No |  |
-| `name` | `string` | No |  |
-| `quadrant` | `string` | No |  |
-| `uid` | `string` | No |  |
-| `warpCapableSpecies` | `bool` | No |  |
+| `extinctSpecies` | `bool` | No | Whether the species is extinct |
+| `extraGalacticSpecies` | `bool` | No | Whether the species is from outside the galaxy |
+| `homeworld` | `string` | No | Name of homeworld |
+| `humanoidSpecies` | `bool` | No | Whether the species is humanoid |
+| `name` | `string` | No | Species name |
+| `quadrant` | `string` | No | Quadrant of origin |
+| `uid` | `string` | No | Unique identifier |
+| `warpCapableSpecies` | `bool` | No | Whether the species is warp capable |
 
 ### Operations
 

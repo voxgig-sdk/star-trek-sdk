@@ -1,0 +1,116 @@
+# Entity: spacecraft
+
+main: kit: entity: spacecraft: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "dateStatus"
+      req: false
+      short: "Date of status"
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: false
+      short: "Spacecraft name"
+      type: "`$STRING`"
+    }
+    {
+      name: "operator"
+      req: false
+      short: "Operating organization"
+      type: "`$STRING`"
+    }
+    {
+      name: "owner"
+      req: false
+      short: "Owner organization"
+      type: "`$STRING`"
+    }
+    {
+      name: "registry"
+      req: false
+      short: "Registry number"
+      type: "`$STRING`"
+    }
+    {
+      name: "spacecraftClass"
+      req: false
+      short: "Class of spacecraft"
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      short: "Current status"
+      type: "`$STRING`"
+    }
+    {
+      name: "uid"
+      req: false
+      short: "Unique identifier"
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "spacecraft"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "name"
+                orig: "name"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "page_number"
+                orig: "page_number"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 50
+                kind: "query"
+                name: "page_size"
+                orig: "page_size"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/spacecraft/search"
+          parts: [
+            "spacecraft"
+            "search"
+          ]
+          select: {
+            "$action": "search"
+            exist: [
+              "name"
+              "page_number"
+              "page_size"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.spacecraft`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

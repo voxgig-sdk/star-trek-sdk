@@ -1,0 +1,116 @@
+# Entity: species
+
+main: kit: entity: species: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "extinctSpecies"
+      req: false
+      short: "Whether the species is extinct"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "extraGalacticSpecies"
+      req: false
+      short: "Whether the species is from outside the galaxy"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "homeworld"
+      req: false
+      short: "Name of homeworld"
+      type: "`$STRING`"
+    }
+    {
+      name: "humanoidSpecies"
+      req: false
+      short: "Whether the species is humanoid"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "name"
+      req: false
+      short: "Species name"
+      type: "`$STRING`"
+    }
+    {
+      name: "quadrant"
+      req: false
+      short: "Quadrant of origin"
+      type: "`$STRING`"
+    }
+    {
+      name: "uid"
+      req: false
+      short: "Unique identifier"
+      type: "`$STRING`"
+    }
+    {
+      name: "warpCapableSpecies"
+      req: false
+      short: "Whether the species is warp capable"
+      type: "`$BOOLEAN`"
+    }
+  ]
+
+  name: "species"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "name"
+                orig: "name"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "page_number"
+                orig: "page_number"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 50
+                kind: "query"
+                name: "page_size"
+                orig: "page_size"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/species/search"
+          parts: [
+            "species"
+            "search"
+          ]
+          select: {
+            "$action": "search"
+            exist: [
+              "name"
+              "page_number"
+              "page_size"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.species`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

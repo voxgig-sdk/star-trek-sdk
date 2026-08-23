@@ -105,16 +105,16 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `deceased` | `Boolean` | No |  |
-| `fictionalCharacter` | `Boolean` | No |  |
-| `gender` | `String` | No |  |
-| `height` | `Integer` | No |  |
-| `hologram` | `Boolean` | No |  |
-| `name` | `String` | No |  |
-| `uid` | `String` | No |  |
-| `weight` | `Integer` | No |  |
-| `yearOfBirth` | `Integer` | No |  |
-| `yearOfDeath` | `Integer` | No |  |
+| `deceased` | `Boolean` | No | Whether the character is deceased |
+| `fictionalCharacter` | `Boolean` | No | Whether this is a fictional character within Star Trek |
+| `gender` | `String` | No | Character gender |
+| `height` | `Integer` | No | Height in centimeters |
+| `hologram` | `Boolean` | No | Whether the character is a hologram |
+| `name` | `String` | No | Character name |
+| `uid` | `String` | No | Unique identifier |
+| `weight` | `Integer` | No | Weight in kilograms |
+| `yearOfBirth` | `Integer` | No | Year of birth |
+| `yearOfDeath` | `Integer` | No | Year of death |
 
 ### Operations
 
@@ -166,17 +166,17 @@ episode = client.Episode
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `episodeNumber` | `Integer` | No |  |
-| `featureLength` | `Boolean` | No |  |
-| `productionSerialNumber` | `String` | No |  |
-| `seasonNumber` | `Integer` | No |  |
-| `stardateFrom` | `Float` | No |  |
-| `stardateTo` | `Float` | No |  |
-| `title` | `String` | No |  |
-| `uid` | `String` | No |  |
-| `usAirDate` | `String` | No |  |
-| `yearFrom` | `Integer` | No |  |
-| `yearTo` | `Integer` | No |  |
+| `episodeNumber` | `Integer` | No | Episode number |
+| `featureLength` | `Boolean` | No | Whether this is a feature length episode |
+| `productionSerialNumber` | `String` | No | Production serial number |
+| `seasonNumber` | `Integer` | No | Season number |
+| `stardateFrom` | `Float` | No | Starting stardate |
+| `stardateTo` | `Float` | No | Ending stardate |
+| `title` | `String` | No | Episode title |
+| `uid` | `String` | No | Unique identifier |
+| `usAirDate` | `String` | No | US air date |
+| `yearFrom` | `Integer` | No | Starting year |
+| `yearTo` | `Integer` | No | Ending year |
 
 ### Operations
 
@@ -228,14 +228,14 @@ spacecraft = client.Spacecraft
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `dateStatus` | `String` | No |  |
-| `name` | `String` | No |  |
-| `operator` | `String` | No |  |
-| `owner` | `String` | No |  |
-| `registry` | `String` | No |  |
-| `spacecraftClass` | `String` | No |  |
-| `status` | `String` | No |  |
-| `uid` | `String` | No |  |
+| `dateStatus` | `String` | No | Date of status |
+| `name` | `String` | No | Spacecraft name |
+| `operator` | `String` | No | Operating organization |
+| `owner` | `String` | No | Owner organization |
+| `registry` | `String` | No | Registry number |
+| `spacecraftClass` | `String` | No | Class of spacecraft |
+| `status` | `String` | No | Current status |
+| `uid` | `String` | No | Unique identifier |
 
 ### Operations
 
@@ -287,14 +287,14 @@ species = client.Species
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `extinctSpecies` | `Boolean` | No |  |
-| `extraGalacticSpecies` | `Boolean` | No |  |
-| `homeworld` | `String` | No |  |
-| `humanoidSpecies` | `Boolean` | No |  |
-| `name` | `String` | No |  |
-| `quadrant` | `String` | No |  |
-| `uid` | `String` | No |  |
-| `warpCapableSpecies` | `Boolean` | No |  |
+| `extinctSpecies` | `Boolean` | No | Whether the species is extinct |
+| `extraGalacticSpecies` | `Boolean` | No | Whether the species is from outside the galaxy |
+| `homeworld` | `String` | No | Name of homeworld |
+| `humanoidSpecies` | `Boolean` | No | Whether the species is humanoid |
+| `name` | `String` | No | Species name |
+| `quadrant` | `String` | No | Quadrant of origin |
+| `uid` | `String` | No | Unique identifier |
+| `warpCapableSpecies` | `Boolean` | No | Whether the species is warp capable |
 
 ### Operations
 

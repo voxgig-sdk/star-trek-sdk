@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "StarTrek",
+      slug = "star-trek",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -32,42 +35,52 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "deceased",
+            ["short"] = "Whether the character is deceased",
             ["type"] = "`$BOOLEAN`",
           },
           {
             ["name"] = "fictionalCharacter",
+            ["short"] = "Whether this is a fictional character within Star Trek",
             ["type"] = "`$BOOLEAN`",
           },
           {
             ["name"] = "gender",
+            ["short"] = "Character gender",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "height",
+            ["short"] = "Height in centimeters",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "hologram",
+            ["short"] = "Whether the character is a hologram",
             ["type"] = "`$BOOLEAN`",
           },
           {
             ["name"] = "name",
+            ["short"] = "Character name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "uid",
+            ["short"] = "Unique identifier",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "weight",
+            ["short"] = "Weight in kilograms",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "yearOfBirth",
+            ["short"] = "Year of birth",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "yearOfDeath",
+            ["short"] = "Year of death",
             ["type"] = "`$INTEGER`",
           },
         },
@@ -140,46 +153,57 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "episodeNumber",
+            ["short"] = "Episode number",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "featureLength",
+            ["short"] = "Whether this is a feature length episode",
             ["type"] = "`$BOOLEAN`",
           },
           {
             ["name"] = "productionSerialNumber",
+            ["short"] = "Production serial number",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "seasonNumber",
+            ["short"] = "Season number",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "stardateFrom",
+            ["short"] = "Starting stardate",
             ["type"] = "`$NUMBER`",
           },
           {
             ["name"] = "stardateTo",
+            ["short"] = "Ending stardate",
             ["type"] = "`$NUMBER`",
           },
           {
             ["name"] = "title",
+            ["short"] = "Episode title",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "uid",
+            ["short"] = "Unique identifier",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "usAirDate",
+            ["short"] = "US air date",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "yearFrom",
+            ["short"] = "Starting year",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "yearTo",
+            ["short"] = "Ending year",
             ["type"] = "`$INTEGER`",
           },
         },
@@ -259,34 +283,42 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "dateStatus",
+            ["short"] = "Date of status",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "name",
+            ["short"] = "Spacecraft name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "operator",
+            ["short"] = "Operating organization",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "owner",
+            ["short"] = "Owner organization",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "registry",
+            ["short"] = "Registry number",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "spacecraftClass",
+            ["short"] = "Class of spacecraft",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
+            ["short"] = "Current status",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "uid",
+            ["short"] = "Unique identifier",
             ["type"] = "`$STRING`",
           },
         },
@@ -352,34 +384,42 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "extinctSpecies",
+            ["short"] = "Whether the species is extinct",
             ["type"] = "`$BOOLEAN`",
           },
           {
             ["name"] = "extraGalacticSpecies",
+            ["short"] = "Whether the species is from outside the galaxy",
             ["type"] = "`$BOOLEAN`",
           },
           {
             ["name"] = "homeworld",
+            ["short"] = "Name of homeworld",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "humanoidSpecies",
+            ["short"] = "Whether the species is humanoid",
             ["type"] = "`$BOOLEAN`",
           },
           {
             ["name"] = "name",
+            ["short"] = "Species name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "quadrant",
+            ["short"] = "Quadrant of origin",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "uid",
+            ["short"] = "Unique identifier",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "warpCapableSpecies",
+            ["short"] = "Whether the species is warp capable",
             ["type"] = "`$BOOLEAN`",
           },
         },
