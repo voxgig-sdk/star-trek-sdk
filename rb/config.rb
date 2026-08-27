@@ -28,6 +28,7 @@ module StarTrekConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
