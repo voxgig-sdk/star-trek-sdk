@@ -28,16 +28,10 @@ type Character struct {
 
 // CharacterListMatch is the typed request payload for Character.ListTyped.
 type CharacterListMatch struct {
-	Deceased *bool `json:"deceased,omitempty"`
-	FictionalCharacter *bool `json:"fictionalCharacter,omitempty"`
 	Gender *string `json:"gender,omitempty"`
-	Height *int `json:"height,omitempty"`
-	Hologram *bool `json:"hologram,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Uid *string `json:"uid,omitempty"`
-	Weight *int `json:"weight,omitempty"`
-	YearOfBirth *int `json:"yearOfBirth,omitempty"`
-	YearOfDeath *int `json:"yearOfDeath,omitempty"`
+	PageNumber *int `json:"page_number,omitempty"`
+	PageSize *int `json:"page_size,omitempty"`
 }
 
 // Episode is the typed data model for the episode entity.
@@ -57,17 +51,11 @@ type Episode struct {
 
 // EpisodeListMatch is the typed request payload for Episode.ListTyped.
 type EpisodeListMatch struct {
-	EpisodeNumber *int `json:"episodeNumber,omitempty"`
-	FeatureLength *bool `json:"featureLength,omitempty"`
-	ProductionSerialNumber *string `json:"productionSerialNumber,omitempty"`
-	SeasonNumber *int `json:"seasonNumber,omitempty"`
-	StardateFrom *float64 `json:"stardateFrom,omitempty"`
-	StardateTo *float64 `json:"stardateTo,omitempty"`
+	EpisodeNumber *int `json:"episode_number,omitempty"`
+	PageNumber *int `json:"page_number,omitempty"`
+	PageSize *int `json:"page_size,omitempty"`
+	SeasonNumber *int `json:"season_number,omitempty"`
 	Title *string `json:"title,omitempty"`
-	Uid *string `json:"uid,omitempty"`
-	UsAirDate *string `json:"usAirDate,omitempty"`
-	YearFrom *int `json:"yearFrom,omitempty"`
-	YearTo *int `json:"yearTo,omitempty"`
 }
 
 // Spacecraft is the typed data model for the spacecraft entity.
@@ -84,14 +72,9 @@ type Spacecraft struct {
 
 // SpacecraftListMatch is the typed request payload for Spacecraft.ListTyped.
 type SpacecraftListMatch struct {
-	DateStatus *string `json:"dateStatus,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Operator *string `json:"operator,omitempty"`
-	Owner *string `json:"owner,omitempty"`
-	Registry *string `json:"registry,omitempty"`
-	SpacecraftClass *string `json:"spacecraftClass,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Uid *string `json:"uid,omitempty"`
+	PageNumber *int `json:"page_number,omitempty"`
+	PageSize *int `json:"page_size,omitempty"`
 }
 
 // Species is the typed data model for the species entity.
@@ -108,14 +91,9 @@ type Species struct {
 
 // SpeciesListMatch is the typed request payload for Species.ListTyped.
 type SpeciesListMatch struct {
-	ExtinctSpecies *bool `json:"extinctSpecies,omitempty"`
-	ExtraGalacticSpecies *bool `json:"extraGalacticSpecies,omitempty"`
-	Homeworld *string `json:"homeworld,omitempty"`
-	HumanoidSpecies *bool `json:"humanoidSpecies,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Quadrant *string `json:"quadrant,omitempty"`
-	Uid *string `json:"uid,omitempty"`
-	WarpCapableSpecies *bool `json:"warpCapableSpecies,omitempty"`
+	PageNumber *int `json:"page_number,omitempty"`
+	PageSize *int `json:"page_size,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

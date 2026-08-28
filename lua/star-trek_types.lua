@@ -19,16 +19,10 @@
 ---@field yearOfDeath? number
 
 ---@class CharacterListMatch
----@field deceased? boolean
----@field fictionalCharacter? boolean
 ---@field gender? string
----@field height? number
----@field hologram? boolean
 ---@field name? string
----@field uid? string
----@field weight? number
----@field yearOfBirth? number
----@field yearOfDeath? number
+---@field page_number? number
+---@field page_size? number
 
 ---@class Episode
 ---@field episodeNumber? number
@@ -44,17 +38,11 @@
 ---@field yearTo? number
 
 ---@class EpisodeListMatch
----@field episodeNumber? number
----@field featureLength? boolean
----@field productionSerialNumber? string
----@field seasonNumber? number
----@field stardateFrom? number
----@field stardateTo? number
+---@field episode_number? number
+---@field page_number? number
+---@field page_size? number
+---@field season_number? number
 ---@field title? string
----@field uid? string
----@field usAirDate? string
----@field yearFrom? number
----@field yearTo? number
 
 ---@class Spacecraft
 ---@field dateStatus? string
@@ -67,14 +55,9 @@
 ---@field uid? string
 
 ---@class SpacecraftListMatch
----@field dateStatus? string
 ---@field name? string
----@field operator? string
----@field owner? string
----@field registry? string
----@field spacecraftClass? string
----@field status? string
----@field uid? string
+---@field page_number? number
+---@field page_size? number
 
 ---@class Species
 ---@field extinctSpecies? boolean
@@ -87,14 +70,9 @@
 ---@field warpCapableSpecies? boolean
 
 ---@class SpeciesListMatch
----@field extinctSpecies? boolean
----@field extraGalacticSpecies? boolean
----@field homeworld? string
----@field humanoidSpecies? boolean
 ---@field name? string
----@field quadrant? string
----@field uid? string
----@field warpCapableSpecies? boolean
+---@field page_number? number
+---@field page_size? number
 
 local M = {}
 

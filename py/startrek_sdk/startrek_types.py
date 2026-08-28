@@ -30,16 +30,10 @@ class Character(TypedDict, total=False):
 
 
 class CharacterListMatch(TypedDict, total=False):
-    deceased: bool
-    fictionalCharacter: bool
     gender: str
-    height: int
-    hologram: bool
     name: str
-    uid: str
-    weight: int
-    yearOfBirth: int
-    yearOfDeath: int
+    page_number: int
+    page_size: int
 
 
 class Episode(TypedDict, total=False):
@@ -57,17 +51,11 @@ class Episode(TypedDict, total=False):
 
 
 class EpisodeListMatch(TypedDict, total=False):
-    episodeNumber: int
-    featureLength: bool
-    productionSerialNumber: str
-    seasonNumber: int
-    stardateFrom: float
-    stardateTo: float
+    episode_number: int
+    page_number: int
+    page_size: int
+    season_number: int
     title: str
-    uid: str
-    usAirDate: str
-    yearFrom: int
-    yearTo: int
 
 
 class Spacecraft(TypedDict, total=False):
@@ -82,14 +70,9 @@ class Spacecraft(TypedDict, total=False):
 
 
 class SpacecraftListMatch(TypedDict, total=False):
-    dateStatus: str
     name: str
-    operator: str
-    owner: str
-    registry: str
-    spacecraftClass: str
-    status: str
-    uid: str
+    page_number: int
+    page_size: int
 
 
 class Species(TypedDict, total=False):
@@ -104,11 +87,6 @@ class Species(TypedDict, total=False):
 
 
 class SpeciesListMatch(TypedDict, total=False):
-    extinctSpecies: bool
-    extraGalacticSpecies: bool
-    homeworld: str
-    humanoidSpecies: bool
     name: str
-    quadrant: str
-    uid: str
-    warpCapableSpecies: bool
+    page_number: int
+    page_size: int

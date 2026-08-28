@@ -19,16 +19,10 @@ export interface Character {
 }
 
 export interface CharacterListMatch {
-  deceased?: boolean
-  fictionalCharacter?: boolean
   gender?: string
-  height?: number
-  hologram?: boolean
   name?: string
-  uid?: string
-  weight?: number
-  yearOfBirth?: number
-  yearOfDeath?: number
+  page_number?: number
+  page_size?: number
 
   // Selects a custom action instead of the plain list:
   //   'search'
@@ -52,17 +46,11 @@ export interface Episode {
 }
 
 export interface EpisodeListMatch {
-  episodeNumber?: number
-  featureLength?: boolean
-  productionSerialNumber?: string
-  seasonNumber?: number
-  stardateFrom?: number
-  stardateTo?: number
+  episode_number?: number
+  page_number?: number
+  page_size?: number
+  season_number?: number
   title?: string
-  uid?: string
-  usAirDate?: string
-  yearFrom?: number
-  yearTo?: number
 
   // Selects a custom action instead of the plain list:
   //   'search'
@@ -83,14 +71,9 @@ export interface Spacecraft {
 }
 
 export interface SpacecraftListMatch {
-  dateStatus?: string
   name?: string
-  operator?: string
-  owner?: string
-  registry?: string
-  spacecraftClass?: string
-  status?: string
-  uid?: string
+  page_number?: number
+  page_size?: number
 
   // Selects a custom action instead of the plain list:
   //   'search'
@@ -111,14 +94,9 @@ export interface Species {
 }
 
 export interface SpeciesListMatch {
-  extinctSpecies?: boolean
-  extraGalacticSpecies?: boolean
-  homeworld?: string
-  humanoidSpecies?: boolean
   name?: string
-  quadrant?: string
-  uid?: string
-  warpCapableSpecies?: boolean
+  page_number?: number
+  page_size?: number
 
   // Selects a custom action instead of the plain list:
   //   'search'

@@ -30,16 +30,10 @@ class Character
 /** Request payload for Character#list. */
 class CharacterListMatch
 {
-    public ?bool $deceased = null;
-    public ?bool $fictionalCharacter = null;
     public ?string $gender = null;
-    public ?int $height = null;
-    public ?bool $hologram = null;
     public ?string $name = null;
-    public ?string $uid = null;
-    public ?int $weight = null;
-    public ?int $yearOfBirth = null;
-    public ?int $yearOfDeath = null;
+    public ?int $page_number = null;
+    public ?int $page_size = null;
 }
 
 /** Episode entity data model. */
@@ -61,17 +55,11 @@ class Episode
 /** Request payload for Episode#list. */
 class EpisodeListMatch
 {
-    public ?int $episodeNumber = null;
-    public ?bool $featureLength = null;
-    public ?string $productionSerialNumber = null;
-    public ?int $seasonNumber = null;
-    public ?float $stardateFrom = null;
-    public ?float $stardateTo = null;
+    public ?int $episode_number = null;
+    public ?int $page_number = null;
+    public ?int $page_size = null;
+    public ?int $season_number = null;
     public ?string $title = null;
-    public ?string $uid = null;
-    public ?string $usAirDate = null;
-    public ?int $yearFrom = null;
-    public ?int $yearTo = null;
 }
 
 /** Spacecraft entity data model. */
@@ -90,14 +78,9 @@ class Spacecraft
 /** Request payload for Spacecraft#list. */
 class SpacecraftListMatch
 {
-    public ?string $dateStatus = null;
     public ?string $name = null;
-    public ?string $operator = null;
-    public ?string $owner = null;
-    public ?string $registry = null;
-    public ?string $spacecraftClass = null;
-    public ?string $status = null;
-    public ?string $uid = null;
+    public ?int $page_number = null;
+    public ?int $page_size = null;
 }
 
 /** Species entity data model. */
@@ -116,13 +99,8 @@ class Species
 /** Request payload for Species#list. */
 class SpeciesListMatch
 {
-    public ?bool $extinctSpecies = null;
-    public ?bool $extraGalacticSpecies = null;
-    public ?string $homeworld = null;
-    public ?bool $humanoidSpecies = null;
     public ?string $name = null;
-    public ?string $quadrant = null;
-    public ?string $uid = null;
-    public ?bool $warpCapableSpecies = null;
+    public ?int $page_number = null;
+    public ?int $page_size = null;
 }
 
