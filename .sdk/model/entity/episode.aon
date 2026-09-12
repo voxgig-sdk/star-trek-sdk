@@ -30,12 +30,14 @@ main: kit: entity: episode: {
       type: "`$INTEGER`"
     }
     {
+      format: "float"
       name: "stardateFrom"
       req: false
       short: "Starting stardate"
       type: "`$NUMBER`"
     }
     {
+      format: "float"
       name: "stardateTo"
       req: false
       short: "Ending stardate"
@@ -54,6 +56,7 @@ main: kit: entity: episode: {
       type: "`$STRING`"
     }
     {
+      format: "date"
       name: "usAirDate"
       req: false
       short: "US air date"
@@ -122,9 +125,13 @@ main: kit: entity: episode: {
           }
           method: "GET"
           orig: "/episode/search"
-          parts: [
-            "episode"
-            "search"
+          segments: [
+            {
+              lit: "episode"
+            }
+            {
+              lit: "search"
+            }
           ]
           select: {
             "$action": "search"

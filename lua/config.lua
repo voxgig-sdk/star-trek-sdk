@@ -125,9 +125,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/character/search",
-                ["parts"] = {
-                  "character",
-                  "search",
+                ["segments"] = {
+                  {
+                    ["lit"] = "character",
+                  },
+                  {
+                    ["lit"] = "search",
+                  },
                 },
                 ["select"] = {
                   ["$action"] = "search",
@@ -141,6 +145,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "character",
+                  "search",
                 },
               },
             },
@@ -173,11 +181,13 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "float",
             ["name"] = "stardateFrom",
             ["short"] = "Starting stardate",
             ["type"] = "`$NUMBER`",
           },
           {
+            ["format"] = "float",
             ["name"] = "stardateTo",
             ["short"] = "Ending stardate",
             ["type"] = "`$NUMBER`",
@@ -193,6 +203,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date",
             ["name"] = "usAirDate",
             ["short"] = "US air date",
             ["type"] = "`$STRING`",
@@ -254,9 +265,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episode/search",
-                ["parts"] = {
-                  "episode",
-                  "search",
+                ["segments"] = {
+                  {
+                    ["lit"] = "episode",
+                  },
+                  {
+                    ["lit"] = "search",
+                  },
                 },
                 ["select"] = {
                   ["$action"] = "search",
@@ -271,6 +286,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "episode",
+                  "search",
                 },
               },
             },
@@ -357,9 +376,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/spacecraft/search",
-                ["parts"] = {
-                  "spacecraft",
-                  "search",
+                ["segments"] = {
+                  {
+                    ["lit"] = "spacecraft",
+                  },
+                  {
+                    ["lit"] = "search",
+                  },
                 },
                 ["select"] = {
                   ["$action"] = "search",
@@ -372,6 +395,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.spacecraft`",
+                },
+                ["parts"] = {
+                  "spacecraft",
+                  "search",
                 },
               },
             },
@@ -458,9 +485,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/species/search",
-                ["parts"] = {
-                  "species",
-                  "search",
+                ["segments"] = {
+                  {
+                    ["lit"] = "species",
+                  },
+                  {
+                    ["lit"] = "search",
+                  },
                 },
                 ["select"] = {
                   ["$action"] = "search",
@@ -473,6 +504,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.species`",
+                },
+                ["parts"] = {
+                  "species",
+                  "search",
                 },
               },
             },

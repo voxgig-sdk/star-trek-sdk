@@ -137,9 +137,13 @@ module StarTrekConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/search",
-                  "parts" => [
-                    "character",
-                    "search",
+                  "segments" => [
+                    {
+                      "lit" => "character",
+                    },
+                    {
+                      "lit" => "search",
+                    },
                   ],
                   "select" => {
                     "$action" => "search",
@@ -154,6 +158,10 @@ module StarTrekConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "character",
+                    "search",
+                  ],
                 },
               ],
             },
@@ -185,11 +193,13 @@ module StarTrekConfig
               "type" => "`$INTEGER`",
             },
             {
+              "format" => "float",
               "name" => "stardateFrom",
               "short" => "Starting stardate",
               "type" => "`$NUMBER`",
             },
             {
+              "format" => "float",
               "name" => "stardateTo",
               "short" => "Ending stardate",
               "type" => "`$NUMBER`",
@@ -205,6 +215,7 @@ module StarTrekConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "date",
               "name" => "usAirDate",
               "short" => "US air date",
               "type" => "`$STRING`",
@@ -266,9 +277,13 @@ module StarTrekConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episode/search",
-                  "parts" => [
-                    "episode",
-                    "search",
+                  "segments" => [
+                    {
+                      "lit" => "episode",
+                    },
+                    {
+                      "lit" => "search",
+                    },
                   ],
                   "select" => {
                     "$action" => "search",
@@ -284,6 +299,10 @@ module StarTrekConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "episode",
+                    "search",
+                  ],
                 },
               ],
             },
@@ -369,9 +388,13 @@ module StarTrekConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/spacecraft/search",
-                  "parts" => [
-                    "spacecraft",
-                    "search",
+                  "segments" => [
+                    {
+                      "lit" => "spacecraft",
+                    },
+                    {
+                      "lit" => "search",
+                    },
                   ],
                   "select" => {
                     "$action" => "search",
@@ -385,6 +408,10 @@ module StarTrekConfig
                     "req" => "`reqdata`",
                     "res" => "`body.spacecraft`",
                   },
+                  "parts" => [
+                    "spacecraft",
+                    "search",
+                  ],
                 },
               ],
             },
@@ -470,9 +497,13 @@ module StarTrekConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/species/search",
-                  "parts" => [
-                    "species",
-                    "search",
+                  "segments" => [
+                    {
+                      "lit" => "species",
+                    },
+                    {
+                      "lit" => "search",
+                    },
                   ],
                   "select" => {
                     "$action" => "search",
@@ -486,6 +517,10 @@ module StarTrekConfig
                     "req" => "`reqdata`",
                     "res" => "`body.species`",
                   },
+                  "parts" => [
+                    "species",
+                    "search",
+                  ],
                 },
               ],
             },

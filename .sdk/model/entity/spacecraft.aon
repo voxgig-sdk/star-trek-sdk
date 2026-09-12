@@ -90,9 +90,13 @@ main: kit: entity: spacecraft: {
           }
           method: "GET"
           orig: "/spacecraft/search"
-          parts: [
-            "spacecraft"
-            "search"
+          segments: [
+            {
+              lit: "spacecraft"
+            }
+            {
+              lit: "search"
+            }
           ]
           select: {
             "$action": "search"

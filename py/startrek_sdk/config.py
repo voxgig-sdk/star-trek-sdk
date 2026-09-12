@@ -1,6 +1,14 @@
 # StarTrek SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -146,9 +154,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/character/search",
-                "parts": [
-                  "character",
-                  "search",
+                "segments": [
+                  {
+                    "lit": "character",
+                  },
+                  {
+                    "lit": "search",
+                  },
                 ],
                 "select": {
                   "$action": "search",
@@ -163,6 +175,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "character",
+                  "search",
+                ],
               },
             ],
           },
@@ -194,11 +210,13 @@ def make_config():
             "type": "`$INTEGER`",
           },
           {
+            "format": "float",
             "name": "stardateFrom",
             "short": "Starting stardate",
             "type": "`$NUMBER`",
           },
           {
+            "format": "float",
             "name": "stardateTo",
             "short": "Ending stardate",
             "type": "`$NUMBER`",
@@ -214,6 +232,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date",
             "name": "usAirDate",
             "short": "US air date",
             "type": "`$STRING`",
@@ -275,9 +294,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/episode/search",
-                "parts": [
-                  "episode",
-                  "search",
+                "segments": [
+                  {
+                    "lit": "episode",
+                  },
+                  {
+                    "lit": "search",
+                  },
                 ],
                 "select": {
                   "$action": "search",
@@ -293,6 +316,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "episode",
+                  "search",
+                ],
               },
             ],
           },
@@ -378,9 +405,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/spacecraft/search",
-                "parts": [
-                  "spacecraft",
-                  "search",
+                "segments": [
+                  {
+                    "lit": "spacecraft",
+                  },
+                  {
+                    "lit": "search",
+                  },
                 ],
                 "select": {
                   "$action": "search",
@@ -394,6 +425,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.spacecraft`",
                 },
+                "parts": [
+                  "spacecraft",
+                  "search",
+                ],
               },
             ],
           },
@@ -479,9 +514,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/species/search",
-                "parts": [
-                  "species",
-                  "search",
+                "segments": [
+                  {
+                    "lit": "species",
+                  },
+                  {
+                    "lit": "search",
+                  },
                 ],
                 "select": {
                   "$action": "search",
@@ -495,6 +534,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.species`",
                 },
+                "parts": [
+                  "species",
+                  "search",
+                ],
               },
             ],
           },

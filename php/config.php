@@ -151,9 +151,13 @@ class StarTrekConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/character/search',
-                  'parts' => [
-                    'character',
-                    'search',
+                  'segments' => [
+                    [
+                      'lit' => 'character',
+                    ],
+                    [
+                      'lit' => 'search',
+                    ],
                   ],
                   'select' => [
                     '$action' => 'search',
@@ -167,6 +171,10 @@ class StarTrekConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'character',
+                    'search',
                   ],
                 ],
               ],
@@ -199,11 +207,13 @@ class StarTrekConfig
               'type' => '`$INTEGER`',
             ],
             [
+              'format' => 'float',
               'name' => 'stardateFrom',
               'short' => 'Starting stardate',
               'type' => '`$NUMBER`',
             ],
             [
+              'format' => 'float',
               'name' => 'stardateTo',
               'short' => 'Ending stardate',
               'type' => '`$NUMBER`',
@@ -219,6 +229,7 @@ class StarTrekConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'date',
               'name' => 'usAirDate',
               'short' => 'US air date',
               'type' => '`$STRING`',
@@ -280,9 +291,13 @@ class StarTrekConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/episode/search',
-                  'parts' => [
-                    'episode',
-                    'search',
+                  'segments' => [
+                    [
+                      'lit' => 'episode',
+                    ],
+                    [
+                      'lit' => 'search',
+                    ],
                   ],
                   'select' => [
                     '$action' => 'search',
@@ -297,6 +312,10 @@ class StarTrekConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'episode',
+                    'search',
                   ],
                 ],
               ],
@@ -383,9 +402,13 @@ class StarTrekConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/spacecraft/search',
-                  'parts' => [
-                    'spacecraft',
-                    'search',
+                  'segments' => [
+                    [
+                      'lit' => 'spacecraft',
+                    ],
+                    [
+                      'lit' => 'search',
+                    ],
                   ],
                   'select' => [
                     '$action' => 'search',
@@ -398,6 +421,10 @@ class StarTrekConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.spacecraft`',
+                  ],
+                  'parts' => [
+                    'spacecraft',
+                    'search',
                   ],
                 ],
               ],
@@ -484,9 +511,13 @@ class StarTrekConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/species/search',
-                  'parts' => [
-                    'species',
-                    'search',
+                  'segments' => [
+                    [
+                      'lit' => 'species',
+                    ],
+                    [
+                      'lit' => 'search',
+                    ],
                   ],
                   'select' => [
                     '$action' => 'search',
@@ -499,6 +530,10 @@ class StarTrekConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.species`',
+                  ],
+                  'parts' => [
+                    'species',
+                    'search',
                   ],
                 ],
               ],

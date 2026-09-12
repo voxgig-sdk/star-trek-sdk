@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -166,9 +177,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/character/search",
-              "parts": [
-                "character",
-                "search"
+              "segments": [
+                {
+                  "lit": "character"
+                },
+                {
+                  "lit": "search"
+                }
               ],
               "select": {
                 "$action": "search",
@@ -182,7 +197,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "character",
+                "search"
+              ]
             }
           ]
         }
@@ -214,11 +233,13 @@ class Config {
           "type": "`$INTEGER`"
         },
         {
+          "format": "float",
           "name": "stardateFrom",
           "short": "Starting stardate",
           "type": "`$NUMBER`"
         },
         {
+          "format": "float",
           "name": "stardateTo",
           "short": "Ending stardate",
           "type": "`$NUMBER`"
@@ -234,6 +255,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "date",
           "name": "usAirDate",
           "short": "US air date",
           "type": "`$STRING`"
@@ -295,9 +317,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/episode/search",
-              "parts": [
-                "episode",
-                "search"
+              "segments": [
+                {
+                  "lit": "episode"
+                },
+                {
+                  "lit": "search"
+                }
               ],
               "select": {
                 "$action": "search",
@@ -312,7 +338,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "episode",
+                "search"
+              ]
             }
           ]
         }
@@ -398,9 +428,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/spacecraft/search",
-              "parts": [
-                "spacecraft",
-                "search"
+              "segments": [
+                {
+                  "lit": "spacecraft"
+                },
+                {
+                  "lit": "search"
+                }
               ],
               "select": {
                 "$action": "search",
@@ -413,7 +447,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.spacecraft`"
-              }
+              },
+              "parts": [
+                "spacecraft",
+                "search"
+              ]
             }
           ]
         }
@@ -499,9 +537,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/species/search",
-              "parts": [
-                "species",
-                "search"
+              "segments": [
+                {
+                  "lit": "species"
+                },
+                {
+                  "lit": "search"
+                }
               ],
               "select": {
                 "$action": "search",
@@ -514,7 +556,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.species`"
-              }
+              },
+              "parts": [
+                "species",
+                "search"
+              ]
             }
           ]
         }
@@ -530,6 +576,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

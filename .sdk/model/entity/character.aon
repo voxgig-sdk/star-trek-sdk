@@ -109,9 +109,13 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/character/search"
-          parts: [
-            "character"
-            "search"
+          segments: [
+            {
+              lit: "character"
+            }
+            {
+              lit: "search"
+            }
           ]
           select: {
             "$action": "search"
