@@ -105,7 +105,7 @@ local results, err = client:Character():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/releases) |
+| TypeScript | `@voxgig-sdk/star-trek-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/releases) |
 | Python | `voxgig-sdk-star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/releases) |
 | PHP | `voxgig-sdk/star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/star-trek-sdk/go` | `go get github.com/voxgig-sdk/star-trek-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Character():list()
 ### TypeScript
 
 ```ts
-import { StarTrekSDK } from '@voxgig-sdk/star-trek'
+import { StarTrekSDK } from '@voxgig-sdk/star-trek-sdk'
 
 const client = new StarTrekSDK()
 

@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/star-trek",
+  "name": "@voxgig-sdk/star-trek-sdk",
   "version": "0.0.1",
   "description": "Unofficial generated TypeScript SDK for the Star Trek public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [

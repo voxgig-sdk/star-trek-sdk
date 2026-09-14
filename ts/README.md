@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { StarTrekSDK } from '@voxgig-sdk/star-trek'
+import { StarTrekSDK } from '@voxgig-sdk/star-trek-sdk'
 
 const client = new StarTrekSDK()
 ```
@@ -571,7 +571,7 @@ star-trek/
 Import the SDK from the package root:
 
 ```ts
-import { StarTrekSDK } from '@voxgig-sdk/star-trek'
+import { StarTrekSDK } from '@voxgig-sdk/star-trek-sdk'
 ```
 
 ### Entity state
