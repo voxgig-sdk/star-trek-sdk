@@ -46,5 +46,133 @@
         "warpCapableSpecies": false
       }
     }
+  },
+  "requests": {
+    "GET /species/search": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "searchSpecies",
+        "parameters": [
+          {
+            "description": "Species name",
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Zero-based page number",
+            "in": "query",
+            "name": "pageNumber",
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Page size",
+            "in": "query",
+            "name": "pageSize",
+            "schema": {
+              "default": 50,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "page": {
+                      "properties": {
+                        "firstPage": {
+                          "description": "Whether this is the first page",
+                          "type": "boolean"
+                        },
+                        "lastPage": {
+                          "description": "Whether this is the last page",
+                          "type": "boolean"
+                        },
+                        "numberOfElements": {
+                          "description": "Number of elements on current page",
+                          "type": "integer"
+                        },
+                        "pageNumber": {
+                          "description": "Current page number (zero-based)",
+                          "type": "integer"
+                        },
+                        "pageSize": {
+                          "description": "Page size",
+                          "type": "integer"
+                        },
+                        "totalElements": {
+                          "description": "Total number of elements",
+                          "type": "integer"
+                        },
+                        "totalPages": {
+                          "description": "Total number of pages",
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "species": {
+                      "items": {
+                        "properties": {
+                          "extinctSpecies": {
+                            "description": "Whether the species is extinct",
+                            "type": "boolean"
+                          },
+                          "extraGalacticSpecies": {
+                            "description": "Whether the species is from outside the galaxy",
+                            "type": "boolean"
+                          },
+                          "homeworld": {
+                            "description": "Name of homeworld",
+                            "type": "string"
+                          },
+                          "humanoidSpecies": {
+                            "description": "Whether the species is humanoid",
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "description": "Species name",
+                            "type": "string"
+                          },
+                          "quadrant": {
+                            "description": "Quadrant of origin",
+                            "type": "string"
+                          },
+                          "uid": {
+                            "description": "Unique identifier",
+                            "type": "string"
+                          },
+                          "warpCapableSpecies": {
+                            "description": "Whether the species is warp capable",
+                            "type": "boolean"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with species search results"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

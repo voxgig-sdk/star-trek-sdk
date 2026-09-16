@@ -5,37 +5,37 @@
         "deceased": true,
         "fictionalCharacter": false,
         "gender": "s66",
-        "height": "s67",
+        "height": 103,
         "hologram": true,
         "name": "s69",
         "uid": "s6a",
-        "weight": "s6b",
-        "yearOfBirth": "s6c",
-        "yearOfDeath": "s6d"
+        "weight": 107,
+        "yearOfBirth": 108,
+        "yearOfDeath": 109
       },
       "CHARACTER01": {
         "deceased": true,
         "fictionalCharacter": false,
         "gender": "sca",
-        "height": "scb",
+        "height": 203,
         "hologram": true,
         "name": "scd",
         "uid": "sce",
-        "weight": "scf",
-        "yearOfBirth": "sd0",
-        "yearOfDeath": "sd1"
+        "weight": 207,
+        "yearOfBirth": 208,
+        "yearOfDeath": 209
       },
       "CHARACTER02": {
         "deceased": true,
         "fictionalCharacter": false,
         "gender": "s12e",
-        "height": "s12f",
+        "height": 303,
         "hologram": true,
         "name": "s131",
         "uid": "s132",
-        "weight": "s133",
-        "yearOfBirth": "s134",
-        "yearOfDeath": "s135"
+        "weight": 307,
+        "yearOfBirth": 308,
+        "yearOfDeath": 309
       }
     }
   },
@@ -45,13 +45,161 @@
         "deceased": true,
         "fictionalCharacter": false,
         "gender": "s192",
-        "height": "s193",
+        "height": 403,
         "hologram": true,
         "name": "s195",
         "uid": "s196",
-        "weight": "s197",
-        "yearOfBirth": "s198",
-        "yearOfDeath": "s199"
+        "weight": 407,
+        "yearOfBirth": 408,
+        "yearOfDeath": 409
+      }
+    }
+  },
+  "requests": {
+    "GET /character/search": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "searchCharacters",
+        "parameters": [
+          {
+            "description": "Character name",
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Character gender",
+            "in": "query",
+            "name": "gender",
+            "schema": {
+              "enum": [
+                "F",
+                "M"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Zero-based page number",
+            "in": "query",
+            "name": "pageNumber",
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Page size",
+            "in": "query",
+            "name": "pageSize",
+            "schema": {
+              "default": 50,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "characters": {
+                      "items": {
+                        "properties": {
+                          "deceased": {
+                            "description": "Whether the character is deceased",
+                            "type": "boolean"
+                          },
+                          "fictionalCharacter": {
+                            "description": "Whether this is a fictional character within Star Trek",
+                            "type": "boolean"
+                          },
+                          "gender": {
+                            "description": "Character gender",
+                            "type": "string"
+                          },
+                          "height": {
+                            "description": "Height in centimeters",
+                            "type": "integer"
+                          },
+                          "hologram": {
+                            "description": "Whether the character is a hologram",
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "description": "Character name",
+                            "type": "string"
+                          },
+                          "uid": {
+                            "description": "Unique identifier",
+                            "type": "string"
+                          },
+                          "weight": {
+                            "description": "Weight in kilograms",
+                            "type": "integer"
+                          },
+                          "yearOfBirth": {
+                            "description": "Year of birth",
+                            "type": "integer"
+                          },
+                          "yearOfDeath": {
+                            "description": "Year of death",
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "page": {
+                      "properties": {
+                        "firstPage": {
+                          "description": "Whether this is the first page",
+                          "type": "boolean"
+                        },
+                        "lastPage": {
+                          "description": "Whether this is the last page",
+                          "type": "boolean"
+                        },
+                        "numberOfElements": {
+                          "description": "Number of elements on current page",
+                          "type": "integer"
+                        },
+                        "pageNumber": {
+                          "description": "Current page number (zero-based)",
+                          "type": "integer"
+                        },
+                        "pageSize": {
+                          "description": "Page size",
+                          "type": "integer"
+                        },
+                        "totalElements": {
+                          "description": "Total number of elements",
+                          "type": "integer"
+                        },
+                        "totalPages": {
+                          "description": "Total number of pages",
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with character search results"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

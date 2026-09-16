@@ -1,12 +1,18 @@
 # StarTrek SDK feature factory
 
 from startrek_sdk.feature.base_feature import StarTrekBaseFeature
+from startrek_sdk.feature.ratelimit_feature import StarTrekRatelimitFeature
+from startrek_sdk.feature.retry_feature import StarTrekRetryFeature
 from startrek_sdk.feature.test_feature import StarTrekTestFeature
+from startrek_sdk.feature.timeout_feature import StarTrekTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: StarTrekBaseFeature(),
+    "ratelimit": lambda: StarTrekRatelimitFeature(),
+    "retry": lambda: StarTrekRetryFeature(),
     "test": lambda: StarTrekTestFeature(),
+    "timeout": lambda: StarTrekTimeoutFeature(),
 }
 
 

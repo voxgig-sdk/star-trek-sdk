@@ -88,6 +88,12 @@ main: kit: entity: spacecraft: {
               }
             ]
           }
+          contract: {
+            id: "GET /spacecraft/search"
+            json: "{\"operationId\":\"searchSpacecraft\",\"parameters\":[{\"description\":\"Spacecraft name\",\"in\":\"query\",\"name\":\"name\",\"schema\":{\"type\":\"string\"}},{\"description\":\"Zero-based page number\",\"in\":\"query\",\"name\":\"pageNumber\",\"schema\":{\"default\":0,\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"Page size\",\"in\":\"query\",\"name\":\"pageSize\",\"schema\":{\"default\":50,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"page\":{\"properties\":{\"firstPage\":{\"description\":\"Whether this is the first page\",\"type\":\"boolean\"},\"lastPage\":{\"description\":\"Whether this is the last page\",\"type\":\"boolean\"},\"numberOfElements\":{\"description\":\"Number of elements on current page\",\"type\":\"integer\"},\"pageNumber\":{\"description\":\"Current page number (zero-based)\",\"type\":\"integer\"},\"pageSize\":{\"description\":\"Page size\",\"type\":\"integer\"},\"totalElements\":{\"description\":\"Total number of elements\",\"type\":\"integer\"},\"totalPages\":{\"description\":\"Total number of pages\",\"type\":\"integer\"}},\"type\":\"object\"},\"spacecraft\":{\"items\":{\"properties\":{\"dateStatus\":{\"description\":\"Date of status\",\"type\":\"string\"},\"name\":{\"description\":\"Spacecraft name\",\"type\":\"string\"},\"operator\":{\"description\":\"Operating organization\",\"type\":\"string\"},\"owner\":{\"description\":\"Owner organization\",\"type\":\"string\"},\"registry\":{\"description\":\"Registry number\",\"type\":\"string\"},\"spacecraftClass\":{\"description\":\"Class of spacecraft\",\"type\":\"string\"},\"status\":{\"description\":\"Current status\",\"type\":\"string\"},\"uid\":{\"description\":\"Unique identifier\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response with spacecraft search results\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/spacecraft/search"
           segments: [
