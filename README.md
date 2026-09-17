@@ -105,12 +105,12 @@ local results, err = client:Character():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/star-trek-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/releases) |
-| Python | `voxgig-sdk-star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/releases) |
-| PHP | `voxgig-sdk/star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/releases) |
+| TypeScript | `@voxgig-sdk/star-trek-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/tags) |
+| Python | `voxgig-sdk-star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/tags) |
+| PHP | `voxgig-sdk/star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/star-trek-sdk/go` | `go get github.com/voxgig-sdk/star-trek-sdk/go@latest` |
-| Ruby | `voxgig-sdk-star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/releases) |
-| Lua | `voxgig-sdk-star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/releases) |
+| Ruby | `voxgig-sdk-star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/tags) |
+| Lua | `voxgig-sdk-star-trek` | publish pending — [install from git tag](https://github.com/voxgig-sdk/star-trek-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/star-trek-sdk/go-cli` | `go install github.com/voxgig-sdk/star-trek-sdk/go-cli/cmd/star-trek@latest` |
 | Go MCP server | `github.com/voxgig-sdk/star-trek-sdk/go-mcp` | `go get github.com/voxgig-sdk/star-trek-sdk/go-mcp@latest` |
 

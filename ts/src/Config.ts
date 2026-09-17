@@ -127,18 +127,18 @@ class Config {
 
     entity: {
       
-      character: {
-      },
-
-      episode: {
-      },
-
-      spacecraft: {
-      },
-
-      species: {
-      },
-
+        character: {
+        },
+  
+        episode: {
+        },
+  
+        spacecraft: {
+        },
+  
+        species: {
+        },
+  
     }
   }
 

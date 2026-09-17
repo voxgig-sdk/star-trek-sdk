@@ -1,6 +1,6 @@
 # Flows
 
-@"BasicCharacterFlow.aon"
-@"BasicEpisodeFlow.aon"
-@"BasicSpacecraftFlow.aon"
-@"BasicSpeciesFlow.aon"
+@"./BasicCharacterFlow.aon"
+@"./BasicEpisodeFlow.aon"
+@"./BasicSpacecraftFlow.aon"
+@"./BasicSpeciesFlow.aon"
